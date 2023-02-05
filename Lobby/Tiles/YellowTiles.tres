@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://b6v1knqhd3qxt"]
+
+[ext_resource type="Texture2D" uid="uid://dh2bbqd2fid56" path="res://Lobby/Tiles/TileNormal.png" id="1_al0pd"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bdnfj"]
+load_path = "res://.godot/imported/TileDisplacement.png-712197f995462ef7c1bd7d5841c16cae.s3tc.ctex"
+
+[resource]
+albedo_color = Color(0.819608, 0.67451, 0.0235294, 1)
+roughness = 0.66
+normal_enabled = true
+normal_scale = -2.52
+normal_texture = ExtResource("1_al0pd")
+clearcoat_roughness = 0.22
+heightmap_scale = 5.855
+heightmap_texture = SubResource("CompressedTexture2D_bdnfj")

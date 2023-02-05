@@ -1,0 +1,149 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="PackedScene" path="res://Shared/Player/Player.tscn" id="2_3fdrr"]
+[ext_resource type="PackedScene" path="res://Lobby/Variants/Dim.tscn" id="2_qvk42"]
+[ext_resource type="PackedScene" path="res://Shared/Train/Train.tscn" id="3_6v5dk"]
+
+[sub_resource type="Curve" id="Curve_dyoxg"]
+_data = [Vector2(0, 0), 0.0, 1.14805, 0, 0, Vector2(0.987179, 0.981818), 0.850909, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_78bjp"]
+_data = [Vector2(0, 0), 0.0, 0.992727, 0, 0, Vector2(1, 1), 0.975, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_5vpu1"]
+_data = [Vector2(0, 0), 0.0, 0.689926, 0, 0, Vector2(1, 1), 1.3852, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_i3eqi"]
+curve_x = SubResource("Curve_dyoxg")
+curve_y = SubResource("Curve_78bjp")
+curve_z = SubResource("Curve_5vpu1")
+
+[sub_resource type="Environment" id="Environment_drgu1"]
+background_mode = 1
+ambient_light_source = 2
+tonemap_mode = 2
+tonemap_exposure = 1.11
+tonemap_white = 2.73
+ssr_fade_in = 0.102453
+ssr_depth_tolerance = 0.3
+ssao_enabled = true
+ssao_intensity = 4.25
+ssil_intensity = 11.42
+sdfgi_enabled = true
+sdfgi_read_sky_light = false
+sdfgi_bounce_feedback = 1.66
+sdfgi_min_cell_size = 0.05
+glow_enabled = true
+glow_intensity = 0.18
+glow_strength = 0.87
+glow_bloom = 0.56
+glow_blend_mode = 0
+glow_hdr_threshold = 2.0
+fog_enabled = true
+fog_light_color = Color(0.027451, 0.0352941, 0.0431373, 1)
+fog_density = 0.0671
+volumetric_fog_density = 0.059
+volumetric_fog_albedo = Color(0.392157, 0.392157, 0.392157, 1)
+volumetric_fog_gi_inject = 0.76
+volumetric_fog_anisotropy = 0.29
+adjustment_color_correction = SubResource("CurveXYZTexture_i3eqi")
+
+[node name="CleanLobby" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("2_3fdrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.0408, 0.852012, 1.95381)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_drgu1")
+
+[node name="Base" parent="." instance=ExtResource("2_qvk42")]
+
+[node name="Static Reflection Probes" type="Node3D" parent="."]
+
+[node name="ReflectionProbe6" type="ReflectionProbe" parent="Static Reflection Probes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8007, 1.43996, 0.609692)
+max_distance = 225.7
+extents = Vector3(4.6207, 5.99726, 6.21756)
+box_projection = true
+enable_shadows = true
+
+[node name="ReflectionProbe12" type="ReflectionProbe" parent="Static Reflection Probes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.38079, 1.43996, 0.609692)
+max_distance = 225.7
+extents = Vector3(1.20066, 0.835452, 2.73831)
+box_projection = true
+enable_shadows = true
+
+[node name="ReflectionProbe13" type="ReflectionProbe" parent="Static Reflection Probes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.04951, 1.43996, 2.3781)
+max_distance = 225.7
+extents = Vector3(2.92429, 0.835452, 1.16416)
+box_projection = true
+enable_shadows = true
+
+[node name="ReflectionProbe10" type="ReflectionProbe" parent="Static Reflection Probes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3506, 2.28141, -6.54712)
+max_distance = 153.6
+extents = Vector3(6.11453, 5.99726, 6.21756)
+box_projection = true
+enable_shadows = true
+
+[node name="ReflectionProbe9" type="ReflectionProbe" parent="Static Reflection Probes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4356, 2.28141, 7.02727)
+max_distance = 408.4
+extents = Vector3(6.01703, 5.99726, 6.21756)
+box_projection = true
+enable_shadows = true
+
+[node name="ReflectionProbe2" type="ReflectionProbe" parent="Static Reflection Probes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.60631, 2.34736, 7.25943)
+max_distance = 262.7
+extents = Vector3(4.62492, 4.29853, 5.05208)
+box_projection = true
+enable_shadows = true
+
+[node name="ReflectionProbe4" type="ReflectionProbe" parent="Static Reflection Probes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.60631, 2.34736, 0.88917)
+max_distance = 240.3
+extents = Vector3(4.62492, 4.29853, 5.05208)
+box_projection = true
+enable_shadows = true
+
+[node name="ReflectionProbe11" type="ReflectionProbe" parent="Static Reflection Probes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.58282, 2.27244, 0.499556)
+max_distance = 41.2
+extents = Vector3(1.00282, 0.45924, 1.6392)
+
+[node name="ReflectionProbe3" type="ReflectionProbe" parent="Static Reflection Probes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.60631, 2.34736, -6.29461)
+max_distance = 228.6
+extents = Vector3(4.62492, 4.29853, 5.16719)
+box_projection = true
+enable_shadows = true
+
+[node name="ReflectionProbe5" type="ReflectionProbe" parent="Static Reflection Probes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.0691, 2.34736, 7.25943)
+max_distance = 229.8
+extents = Vector3(4.62492, 4.29853, 5.05208)
+box_projection = true
+enable_shadows = true
+
+[node name="ReflectionProbe7" type="ReflectionProbe" parent="Static Reflection Probes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.0691, 2.34736, 0.88917)
+max_distance = 136.2
+extents = Vector3(4.62492, 4.29853, 5.05208)
+box_projection = true
+enable_shadows = true
+
+[node name="ReflectionProbe8" type="ReflectionProbe" parent="Static Reflection Probes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.0691, 2.34736, -6.29461)
+max_distance = 99.6
+extents = Vector3(4.62492, 4.29853, 5.16719)
+box_projection = true
+enable_shadows = true
+
+[node name="Train" parent="." instance=ExtResource("3_6v5dk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.821036, -0.123827, -5.97169)

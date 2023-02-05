@@ -1,0 +1,17 @@
+[gd_resource type="Environment" load_steps=3 format=3 uid="uid://cl35s1bnt3mln"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2v5jq"]
+
+[sub_resource type="Sky" id="Sky_xlwcl"]
+sky_material = SubResource("ProceduralSkyMaterial_2v5jq")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_xlwcl")
+ambient_light_source = 3
+reflected_light_source = 2
+ssao_power = 1.78381
+ssao_detail = 1.0
+sdfgi_min_cell_size = 0.528418
+sdfgi_cascade0_distance = 33.8187
+sdfgi_max_distance = 541.1

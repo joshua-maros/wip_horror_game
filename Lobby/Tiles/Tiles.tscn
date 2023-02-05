@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="PackedScene" uid="uid://c27qqx186w0cx" path="res://Lobby/Tiles/Tiles.glb" id="1_q7gr3"]
+[ext_resource type="Material" path="res://Lobby/Tiles/BlackTiles.tres" id="2_ryfjy"]
+[ext_resource type="Material" path="res://Lobby/Tiles/YellowTiles.tres" id="3_c5dah"]
+
+[node name="Tiles" instance=ExtResource("1_q7gr3")]
+
+[node name="Plane002" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_ryfjy")
+surface_material_override/1 = ExtResource("3_c5dah")

@@ -1,0 +1,31 @@
+[gd_resource type="ShaderMaterial" load_steps=11 format=3 uid="uid://dfpp6d8uyh80a"]
+
+[ext_resource type="Shader" uid="uid://dyxxlamml6dy0" path="res://Shared/MultiMapMix/MultiMapMixShader.tres" id="1_0hgdd"]
+[ext_resource type="Texture2D" uid="uid://cvh8bd63clmi8" path="res://Lobby/Base/Textures/Beams1/1K-metal_frame_3_Base_Color.png" id="2_0v6oy"]
+[ext_resource type="Texture2D" uid="uid://c7jmesi8j7uwl" path="res://Lobby/Base/Textures/Beams2/painted-old-metal-pbr-texture-02.jpg" id="3_4i8sp"]
+[ext_resource type="Texture2D" uid="uid://wei0cjbcmnif" path="res://Lobby/Base/Textures/Beams1/1K-metal_frame_3_metallic.png" id="4_ltt8c"]
+[ext_resource type="Texture2D" uid="uid://dwbx6wtqfk8c1" path="res://Lobby/Base/Textures/Beams1/1K-metal_frame_3_Normal.png" id="5_ehd4y"]
+[ext_resource type="Texture2D" uid="uid://uyy1o1bd64ab" path="res://Lobby/Base/Textures/Beams2/painted-old-metal-pbr-texture-05.jpg" id="6_p7svg"]
+[ext_resource type="Texture2D" uid="uid://pu705lsxhepr" path="res://Lobby/Base/Textures/Beams2/painted-old-metal-pbr-texture-03.jpg" id="7_sjngr"]
+[ext_resource type="Texture2D" uid="uid://vuncdhxg71d" path="res://Lobby/Base/Textures/Beams1/1K-metal_frame_3_roughness.png" id="8_7l6yv"]
+
+[sub_resource type="Gradient" id="Gradient_awnnt"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_555qe"]
+gradient = SubResource("Gradient_awnnt")
+fill_from = Vector2(1, 0)
+fill_to = Vector2(0.00854701, 0.0042735)
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_0hgdd")
+shader_parameter/Albedo1 = ExtResource("2_0v6oy")
+shader_parameter/Albedo2 = ExtResource("3_4i8sp")
+shader_parameter/Metallic1 = ExtResource("4_ltt8c")
+shader_parameter/Metallic2 = SubResource("GradientTexture2D_555qe")
+shader_parameter/NoiseScale = 5.786
+shader_parameter/Normal1 = ExtResource("5_ehd4y")
+shader_parameter/Normal2 = ExtResource("6_p7svg")
+shader_parameter/Roughness1 = ExtResource("7_sjngr")
+shader_parameter/Roughness2 = ExtResource("8_7l6yv")

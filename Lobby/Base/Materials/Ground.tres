@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" load_steps=8 format=3]
+
+[ext_resource type="Shader" path="res://Shared/MultiMapMix/MultiMapMixShader.tres" id="1_t37h4"]
+[ext_resource type="Texture2D" uid="uid://hpkhwtqorljq" path="res://Lobby/Base/Textures/Ground1/2K-concrete_49_basecolor.png" id="2_gga0o"]
+[ext_resource type="Texture2D" uid="uid://cfhrtpag3ivwn" path="res://Lobby/Base/Textures/Ground2/2K-concrete_50_basecolor.png" id="3_4ow7k"]
+[ext_resource type="Texture2D" uid="uid://hrd4fdrkuijo" path="res://Lobby/Base/Textures/Ground1/2K-concrete_49_normal.png" id="4_jtdxx"]
+[ext_resource type="Texture2D" uid="uid://t0gm68pif0n6" path="res://Lobby/Base/Textures/Ground1/2K-concrete_49_roughness.png" id="4_v0jf0"]
+[ext_resource type="Texture2D" uid="uid://eq6v6bqq0asb" path="res://Lobby/Base/Textures/Ground2/2K-concrete_50_roughness.png" id="5_dsnlc"]
+[ext_resource type="Texture2D" uid="uid://de0kdxpp241w3" path="res://Lobby/Base/Textures/Ground2/2K-concrete_50_normal.png" id="5_x6fnq"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_t37h4")
+shader_parameter/Albedo1 = ExtResource("2_gga0o")
+shader_parameter/Albedo2 = ExtResource("3_4ow7k")
+shader_parameter/NoiseScale = 5.43
+shader_parameter/Normal1 = ExtResource("4_jtdxx")
+shader_parameter/Normal2 = ExtResource("5_x6fnq")
+shader_parameter/Roughness1 = ExtResource("4_v0jf0")
+shader_parameter/Roughness2 = ExtResource("5_dsnlc")

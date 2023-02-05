@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="PackedScene" path="res://Lobby/Variants/Bright.tscn" id="1_dyfc2"]
+[ext_resource type="PackedScene" path="res://Shared/Player/Player.tscn" id="2_eem4e"]
+
+[sub_resource type="Curve" id="Curve_dyoxg"]
+_data = [Vector2(0, 0), 0.0, 1.14805, 0, 0, Vector2(0.987179, 0.981818), 0.850909, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_78bjp"]
+_data = [Vector2(0, 0), 0.0, 0.992727, 0, 0, Vector2(1, 1), 0.975, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_5vpu1"]
+_data = [Vector2(0, 0), 0.0, 0.689926, 0, 0, Vector2(1, 1), 1.3852, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_i3eqi"]
+curve_x = SubResource("Curve_dyoxg")
+curve_y = SubResource("Curve_78bjp")
+curve_z = SubResource("Curve_5vpu1")
+
+[sub_resource type="Environment" id="Environment_drgu1"]
+background_mode = 1
+ambient_light_source = 2
+ambient_light_color = Color(0.180392, 0.180392, 0.180392, 1)
+tonemap_mode = 2
+tonemap_exposure = 1.11
+tonemap_white = 2.73
+sdfgi_use_occlusion = true
+sdfgi_read_sky_light = false
+glow_enabled = true
+glow_intensity = 0.37
+glow_bloom = 0.54
+glow_blend_mode = 0
+fog_light_color = Color(0.129412, 0.129412, 0.129412, 1)
+fog_density = 0.0287
+adjustment_color_correction = SubResource("CurveXYZTexture_i3eqi")
+
+[node name="CleanLobby" type="Node3D"]
+
+[node name="Base" parent="." instance=ExtResource("1_dyfc2")]
+
+[node name="Player" parent="." instance=ExtResource("2_eem4e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.0408, 0.852012, 1.95381)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_drgu1")
