@@ -9,15 +9,14 @@ var collider: StaticBody3D
 var position: Vector3
 var target: Hoverable = null
 
-func _init(c: StaticBody3D, p: Vector3):
+# c is a StaticBody3D, but due to a bug we cannot annotate it as such
+# (https://github.com/godotengine/godot/issues/67105)
+func _init(c, p: Vector3):
 	collider = c
 	position = p
 	if collider == null:
 		return
-	var candidate = collider
-	while candidate != null and not candidate is Hoverable:
-		candidate = candidate.get_parent_spatial()
-	target = candidate
+	target = Util.get_parent_hoverable(collider)
 
 func target_movable() -> Movable:
 	if target is Movable:

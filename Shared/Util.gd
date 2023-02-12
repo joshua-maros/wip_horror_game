@@ -13,7 +13,9 @@ func disable_colliders(on_root: Node):
 		if child is StaticBody3D:
 			(child as StaticBody3D).collision_layer = 0
 
-func get_parent_with_class_impl(search_start: Node, clas) -> Node:
+# search_start is Node, but due to a bug we cannot annotate it as such.
+# (https://github.com/godotengine/godot/issues/67105)
+func get_parent_with_class_impl(search_start, clas) -> Node:
 	if search_start == null:
 		return null
 	elif search_start is clas:
@@ -24,8 +26,8 @@ func get_parent_with_class_impl(search_start: Node, clas) -> Node:
 # Get parent with class, only used to implement other methods.
 func get_parent_with_class(search_start: Node, clas, clas_name: String) -> Node:
 	var result = get_parent_with_class_impl(search_start, clas)
-	assert(result != null, str(search_start) + " does not have a " \
-		+ clas_name + " as a parent.")
+	# assert(result != null, str(search_start) + " does not have a " \
+	# 	+ clas_name + " as a parent.")
 	return result
 
 func get_parent_hoverable(search_start: Node) -> Hoverable:
