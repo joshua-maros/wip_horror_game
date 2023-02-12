@@ -1,9 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://bjxo45ed1teny"]
+[gd_scene load_steps=13 format=3 uid="uid://cmodibp2mtuwe"]
 
 [ext_resource type="PackedScene" uid="uid://cxcbr4rc073fl" path="res://Shared/Player/Player.tscn" id="1_3tjwb"]
 [ext_resource type="Texture2D" uid="uid://byidb4fctdwfw" path="res://Farm/TempNoise.tres" id="1_5dbxu"]
 [ext_resource type="Environment" uid="uid://dpy1y2nditdwo" path="res://Farm/Environment.tres" id="2_ppd5i"]
-[ext_resource type="PackedScene" uid="uid://bp65wqywxkcfx" path="res://Farm/Carrot.tscn" id="4_vk1vt"]
+[ext_resource type="PackedScene" uid="uid://bp65wqywxkcfx" path="res://Farm/Carrot/Carrot.tscn" id="4_vk1vt"]
 [ext_resource type="Texture2D" uid="uid://bb4nx236sonus" path="res://Farm/Crosshair.png" id="5_15q4x"]
 [ext_resource type="PackedScene" uid="uid://djkpwg3rinaoa" path="res://Farm/Crate/Crate.tscn" id="6_omg7f"]
 
@@ -55,40 +55,40 @@ transform = Transform3D(0.834694, -0.368235, 0.409498, 0, 0.743577, 0.668651, -0
 shadow_enabled = true
 
 [node name="Carrot" parent="." instance=ExtResource("4_vk1vt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.829109, -0.0567143, -4.6997)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.829109, 0.0252627, -4.6997)
 
 [node name="Carrot2" parent="." instance=ExtResource("4_vk1vt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.214641, -0.0567143, -4.6997)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.214641, 0.0252627, -4.6997)
 
 [node name="Carrot3" parent="." instance=ExtResource("4_vk1vt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.384657, -0.0567143, -4.6997)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.384657, 0.0252627, -4.6997)
 
 [node name="Carrot4" parent="." instance=ExtResource("4_vk1vt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.999125, -0.0567143, -4.6997)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.999125, 0.0252627, -4.6997)
 
 [node name="Carrot5" parent="." instance=ExtResource("4_vk1vt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.64269, -0.0567143, -4.6997)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.64269, 0.0252627, -4.6997)
 
 [node name="Carrot6" parent="." instance=ExtResource("4_vk1vt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25716, -0.0567143, -4.6997)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25716, 0.0252627, -4.6997)
 
 [node name="Carrot7" parent="." instance=ExtResource("4_vk1vt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85646, -0.0567143, -4.6997)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85646, 0.0252627, -4.6997)
 
 [node name="Carrot8" parent="." instance=ExtResource("4_vk1vt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.47092, -0.0567143, -4.6997)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.47092, 0.0252627, -4.6997)
 
 [node name="Carrot9" parent="." instance=ExtResource("4_vk1vt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.08787, -0.0567143, -4.6997)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.08787, 0.0252627, -4.6997)
 
 [node name="Carrot10" parent="." instance=ExtResource("4_vk1vt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.70234, -0.0567143, -4.6997)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.70234, 0.0252627, -4.6997)
 
 [node name="Carrot11" parent="." instance=ExtResource("4_vk1vt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.30163, -0.0567143, -4.6997)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.30163, 0.0252627, -4.6997)
 
 [node name="Carrot12" parent="." instance=ExtResource("4_vk1vt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9161, -0.0567143, -4.6997)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9161, 0.0252627, -4.6997)
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

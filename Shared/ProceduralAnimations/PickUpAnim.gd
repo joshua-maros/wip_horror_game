@@ -9,7 +9,7 @@ func _init(d: Node3D):
 	destination = d
 
 func duration():
-	return 0.3
+	return 0.15
 
 func on_start():
 	start = target.transform

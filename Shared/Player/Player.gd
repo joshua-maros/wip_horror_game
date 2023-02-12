@@ -26,16 +26,13 @@ func _ready():
 func _process(delta):
 	input_handler.process(delta)
 	hand_state.process(delta)
-	return
-	
-func _input(event):
-	input_handler.input(event)
-
-func _physics_process(_delta):
 	var target = get_raycast_result()
 	hover_state.physics_process(target)
 	interact_state.physics_process(target)
 	hand_state.physics_process(target)
+	
+func _input(event):
+	input_handler.input(event)
 
 func get_raycast_result() -> Target:
 	var from = $Camera/CrosshairRay
