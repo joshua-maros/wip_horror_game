@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bigijyt1jy7sx"]
+
+[sub_resource type="GDScript" id="GDScript_1qjc6"]
+script/source = "extends Node
+
+@export var cursor_mat: Material
+"
+
+[node name="Constants" type="Node"]
+script = SubResource("GDScript_1qjc6")

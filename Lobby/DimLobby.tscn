@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=3]
+[gd_scene load_steps=9 format=3 uid="uid://1w7iwfmefn3h"]
 
-[ext_resource type="PackedScene" path="res://Shared/Player/Player.tscn" id="2_3fdrr"]
-[ext_resource type="PackedScene" path="res://Lobby/Variants/Dim.tscn" id="2_qvk42"]
+[ext_resource type="PackedScene" uid="uid://cxcbr4rc073fl" path="res://Shared/Player/Player.tscn" id="2_3fdrr"]
+[ext_resource type="PackedScene" uid="uid://k30ccwvtvxug" path="res://Lobby/Variants/Dim.tscn" id="2_qvk42"]
 [ext_resource type="PackedScene" path="res://Shared/Train/Train.tscn" id="3_6v5dk"]
 
 [sub_resource type="Curve" id="Curve_dyoxg"]

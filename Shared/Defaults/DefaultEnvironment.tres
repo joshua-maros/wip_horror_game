@@ -1,4 +1,11 @@
-[gd_resource type="Environment" load_steps=3 format=3 uid="uid://cl35s1bnt3mln"]
+[gd_resource type="Environment" load_steps=5 format=3 uid="uid://cl35s1bnt3mln"]
+
+[sub_resource type="Curve" id="Curve_2pkde"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_yi7v5"]
+curve = SubResource("Curve_2pkde")
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2v5jq"]
 
@@ -15,3 +22,4 @@ ssao_detail = 1.0
 sdfgi_min_cell_size = 0.528418
 sdfgi_cascade0_distance = 33.8187
 sdfgi_max_distance = 541.1
+adjustment_color_correction = SubResource("CurveTexture_yi7v5")

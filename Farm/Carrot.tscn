@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://bp65wqywxkcfx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cn5rp"]
+albedo_color = Color(0.764706, 0.45098, 0.0941176, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_wvxsq"]
+material = SubResource("StandardMaterial3D_cn5rp")
+radius = 0.05
+height = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qpdmk"]
+albedo_color = Color(0.482353, 0.807843, 0.254902, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_dgsf1"]
+material = SubResource("StandardMaterial3D_qpdmk")
+radius = 0.025
+height = 0.1
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_6i2jt"]
+material = SubResource("StandardMaterial3D_qpdmk")
+radius = 0.2
+height = 0.4
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0l6ps"]
+size = Vector3(0.512471, 0.822895, 0.417306)
+
+[node name="Carrot" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_wvxsq")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.166921, 0)
+mesh = SubResource("CapsuleMesh_dgsf1")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.374804, 0)
+mesh = SubResource("CapsuleMesh_6i2jt")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0576798, 0)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.174259, 0)
+shape = SubResource("BoxShape3D_0l6ps")

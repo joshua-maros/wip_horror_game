@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8hqv6hpb8wla"]
+
+[sub_resource type="GDScript" id="GDScript_hcpib"]
+script/source = "extends Node
+
+var target: MeshInstance3D
+
+func _ready():
+	target = Util.get_parent_mesh(self)
+	var react_to = Util.get_parent_hoverable(self)
+	react_to.connect(\"hover_started\", set_material_override)
+	react_to.connect(\"hover_ended\", clear_material_override)
+
+func set_material_override():
+	target.material_override = Constants.cursor_mat
+	
+func clear_material_override():
+	target.material_override = null
+"
+
+[node name="HighlightOnHover" type="Node"]
+script = SubResource("GDScript_hcpib")

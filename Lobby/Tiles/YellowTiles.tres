@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://dh2bbqd2fid56" path="res://Lobby/Tiles/TileNormal.png" id="1_al0pd"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bdnfj"]
-load_path = "res://.godot/imported/TileDisplacement.png-712197f995462ef7c1bd7d5841c16cae.s3tc.ctex"
 
 [resource]
 albedo_color = Color(0.819608, 0.67451, 0.0235294, 1)

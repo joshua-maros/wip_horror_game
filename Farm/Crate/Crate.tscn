@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://djkpwg3rinaoa"]
+
+[ext_resource type="PackedScene" uid="uid://dqrl6ewegnnwv" path="res://Farm/Crate/Crate.glb" id="1_82sv7"]
+[ext_resource type="Script" path="res://Shared/Interactables/Movable.gd" id="2_unvat"]
+[ext_resource type="PackedScene" uid="uid://c8hqv6hpb8wla" path="res://Shared/Reactions/HighlightOnHover.tscn" id="3_egsgx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dumg0"]
+size = Vector3(0.915046, 0.678832, 0.842783)
+
+[node name="Crate" instance=ExtResource("1_82sv7")]
+script = ExtResource("2_unvat")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.308961, 0)
+shape = SubResource("BoxShape3D_dumg0")
+
+[node name="HighlightOnHover" parent="Cube" index="0" instance=ExtResource("3_egsgx")]
