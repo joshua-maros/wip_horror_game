@@ -46,7 +46,7 @@ func handle_interact_start():
 		hand_state.request_put_down()
 	else:
 		# An individual object will only respond to one of these. Interactable
-		# and Movable are distinct sub-classes of Hoverable.
+		# and MovableBehavior are distinct sub-classes of Hoverable.
 		interact_state.request_interaction()
 		hand_state.request_pick_up()
 

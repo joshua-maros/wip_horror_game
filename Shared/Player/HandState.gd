@@ -1,18 +1,18 @@
 extends RefCounted
 
+const ContainerBehavior = preload('res://Shared/Interactables/ContainerBehavior.gd')
 const HandAnimationSystem = preload('HandAnimationSystem.gd')
 const InsertAnim = preload('res://Shared/ProceduralAnimations/InsertAnim.gd')
-const Movable = preload('res://Shared/Interactables/Movable.gd')
+const MovableBehavior = preload('res://Shared/Interactables/MovableBehavior.gd')
 const PickUpAnim = preload('res://Shared/ProceduralAnimations/PickUpAnim.gd')
 const PutDownAnim = preload('res://Shared/ProceduralAnimations/PutDownAnim.gd')
-const Target = preload("Target.gd")
 const RemoveAnim = preload('res://Shared/ProceduralAnimations/RemoveAnim.gd')
-const Slot = preload('res://Shared/Interactables/Slot.gd')
+const Target = preload("Target.gd")
 
 var camera: Node3D
 var held_parent: Node3D
 var place_cursor: MeshInstance3D
-var holding: Movable
+var holding: MovableBehavior
 var pick_up_requested = false
 var put_down_requested = false
 var animations = HandAnimationSystem.new()
@@ -38,43 +38,46 @@ func process(delta: float):
 func physics_process(t: Target):
 	if pick_up_requested:
 		pick_up_requested = false
-		if t.target_slot() != null:
-			remove_object_from_slot(t.target_slot())
+		if t.target_container() != null:
+			remove_object_from_slot(t.target_container())
 		elif t.target_movable() != null:
+			print('movable')
 			if t.target_movable().contained_in != null:
 				remove_object_from_slot(t.target_movable().contained_in)
 			else:
+				print('pick up')
 				pick_up_object(t.target_movable())
 	var target_transform = object_place_transform(t)
 	update_cursor(target_transform)
 	if put_down_requested:
 		put_down_requested = false
-		put_down_object(target_transform, t.target_slot())
+		put_down_object(target_transform, t.target_container())
 
-func pick_up_object(obj: Movable):
+func pick_up_object(obj: MovableBehavior):
 	if obj != null:
-		animations.start(PickUpAnim.new(held_parent), obj)
+		animations.start(PickUpAnim.new(held_parent), obj.get_parent())
 		set_holding(obj)
 
-func remove_object_from_slot(slot: Slot):
-	var obj: Movable = slot.contents
+func remove_object_from_slot(container: ContainerBehavior):
+	var obj: MovableBehavior = container.contents
 	if obj == null:
 		return
-	if not slot.can_remove():
+	if not container.can_remove():
 		return
-	slot.on_remove()
+	container.on_remove()
 	obj.on_remove()
-	animations.start(RemoveAnim.new(slot, held_parent), obj)
+	animations.start(RemoveAnim.new(container, held_parent), obj.get_parent())
 	set_holding(obj)
 	
-func set_holding(obj: Movable):
+func set_holding(obj: MovableBehavior):
 	obj.on_pick_up()
 	holding = obj
 	Util.disable_colliders(obj)
 
 func object_place_transform(t: Target):
-	if t.target_slot() != null and t.target_slot().can_insert(holding):
-		return t.target_slot().get_insertion_point().global_transform
+	if t.target_container() != null \
+		and t.target_container().can_insert(holding.get_parent()):
+		return t.target_container().get_insertion_point().global_transform
 	elif t.collider != null:
 		return Transform3D.IDENTITY.translated(t.position) \
 			* Transform3D.IDENTITY.rotated(Vector3.UP, camera.rotation.y)
@@ -90,18 +93,18 @@ func update_cursor(target_transform):
 		place_cursor.mesh = mesh_obj.mesh
 		place_cursor.transform = target_transform * mesh_obj.transform
 
-func put_down_object(target_transform: Transform3D, slot: Slot):
+func put_down_object(target_transform: Transform3D, container: ContainerBehavior):
 	assert(holding != null)
 	if target_transform == null:
 		return
 	holding.on_put_down()
 	var anim
-	if slot == null or not slot.can_insert(holding):
+	if container == null or not container.can_insert(holding.get_parent()):
 		anim = PutDownAnim.new(target_transform)
 		Util.enable_colliders(holding)
 	else:
-		holding.contained_in = slot
-		slot.on_insert_start(holding)
-		anim = InsertAnim.new(slot)
-	animations.start(anim, holding)
+		holding.contained_in = container
+		container.on_insert_start(holding.get_parent())
+		anim = InsertAnim.new(container)
+	animations.start(anim, holding.get_parent())
 	holding = null

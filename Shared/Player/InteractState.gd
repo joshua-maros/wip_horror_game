@@ -1,9 +1,10 @@
 extends RefCounted
 
-const Interactable = preload("res://Shared/Interactables/Interactable.gd")
+const InteractableBehavior = \
+	preload("res://Shared/Interactables/InteractableBehavior.gd")
 const Target = preload("Target.gd")
 
-var last_interacted: Interactable = null
+var last_interacted: InteractableBehavior = null
 var captured = false
 var interaction_requested = false
 var crosshair_ray: RayCast3D = null
@@ -26,7 +27,7 @@ func physics_process(t: Target):
 		if t.target_interactable() != null:
 			start_interacting_with_object(t.target_interactable())
 
-func start_interacting_with_object(obj: Interactable):
+func start_interacting_with_object(obj: InteractableBehavior):
 	obj.on_interact_start()
 	captured = obj.captures_cursor() == true
 	last_interacted = obj

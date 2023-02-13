@@ -1,16 +1,16 @@
 extends "FiniteProceduralAnimation.gd"
 
 const HoldAnim = preload("HoldAnim.gd")
-const Slot = preload("res://Shared/Interactables/Slot.gd")
+const ContainerBehavior = preload("res://Shared/Interactables/ContainerBehavior.gd")
 
 var start: Transform3D
 var destination: Node3D
 var halfway: Node3D
 var cutoff: float = 0.5
 
-func _init(s: Slot, d: Node3D):
-	assert(s != null)
-	halfway = s.get_halfway_point()
+func _init(c: ContainerBehavior, d: Node3D):
+	assert(c != null)
+	halfway = c.get_halfway_point()
 	assert(d != null)
 	destination = d
 

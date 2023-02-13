@@ -3,7 +3,7 @@ extends RefCounted
 const HandState = preload("HandState.gd")
 const Hoverable = preload("res://Shared/Interactables/Hoverable.gd")
 const Target = preload("Target.gd")
-const Slot = preload("res://Shared/Interactables/Slot.gd")
+const ContainerBehavior = preload("res://Shared/Interactables/ContainerBehavior.gd")
 
 var hand_state: HandState
 var last_hovered: Array = []
@@ -18,11 +18,11 @@ func physics_process(t: Target):
 	
 func get_hovering_root(t: Target):
 	if hand_state.holding != null:
-		if not t.target is Slot:
+		if t.target_container() == null:
 			return null
-		elif not (t.target as Slot).can_insert(hand_state.holding):
+		elif not t.target_container().can_insert(hand_state.holding.get_parent()):
 			return null
-	elif t.target is Slot and t.target.locked:
+	elif t.target_container() != null and t.target_container().locked:
 		return null
 	return t.target
 
@@ -31,10 +31,6 @@ func collect_object_and_holding(obj: Hoverable):
 		return []
 	elif hand_state.animations.currently_animating(obj):
 		return []
-	elif obj is Slot:
-		var result = collect_object_and_holding((obj as Slot).contents)
-		result.append(obj)
-		return result
 	else:
 		return [obj]
 

@@ -1,4 +1,4 @@
-extends "Hoverable.gd"
+extends Node
 
 var interacting = false
 

@@ -1,4 +1,4 @@
-extends "Hoverable.gd"
+extends Node
 
 signal inserted(obj)
 signal removed(obj)

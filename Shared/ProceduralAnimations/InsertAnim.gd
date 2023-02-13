@@ -1,19 +1,19 @@
 extends "FiniteProceduralAnimation.gd"
 
 const HoldAnim = preload("HoldAnim.gd")
-const Slot = preload("res://Shared/Interactables/Slot.gd")
+const ContainerBehavior = preload("res://Shared/Interactables/ContainerBehavior.gd")
 
 var start: Transform3D
-var slot: Slot
+var container: ContainerBehavior
 var destination: Node3D
 var halfway: Node3D
 var cutoff: float = 0.7
 
-func _init(s: Slot):
+func _init(s: ContainerBehavior):
 	assert(s != null)
-	slot = s
-	destination = slot.get_insertion_point()
-	halfway = slot.get_halfway_point()
+	container = s
+	destination = container.get_insertion_point()
+	halfway = container.get_halfway_point()
 
 func on_start():
 	start = target.transform
@@ -41,5 +41,5 @@ func on_finish():
 	target.get_parent().remove_child(target)
 	destination.add_child(target)
 	target.transform = Transform3D.IDENTITY
-	slot.on_insert_end()
+	container.on_insert_end()
 	Util.enable_colliders(target)

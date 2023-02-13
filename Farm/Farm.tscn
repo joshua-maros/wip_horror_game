@@ -5,7 +5,7 @@
 [ext_resource type="Environment" uid="uid://dpy1y2nditdwo" path="res://Farm/Environment.tres" id="2_ppd5i"]
 [ext_resource type="PackedScene" uid="uid://bp65wqywxkcfx" path="res://Farm/Carrot/Carrot.tscn" id="4_vk1vt"]
 [ext_resource type="Texture2D" uid="uid://bb4nx236sonus" path="res://Farm/Crosshair.png" id="5_15q4x"]
-[ext_resource type="PackedScene" uid="uid://djkpwg3rinaoa" path="res://Farm/Crate/Crate.tscn" id="6_omg7f"]
+[ext_resource type="PackedScene" uid="uid://cp5ej4gbf2b50" path="res://Farm/Crate/Crate.tscn" id="6_omg7f"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_f1att"]
 lightmap_size_hint = Vector2i(304, 156)

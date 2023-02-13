@@ -1,14 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://bp65wqywxkcfx"]
+[gd_scene load_steps=6 format=3 uid="uid://bp65wqywxkcfx"]
 
+[ext_resource type="Script" path="res://Shared/Interactables/Hoverable.gd" id="1_62066"]
 [ext_resource type="PackedScene" uid="uid://c8hqv6hpb8wla" path="res://Shared/Reactions/HighlightOnHover.tscn" id="1_myoxk"]
-[ext_resource type="Script" path="res://Shared/Interactables/Movable.gd" id="1_rccib"]
+[ext_resource type="Script" path="res://Shared/Interactables/MovableBehavior.gd" id="1_rccib"]
 [ext_resource type="ArrayMesh" uid="uid://torn78wvgjle" path="res://Farm/Carrot/Carrot.res" id="2_h3587"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0l6ps"]
 size = Vector3(0.512471, 0.822895, 0.417306)
 
 [node name="Carrot" type="Node3D"]
-script = ExtResource("1_rccib")
+script = ExtResource("1_62066")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0576798, 0)
@@ -22,3 +23,6 @@ mesh = ExtResource("2_h3587")
 skeleton = NodePath("")
 
 [node name="HighlightOnHover" parent="Mesh" instance=ExtResource("1_myoxk")]
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("1_rccib")
