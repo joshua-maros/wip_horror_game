@@ -1,8 +1,5 @@
 extends Node
 
-const Hoverable = preload("res://Shared/Interactables/Hoverable.gd")
-const ContainerBehavior = preload("res://Shared/Interactables/ContainerBehavior.gd")
-
 func enable_colliders(on_root: Node):
 	for child in on_root.get_children():
 		if child is StaticBody3D:
@@ -30,17 +27,9 @@ func get_parent_with_class(search_start: Node, clas, clas_name: String) -> Node:
 	# 	+ clas_name + " as a parent.")
 	return result
 
-func get_parent_hoverable(search_start: Node) -> Hoverable:
-	return get_parent_with_class( \
-		search_start, Hoverable, "Hoverable") as Hoverable
-
 func get_parent_mesh(search_start: Node) -> MeshInstance3D:
 	return get_parent_with_class( \
 		search_start, MeshInstance3D, "MeshInstance3D") as MeshInstance3D
-
-func get_parent_ContainerBehavior(search_start: Node) -> ContainerBehavior:
-	return get_parent_with_class( \
-		search_start, ContainerBehavior, "ContainerBehavior") as ContainerBehavior
 
 func get_parent_node_3d(search_start: Node) -> Node3D:
 	return get_parent_with_class( \

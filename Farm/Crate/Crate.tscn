@@ -1,9 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cp5ej4gbf2b50"]
-
-[ext_resource type="Script" path="res://Shared/Interactables/Hoverable.gd" id="1_46jsq"]
-[ext_resource type="Script" path="res://Shared/Interactables/MovableBehavior.gd" id="2_unvat"]
-[ext_resource type="PackedScene" uid="uid://c8hqv6hpb8wla" path="res://Shared/Reactions/HighlightOnHover.tscn" id="3_egsgx"]
-[ext_resource type="Script" path="res://Shared/Interactables/ContainerBehavior.gd" id="3_plann"]
+[gd_scene load_steps=5 format=3 uid="uid://cp5ej4gbf2b50"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kmapm"]
 resource_name = "Material"
@@ -46,18 +41,13 @@ shadow_mesh = SubResource("ArrayMesh_wandp")
 size = Vector3(0.915046, 0.678832, 0.842783)
 
 [node name="Crate" type="Node3D"]
-script = ExtResource("1_46jsq")
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_njr80")
 skeleton = NodePath("")
 
-[node name="HighlightOnHover" parent="Mesh" instance=ExtResource("3_egsgx")]
-
 [node name="Slot" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.303112, 0)
-script = ExtResource("3_plann")
-halfway_point_path = NodePath("HalfwayPoint")
 
 [node name="InsertionPoint" type="Node3D" parent="Slot"]
 
@@ -70,6 +60,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.303112, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Slot/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.308961, 0)
 shape = SubResource("BoxShape3D_dumg0")
-
-[node name="Node" type="Node" parent="."]
-script = ExtResource("2_unvat")
