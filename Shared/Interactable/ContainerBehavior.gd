@@ -13,3 +13,6 @@ func get_insertion_point() -> Transform3D:
 
 func get_halfway_point() -> Transform3D:
 	return Transform3D.IDENTITY.translated(Vector3(0, 1.0, 0))
+
+func start_taking(_holdable: HoldableBehavior):
+	pass

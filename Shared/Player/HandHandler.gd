@@ -20,7 +20,9 @@ func start_interacting():
 		if c and c.can_take(_currently_holding):
 			var anim := InsertAnim.new(c)
 			_anim_sys.start(anim, _currently_holding.parent)
+			c.start_taking(_currently_holding)
 			_currently_holding = null
+			_player.hover_handler._stop_hovering_previous_object()
 	elif target.interactable():
 		target.interactable().start_interacting(_player)
 
@@ -29,7 +31,6 @@ func stop_interacting():
 		var target = _player.target.interactable()
 		if target:
 			target.stop_interacting(_player)
-
 
 func _init(p: Player):
 	_player = p

@@ -16,10 +16,20 @@ func _process():
 
 func _stop_hovering_previous_object():
 	if _prev_hovering != null:
-		_prev_hovering.stop_hovering(_player)
+		_call_stop_hovering(_prev_hovering)
 	_prev_hovering = null
+
+func _call_stop_hovering(target: Interactable):
+	target.stop_hovering(_player)
+	for child in target.glued_children:
+		_call_stop_hovering(child)
 
 func _start_hovering(target: Interactable):
 	if target != null:
-		target.start_hovering(_player)
+		_call_start_hovering(target)
 	_prev_hovering = target
+
+func _call_start_hovering(target: Interactable):
+	target.start_hovering(_player)
+	for child in target.glued_children:
+		_call_start_hovering(child)

@@ -3,6 +3,8 @@ extends Node3D
 class_name Interactable
 
 var behaviors: Array[Behavior] = []
+var glued_children: Array[Interactable] = []
+var glued_to: Interactable = null
 
 signal hover_start(player: Player)
 signal hover_stop(player: Player)
@@ -25,3 +27,7 @@ func start_interacting(player: Player):
 
 func stop_interacting(player: Player):
 	emit_signal("interact_stop", player)
+
+func glue_to_self(object: Interactable):
+	glued_children.push_back(object)
+	object.glued_to = self

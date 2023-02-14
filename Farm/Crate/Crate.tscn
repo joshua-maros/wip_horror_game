@@ -68,8 +68,39 @@ skeleton = NodePath("")
 script = ExtResource("2_mrslu")
 meshes = [null]
 
-[node name="CrateBehavior" type="Node" parent="."]
+[node name="CrateBehavior" type="Node" parent="." node_paths=PackedStringArray("positions")]
 script = ExtResource("3_coxs3")
+positions = NodePath("../Positions")
 
 [node name="HoldableBehavior" type="Node" parent="."]
 script = ExtResource("4_xxw2o")
+
+[node name="Positions" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.326775, 0)
+
+[node name="Position" type="Node3D" parent="Positions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.192646, 0, -0.197518)
+
+[node name="Position2" type="Node3D" parent="Positions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0139146, 0, -0.197518)
+
+[node name="Position3" type="Node3D" parent="Positions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.237041, 0, -0.197518)
+
+[node name="Position4" type="Node3D" parent="Positions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.192646, 0, -0.00820076)
+
+[node name="Position5" type="Node3D" parent="Positions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0139146, 0, -0.00820076)
+
+[node name="Position6" type="Node3D" parent="Positions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.237041, 0, -0.00820076)
+
+[node name="Position7" type="Node3D" parent="Positions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.192646, 0, 0.18153)
+
+[node name="Position8" type="Node3D" parent="Positions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0139146, 0, 0.18153)
+
+[node name="Position9" type="Node3D" parent="Positions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.237041, 0, 0.18153)
