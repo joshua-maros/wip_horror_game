@@ -30,6 +30,9 @@ func compute_offset():
 	else:
 		return position_after_accelerating_for(movement_timer)
 
+func set_internal_light_brightness(brightness):
+	pass
+
 func _process(delta):
 	var start_pos = position.z
 	if not completed_parking_in_station:

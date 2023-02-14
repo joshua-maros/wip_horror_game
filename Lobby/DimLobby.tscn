@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cxcbr4rc073fl" path="res://Shared/Player/Player.tscn" id="2_3fdrr"]
 [ext_resource type="PackedScene" uid="uid://k30ccwvtvxug" path="res://Lobby/Variants/Dim.tscn" id="2_qvk42"]
-[ext_resource type="PackedScene" path="res://Shared/Train/Train.tscn" id="3_6v5dk"]
+[ext_resource type="PackedScene" uid="uid://bfw18r3061nol" path="res://Shared/Train/Train.tscn" id="3_6v5dk"]
 
 [sub_resource type="Curve" id="Curve_dyoxg"]
 _data = [Vector2(0, 0), 0.0, 1.14805, 0, 0, Vector2(0.987179, 0.981818), 0.850909, 0.0, 0, 0]
@@ -64,86 +64,39 @@ environment = SubResource("Environment_drgu1")
 [node name="Static Reflection Probes" type="Node3D" parent="."]
 
 [node name="ReflectionProbe6" type="ReflectionProbe" parent="Static Reflection Probes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8007, 1.43996, 0.609692)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9693, 1.34544, 0.609692)
 max_distance = 225.7
-extents = Vector3(4.6207, 5.99726, 6.21756)
+size = Vector3(15.7964, 12.7144, 12.4351)
 box_projection = true
 enable_shadows = true
 
 [node name="ReflectionProbe12" type="ReflectionProbe" parent="Static Reflection Probes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.38079, 1.43996, 0.609692)
 max_distance = 225.7
-extents = Vector3(1.20066, 0.835452, 2.73831)
-box_projection = true
-enable_shadows = true
-
-[node name="ReflectionProbe13" type="ReflectionProbe" parent="Static Reflection Probes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.04951, 1.43996, 2.3781)
-max_distance = 225.7
-extents = Vector3(2.92429, 0.835452, 1.16416)
+size = Vector3(2.40132, 1.6709, 5.47662)
 box_projection = true
 enable_shadows = true
 
 [node name="ReflectionProbe10" type="ReflectionProbe" parent="Static Reflection Probes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3506, 2.28141, -6.54712)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9344, 1.40851, -6.54712)
 max_distance = 153.6
-extents = Vector3(6.11453, 5.99726, 6.21756)
+size = Vector3(16.0987, 13.4693, 12.4351)
 box_projection = true
 enable_shadows = true
 
 [node name="ReflectionProbe9" type="ReflectionProbe" parent="Static Reflection Probes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4356, 2.28141, 7.02727)
 max_distance = 408.4
-extents = Vector3(6.01703, 5.99726, 6.21756)
-box_projection = true
-enable_shadows = true
-
-[node name="ReflectionProbe2" type="ReflectionProbe" parent="Static Reflection Probes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.60631, 2.34736, 7.25943)
-max_distance = 262.7
-extents = Vector3(4.62492, 4.29853, 5.05208)
-box_projection = true
-enable_shadows = true
-
-[node name="ReflectionProbe4" type="ReflectionProbe" parent="Static Reflection Probes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.60631, 2.34736, 0.88917)
-max_distance = 240.3
-extents = Vector3(4.62492, 4.29853, 5.05208)
+size = Vector3(12.0341, 11.9945, 12.4351)
 box_projection = true
 enable_shadows = true
 
 [node name="ReflectionProbe11" type="ReflectionProbe" parent="Static Reflection Probes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.58282, 2.27244, 0.499556)
 max_distance = 41.2
-extents = Vector3(1.00282, 0.45924, 1.6392)
-
-[node name="ReflectionProbe3" type="ReflectionProbe" parent="Static Reflection Probes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.60631, 2.34736, -6.29461)
-max_distance = 228.6
-extents = Vector3(4.62492, 4.29853, 5.16719)
-box_projection = true
-enable_shadows = true
-
-[node name="ReflectionProbe5" type="ReflectionProbe" parent="Static Reflection Probes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.0691, 2.34736, 7.25943)
-max_distance = 229.8
-extents = Vector3(4.62492, 4.29853, 5.05208)
-box_projection = true
-enable_shadows = true
-
-[node name="ReflectionProbe7" type="ReflectionProbe" parent="Static Reflection Probes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.0691, 2.34736, 0.88917)
-max_distance = 136.2
-extents = Vector3(4.62492, 4.29853, 5.05208)
-box_projection = true
-enable_shadows = true
-
-[node name="ReflectionProbe8" type="ReflectionProbe" parent="Static Reflection Probes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.0691, 2.34736, -6.29461)
-max_distance = 99.6
-extents = Vector3(4.62492, 4.29853, 5.16719)
-box_projection = true
-enable_shadows = true
+size = Vector3(2.00564, 0.91848, 3.2784)
 
 [node name="Train" parent="." instance=ExtResource("3_6v5dk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.821036, -0.123827, -5.97169)
+
+[editable path="Train"]

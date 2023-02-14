@@ -173,128 +173,36 @@ shape = SubResource("ConcavePolygonShape3D_5lx1w")
 shape = SubResource("ConcavePolygonShape3D_x783b")
 
 [node name="Lights" type="Node3D" parent="." index="42"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.68947, 0.826307, 0)
 
 [node name="Light22" parent="Lights" index="0" instance=ExtResource("4_k55r7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, 7.25332)
 
-[node name="Light10" parent="Lights" index="1" instance=ExtResource("4_k55r7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12362, 6.29144, 7.25332)
-
-[node name="Light3" parent="Lights" index="2" instance=ExtResource("4_m3spk")]
+[node name="Light3" parent="Lights" index="1" instance=ExtResource("4_m3spk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, 13.9651)
 
-[node name="Light4" parent="Lights" index="3" instance=ExtResource("4_m3spk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12362, 6.29144, 13.9651)
-
-[node name="Light23" parent="Lights" index="4" instance=ExtResource("4_k55r7")]
+[node name="Light23" parent="Lights" index="2" instance=ExtResource("4_k55r7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, 20.3309)
 
-[node name="Light6" parent="Lights" index="5" instance=ExtResource("4_m3spk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12362, 6.29144, 20.3309)
-
-[node name="Light" parent="Lights" index="6" instance=ExtResource("4_k55r7")]
+[node name="Light" parent="Lights" index="3" instance=ExtResource("4_k55r7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, 26.9923)
 
-[node name="Light8" parent="Lights" index="7" instance=ExtResource("4_m3spk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12362, 6.29144, 26.9923)
-
-[node name="Light9" parent="Lights" index="8" instance=ExtResource("4_m3spk")]
+[node name="Light9" parent="Lights" index="4" instance=ExtResource("4_m3spk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, 0.47544)
 
-[node name="Light12" parent="Lights" index="9" instance=ExtResource("4_k55r7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12362, 6.29144, 0.47544)
-
-[node name="Light11" parent="Lights" index="10" instance=ExtResource("4_m3spk")]
+[node name="Light11" parent="Lights" index="5" instance=ExtResource("4_m3spk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, -5.91792)
 
-[node name="Light17" parent="Lights" index="11" instance=ExtResource("4_k55r7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12362, 6.29144, -5.91792)
-
-[node name="Light13" parent="Lights" index="12" instance=ExtResource("4_m3spk")]
+[node name="Light13" parent="Lights" index="6" instance=ExtResource("4_m3spk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, -12.5354)
 
-[node name="Light14" parent="Lights" index="13" instance=ExtResource("4_m3spk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12362, 6.29144, -12.5354)
-
-[node name="Light15" parent="Lights" index="14" instance=ExtResource("4_m3spk")]
+[node name="Light15" parent="Lights" index="7" instance=ExtResource("4_m3spk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, -19.0483)
 
-[node name="Light16" parent="Lights" index="15" instance=ExtResource("4_m3spk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12362, 6.29144, -19.0483)
-
-[node name="Light18" parent="Lights" index="16" instance=ExtResource("4_k55r7")]
+[node name="Light18" parent="Lights" index="8" instance=ExtResource("4_k55r7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, -25.496)
 
-[node name="Light7" parent="Lights" index="17" instance=ExtResource("4_k55r7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12362, 6.29144, -25.496)
-
-[node name="Light5" parent="Lights" index="18" instance=ExtResource("4_k55r7")]
+[node name="Light5" parent="Lights" index="9" instance=ExtResource("4_k55r7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, -32.2249)
 
-[node name="Light20" parent="Lights" index="19" instance=ExtResource("4_m3spk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12362, 6.29144, -32.2249)
-
-[node name="Lights2" type="Node3D" parent="." index="43"]
-transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 22.5654, 0, 1.12888)
-
-[node name="Light" parent="Lights2" index="0" instance=ExtResource("4_m3spk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, 7.25332)
-
-[node name="Light2" parent="Lights2" index="1" instance=ExtResource("4_m3spk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12362, 6.29144, 7.25332)
-
-[node name="Light3" parent="Lights2" index="2" instance=ExtResource("4_m3spk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, 13.9651)
-
-[node name="Light4" parent="Lights2" index="3" instance=ExtResource("4_m3spk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12362, 6.29144, 13.9651)
-
-[node name="Light5" parent="Lights2" index="4" instance=ExtResource("4_m3spk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, 20.3309)
-
-[node name="Light6" parent="Lights2" index="5" instance=ExtResource("4_m3spk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12362, 6.29144, 20.3309)
-
-[node name="Light7" parent="Lights2" index="6" instance=ExtResource("4_m3spk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, 26.9923)
-
-[node name="Light8" parent="Lights2" index="7" instance=ExtResource("4_m3spk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12362, 6.29144, 26.9923)
-
-[node name="Light9" parent="Lights2" index="8" instance=ExtResource("4_m3spk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, 0.47544)
-
-[node name="Light10" parent="Lights2" index="9" instance=ExtResource("4_m3spk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12362, 6.29144, 0.47544)
-
-[node name="Light11" parent="Lights2" index="10" instance=ExtResource("4_m3spk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, -5.91792)
-
-[node name="Light12" parent="Lights2" index="11" instance=ExtResource("4_m3spk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12362, 6.29144, -5.91792)
-
-[node name="Light13" parent="Lights2" index="12" instance=ExtResource("4_m3spk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, -12.5354)
-
-[node name="Light14" parent="Lights2" index="13" instance=ExtResource("4_m3spk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12362, 6.29144, -12.5354)
-
-[node name="Light15" parent="Lights2" index="14" instance=ExtResource("4_m3spk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, -19.0483)
-
-[node name="Light16" parent="Lights2" index="15" instance=ExtResource("4_m3spk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12362, 6.29144, -19.0483)
-
-[node name="Light17" parent="Lights2" index="16" instance=ExtResource("4_m3spk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, -25.496)
-
-[node name="Light18" parent="Lights2" index="17" instance=ExtResource("4_m3spk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12362, 6.29144, -25.496)
-
-[node name="Light19" parent="Lights2" index="18" instance=ExtResource("4_m3spk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, -32.2249)
-
-[node name="Light20" parent="Lights2" index="19" instance=ExtResource("4_m3spk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12362, 6.29144, -32.2249)
-
-[node name="Tiles" parent="." index="44" instance=ExtResource("6_5hy4s")]
+[node name="Tiles" parent="." index="43" instance=ExtResource("6_5hy4s")]

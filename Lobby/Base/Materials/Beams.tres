@@ -20,12 +20,12 @@ fill_to = Vector2(0.00854701, 0.0042735)
 [resource]
 render_priority = 0
 shader = ExtResource("1_0hgdd")
+shader_parameter/NoiseScale = 5.786
 shader_parameter/Albedo1 = ExtResource("2_0v6oy")
 shader_parameter/Albedo2 = ExtResource("3_4i8sp")
 shader_parameter/Metallic1 = ExtResource("4_ltt8c")
 shader_parameter/Metallic2 = SubResource("GradientTexture2D_555qe")
-shader_parameter/NoiseScale = 5.786
-shader_parameter/Normal1 = ExtResource("5_ehd4y")
-shader_parameter/Normal2 = ExtResource("6_p7svg")
 shader_parameter/Roughness1 = ExtResource("7_sjngr")
 shader_parameter/Roughness2 = ExtResource("8_7l6yv")
+shader_parameter/Normal1 = ExtResource("5_ehd4y")
+shader_parameter/Normal2 = ExtResource("6_p7svg")

@@ -111,11 +111,9 @@ uniform sampler2D Normal2 : hint_normal;
 
 
 void fragment() {
-
 	vec4 n_out6p0;
 // Texture2D:6
 	n_out6p0 = texture(Albedo1, UV);
-
 
 
 	vec4 n_out9p0;
@@ -143,11 +141,9 @@ void fragment() {
 	vec3 n_out7p0 = mix(vec3(n_out6p0.xyz), vec3(n_out9p0.xyz), vec3(n_out2p0.xyz));
 
 
-
 	vec4 n_out24p0;
 // Texture2D:24
 	n_out24p0 = texture(Metallic1, UV);
-
 
 
 	vec4 n_out23p0;
@@ -159,12 +155,10 @@ void fragment() {
 	vec3 n_out25p0 = mix(vec3(n_out24p0.xyz), vec3(n_out23p0.xyz), vec3(n_out2p0.xyz));
 
 
-
 	vec4 n_out14p0;
 // Texture2D:14
 	n_out14p0 = texture(Roughness1, UV);
 	float n_out14p1 = n_out14p0.r;
-
 
 
 	vec4 n_out11p0;
@@ -177,11 +171,9 @@ void fragment() {
 	float n_out12p0 = mix(n_out14p1, n_out11p1, n_out2p0.x);
 
 
-
 	vec4 n_out20p0;
 // Texture2D:20
 	n_out20p0 = texture(Normal1, UV);
-
 
 
 	vec4 n_out19p0;

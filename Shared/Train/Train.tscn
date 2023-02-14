@@ -1,30 +1,25 @@
-[gd_scene load_steps=8 format=3]
+[gd_scene load_steps=10 format=3 uid="uid://bfw18r3061nol"]
 
 [ext_resource type="Script" path="res://Shared/Train/Train.gd" id="1_j5mfx"]
 [ext_resource type="AudioStream" uid="uid://b5a85gao5uhd8" path="res://Shared/Train/Deceleration.ogg" id="2_sbgls"]
 [ext_resource type="AudioStream" uid="uid://d3bgvb3dswetf" path="res://Shared/Train/Acceleration.ogg" id="3_l5ro8"]
 [ext_resource type="AudioStream" uid="uid://da35ffrbudneq" path="res://Shared/Train/Drive Loop.ogg" id="4_lukiv"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_8rdng"]
-size = Vector3(3, 1, 6)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ypsnh"]
-size = Vector3(3, 1, 6)
+[ext_resource type="PackedScene" uid="uid://ckjp58s02vk1g" path="res://Shared/Train/TrainCar.scn" id="5_e0q4i"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8c6ya"]
-size = Vector3(3, 2, 6)
+size = Vector3(3, 2, 57.6687)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2w787"]
+size = Vector3(0.047697, 2.32594, 5.05994)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t7fdj"]
+size = Vector3(0.047697, 2.32594, 2.63394)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ypsnh"]
+size = Vector3(3, 1, 57.5891)
 
 [node name="Train" type="Node3D"]
 script = ExtResource("1_j5mfx")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-mesh = SubResource("BoxMesh_8rdng")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
-shape = SubResource("BoxShape3D_ypsnh")
 
 [node name="PlayerDetector" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0965035, 0)
@@ -56,3 +51,171 @@ stream = ExtResource("4_lukiv")
 volume_db = -18.262
 autoplay = true
 attenuation_filter_cutoff_hz = 20000.0
+
+[node name="TrainCar2" parent="." instance=ExtResource("5_e0q4i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.477739, 0)
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="TrainCar2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.78973, 0)
+size = Vector3(3.38174, 4.01688, 19.2442)
+box_projection = true
+
+[node name="Collision" type="Node3D" parent="TrainCar2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.477739, 0)
+
+[node name="Wall1" type="StaticBody3D" parent="TrainCar2/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.477739, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TrainCar2/Collision/Wall1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37403, 1.56406, 3.12787)
+shape = SubResource("BoxShape3D_2w787")
+
+[node name="Wall2" type="StaticBody3D" parent="TrainCar2/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.477739, -6.20646)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TrainCar2/Collision/Wall2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37403, 1.56406, 3.12787)
+shape = SubResource("BoxShape3D_2w787")
+
+[node name="Wall3" type="StaticBody3D" parent="TrainCar2/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.477739, -11.0616)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TrainCar2/Collision/Wall3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37403, 1.56406, 3.02093)
+shape = SubResource("BoxShape3D_t7fdj")
+
+[node name="Wall4" type="StaticBody3D" parent="TrainCar2/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.477739, 5.0614)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TrainCar2/Collision/Wall4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37403, 1.56406, 3.02093)
+shape = SubResource("BoxShape3D_t7fdj")
+
+[node name="Wall5" type="StaticBody3D" parent="TrainCar2/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75376, 0.477739, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TrainCar2/Collision/Wall5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37403, 1.56406, 3.12787)
+shape = SubResource("BoxShape3D_2w787")
+
+[node name="Wall6" type="StaticBody3D" parent="TrainCar2/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75376, 0.477739, -6.20646)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TrainCar2/Collision/Wall6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37403, 1.56406, 3.12787)
+shape = SubResource("BoxShape3D_2w787")
+
+[node name="Wall7" type="StaticBody3D" parent="TrainCar2/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75376, 0.477739, -11.0616)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TrainCar2/Collision/Wall7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37403, 1.56406, 3.02093)
+shape = SubResource("BoxShape3D_t7fdj")
+
+[node name="Wall8" type="StaticBody3D" parent="TrainCar2/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75376, 0.477739, 5.0614)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TrainCar2/Collision/Wall8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37403, 1.56406, 3.02093)
+shape = SubResource("BoxShape3D_t7fdj")
+
+[node name="Wall9" type="StaticBody3D" parent="TrainCar2/Collision"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.01883, 0.477739, 8.00777)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TrainCar2/Collision/Wall9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37403, 1.56406, 3.02093)
+shape = SubResource("BoxShape3D_t7fdj")
+
+[node name="Wall10" type="StaticBody3D" parent="TrainCar2/Collision"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.01883, 0.477739, -10.767)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TrainCar2/Collision/Wall10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37403, 1.56406, 3.02093)
+shape = SubResource("BoxShape3D_t7fdj")
+
+[node name="InsideLights" type="Node3D" parent="TrainCar2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.477739, 0)
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="TrainCar2/InsideLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.875182, 3.22627, 2.06481)
+light_color = Color(0.807843, 0.866667, 1, 1)
+light_energy = 0.349
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="TrainCar2/InsideLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.875182, 3.22627, 3.87437)
+light_color = Color(0.807843, 0.866667, 1, 1)
+light_energy = 0.349
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="TrainCar2/InsideLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.875182, 3.22627, -3.90503)
+light_color = Color(0.807843, 0.866667, 1, 1)
+light_energy = 0.349
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="TrainCar2/InsideLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.875182, 3.22627, -8.26768)
+light_color = Color(0.807843, 0.866667, 1, 1)
+light_energy = 0.349
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="TrainCar2/InsideLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.875182, 3.22627, 8.26756)
+light_color = Color(0.807843, 0.866667, 1, 1)
+light_energy = 0.349
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="TrainCar2/InsideLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.875182, 3.22627, -2.09547)
+light_color = Color(0.807843, 0.866667, 1, 1)
+light_energy = 0.349
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="TrainCar2/InsideLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02547, 3.22627, 2.06481)
+light_color = Color(0.807843, 0.866667, 1, 1)
+light_energy = 0.349
+
+[node name="OmniLight3D10" type="OmniLight3D" parent="TrainCar2/InsideLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02547, 3.22627, 3.87437)
+light_color = Color(0.807843, 0.866667, 1, 1)
+light_energy = 0.349
+
+[node name="OmniLight3D11" type="OmniLight3D" parent="TrainCar2/InsideLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02547, 3.22627, -3.90503)
+light_color = Color(0.807843, 0.866667, 1, 1)
+light_energy = 0.349
+
+[node name="OmniLight3D12" type="OmniLight3D" parent="TrainCar2/InsideLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02547, 3.22627, -8.26768)
+light_color = Color(0.807843, 0.866667, 1, 1)
+light_energy = 0.349
+
+[node name="OmniLight3D13" type="OmniLight3D" parent="TrainCar2/InsideLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02547, 3.22627, 8.26756)
+light_color = Color(0.807843, 0.866667, 1, 1)
+light_energy = 0.349
+
+[node name="OmniLight3D14" type="OmniLight3D" parent="TrainCar2/InsideLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02547, 3.22627, -2.09547)
+light_color = Color(0.807843, 0.866667, 1, 1)
+light_energy = 0.349
+
+[node name="RedLights" type="Node3D" parent="TrainCar2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.477739, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="TrainCar2/RedLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.48873, 3.11952, 0.00732718)
+light_color = Color(1, 0.290196, 0, 1)
+light_energy = 0.812
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="TrainCar2/RedLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.48873, 3.14132, 6.19084)
+light_color = Color(1, 0.290196, 0, 1)
+light_energy = 0.812
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="TrainCar2/RedLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.48873, 3.09954, -6.16723)
+light_color = Color(1, 0.290196, 0, 1)
+light_energy = 0.812
+
+[node name="Floor" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.477739, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("BoxShape3D_ypsnh")
