@@ -1,4 +1,4 @@
-extends "FiniteProceduralAnimation.gd"
+extends FiniteProceduralAnimation
 
 var start: Transform3D
 var destination: Transform3D

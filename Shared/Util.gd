@@ -27,6 +27,10 @@ func get_parent_with_class(search_start: Node, clas, clas_name: String) -> Node:
 	# 	+ clas_name + " as a parent.")
 	return result
 
+func get_parent_interactable(search_start: Node) -> Interactable:
+	return get_parent_with_class( \
+		search_start, Interactable, "Interactable") as Interactable
+
 func get_parent_mesh(search_start: Node) -> MeshInstance3D:
 	return get_parent_with_class( \
 		search_start, MeshInstance3D, "MeshInstance3D") as MeshInstance3D
@@ -34,3 +38,6 @@ func get_parent_mesh(search_start: Node) -> MeshInstance3D:
 func get_parent_node_3d(search_start: Node) -> Node3D:
 	return get_parent_with_class( \
 		search_start, Node3D, "Node3D") as Node3D
+
+func todo():
+	assert(false, "TODO")

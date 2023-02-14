@@ -1,4 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://cp5ej4gbf2b50"]
+[gd_scene load_steps=9 format=3 uid="uid://cp5ej4gbf2b50"]
+
+[ext_resource type="Script" path="res://Shared/Interactable/Interactable.gd" id="1_h00r6"]
+[ext_resource type="Script" path="res://Shared/Interactable/HighlightOnHoverBehavior.gd" id="2_mrslu"]
+[ext_resource type="Script" path="res://Farm/Crate/CrateBehavior.gd" id="3_coxs3"]
+[ext_resource type="Script" path="res://Shared/Interactable/HoldableBehavior.gd" id="4_xxw2o"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dumg0"]
+size = Vector3(0.915046, 0.678832, 0.842783)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kmapm"]
 resource_name = "Material"
@@ -37,26 +45,31 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_wandp")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_dumg0"]
-size = Vector3(0.915046, 0.678832, 0.842783)
-
 [node name="Crate" type="Node3D"]
+script = ExtResource("1_h00r6")
+
+[node name="InsertionPoint" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.303112, 0)
+
+[node name="HalfwayPoint" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.969921, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.308961, 0)
+shape = SubResource("BoxShape3D_dumg0")
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_njr80")
 skeleton = NodePath("")
 
-[node name="Slot" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.303112, 0)
+[node name="HighlightOnHoverBehavior" type="Node" parent="."]
+script = ExtResource("2_mrslu")
+meshes = [null]
 
-[node name="InsertionPoint" type="Node3D" parent="Slot"]
+[node name="CrateBehavior" type="Node" parent="."]
+script = ExtResource("3_coxs3")
 
-[node name="HalfwayPoint" type="Node3D" parent="Slot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.666809, 0)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Slot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.303112, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Slot/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.308961, 0)
-shape = SubResource("BoxShape3D_dumg0")
+[node name="HoldableBehavior" type="Node" parent="."]
+script = ExtResource("4_xxw2o")

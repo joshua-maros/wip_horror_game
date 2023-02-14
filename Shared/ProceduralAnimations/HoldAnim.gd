@@ -1,4 +1,6 @@
-extends "ProceduralAnimation.gd"
+extends ProceduralAnimation
+
+class_name HoldAnim
 
 var destination: Node3D
 

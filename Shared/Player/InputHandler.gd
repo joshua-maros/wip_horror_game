@@ -1,17 +1,22 @@
 extends RefCounted
 
-var player: Node3D
-var camera: Node3D
+class_name InputHandler
+
+var player: Player
+var camera: Camera3D
 var input_queue = []
 
-func _init(p: Node3D, c: Node3D):
-	player = p
-	camera = c
+signal interact_start
+signal interact_end
 
-func ready():
+func _init(p: Player):
+	player = p
+	camera = player.camera
+
+func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
-func input(event):
+func _input(event: InputEvent):
 	var speed = 0.005
 	if event is InputEventMouseMotion:
 		var dy = event.relative.y * speed
@@ -19,7 +24,7 @@ func input(event):
 		camera.rotation.y -= dx
 		camera.rotation.x -= dy
 
-func process(delta: float):
+func _process(delta: float):
 	var dx = Input.get_axis('nx', 'px')
 	var dy = Input.get_axis('ny', 'py')
 	var speed = 2.0 * delta
@@ -30,12 +35,12 @@ func process(delta: float):
 	if Input.is_action_pressed("exit"):
 		player.get_tree().quit()
 	if Input.is_action_just_pressed("interact"):
-		handle_interact_start()
+		_handle_interact_start()
 	elif Input.is_action_just_released("interact"):
-		handle_interact_end()
+		_handle_interact_end()
 
-func handle_interact_start():
-	pass
-
-func handle_interact_end():
-	pass
+func _handle_interact_start():
+	player.hand_handler.start_interacting()
+		
+func _handle_interact_end():
+	player.hand_handler.stop_interacting()

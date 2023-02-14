@@ -1,5 +1,7 @@
 extends RefCounted
 
+class_name SnappyAnimTimer
+
 var snappiness: float = 1.0
 var was_forward: bool = false
 var anim_progress = 0.0

@@ -1,4 +1,6 @@
-extends "ProceduralAnimation.gd"
+extends ProceduralAnimation
+
+class_name FiniteProceduralAnimation
 
 func snappiness():
 	return -1.0

@@ -1,6 +1,6 @@
 extends RefCounted
 
-const ProceduralAnimation = preload("res://Shared/ProceduralAnimations/ProceduralAnimation.gd")
+class_name HandAnimationSystem
 
 var active_animations: Dictionary = {}
 

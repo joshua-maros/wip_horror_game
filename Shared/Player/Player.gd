@@ -1,29 +1,31 @@
 extends Node3D
 
-const InputHandler = preload("InputHandler.gd")
-const Target = preload("Target.gd")
+class_name Player
 
-@onready var camera: Camera3D = $Camera
-var place_cursor = MeshInstance3D.new()
-@onready var input_handler: InputHandler \
-	= InputHandler.new(self, camera)
+@export var camera: Camera3D
+@export var held_parent: Node3D
+@export var crosshair_ray: RayCast3D
+@onready var hand_handler: HandHandler = HandHandler.new(self) # lol
+var hover_handler: HoverHandler = HoverHandler.new(self)
+@onready var input_handler: InputHandler = InputHandler.new(self)
+var target: Target
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	place_cursor.set_name("PlaceCursor")
-	place_cursor.material_override = Constants.cursor_mat
-	get_tree().root.get_child(0).call_deferred("add_child", place_cursor)
-	input_handler.ready()
+	hand_handler._ready()
+	input_handler._ready()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	input_handler.process(delta)
-	var target = get_raycast_result()
+	_update_target()
+	input_handler._process(delta)
+	hand_handler._process(delta)
+	hover_handler._process()
 	
 func _input(event):
-	input_handler.input(event)
+	input_handler._input(event)
 
-func get_raycast_result() -> Target:
-	var from = $Camera/CrosshairRay
+func _update_target():
+	var from = crosshair_ray
 	from.force_raycast_update()
-	return Target.new(from.get_collider(), from.get_collision_point())
+	target = Target.new(from.get_collider(), from.get_collision_point())

@@ -1,8 +1,10 @@
 extends RefCounted
 
+class_name Target
+
 var collider: StaticBody3D
 var position: Vector3
-var target: Node3D = null
+var target: Interactable = null
 
 # c is a StaticBody3D, but due to a bug we cannot annotate it as such
 # (https://github.com/godotengine/godot/issues/67105)
@@ -11,4 +13,15 @@ func _init(c, p: Vector3):
 	position = p
 	if collider == null:
 		return
-	target = collider.get_parent_node_3d()
+	target = Util.get_parent_interactable(collider)
+
+func interactable() -> Interactable:
+	return target
+
+func container() -> ContainerBehavior:
+	if target:
+		for behavior in target.behaviors:
+			if behavior is ContainerBehavior:
+				return behavior
+	return null
+		

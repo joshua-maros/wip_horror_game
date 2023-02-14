@@ -1,4 +1,4 @@
-extends "FiniteProceduralAnimation.gd"
+extends FiniteProceduralAnimation
 
 const HoldAnim = preload("HoldAnim.gd")
 const ContainerBehavior = preload("res://Shared/Interactables/ContainerBehavior.gd")

@@ -1,12 +1,11 @@
-extends "FiniteProceduralAnimation.gd"
+extends FiniteProceduralAnimation
 
-const HoldAnim = preload("HoldAnim.gd")
-const ContainerBehavior = preload("res://Shared/Interactables/ContainerBehavior.gd")
+class_name InsertAnim
 
 var start: Transform3D
 var container: ContainerBehavior
-var destination: Node3D
-var halfway: Node3D
+var destination: Transform3D
+var halfway: Transform3D
 var cutoff: float = 0.7
 
 func _init(s: ContainerBehavior):
@@ -16,11 +15,15 @@ func _init(s: ContainerBehavior):
 	halfway = container.get_halfway_point()
 
 func on_start():
+	var old_transform := target.global_transform
+	target.get_parent().remove_child(target)
+	container.parent.add_child(target)
+	target.global_transform = old_transform
 	start = target.transform
 
 func evaluate():
 	if halfway != null:
-		var middle = halfway.global_transform
+		var middle = halfway
 		if progress() < cutoff:
 			target.transform = start.interpolate_with(
 				middle, 
@@ -28,18 +31,12 @@ func evaluate():
 			)
 		else:
 			target.transform = middle.interpolate_with(
-				destination.global_transform, 
+				destination, 
 				(progress() - cutoff) / (1.0 - cutoff)
 			)
 	else:
-		target.transform = start.interpolate_with(
-			destination.global_transform, 
-			progress()
-		)
+		target.transform = start.interpolate_with(destination, progress())
 
 func on_finish():
-	target.get_parent().remove_child(target)
-	destination.add_child(target)
-	target.transform = Transform3D.IDENTITY
-	container.on_insert_end()
+	# container.on_insert_end()
 	Util.enable_colliders(target)

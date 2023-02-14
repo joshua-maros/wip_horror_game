@@ -6,7 +6,7 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_47ln8"]
 
-[node name="Player" type="AnimatableBody3D"]
+[node name="Player" type="AnimatableBody3D" node_paths=PackedStringArray("camera", "held_parent", "crosshair_ray")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0463732, 0)
 collision_layer = 3
 collision_mask = 3
@@ -16,6 +16,9 @@ axis_lock_angular_z = true
 physics_material_override = SubResource("PhysicsMaterial_6707c")
 sync_to_physics = false
 script = ExtResource("1_lyr5h")
+camera = NodePath("Camera")
+held_parent = NodePath("Camera/HeldParent")
+crosshair_ray = NodePath("Camera/CrosshairRay")
 
 [node name="Camera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)

@@ -1,6 +1,6 @@
-extends "FiniteProceduralAnimation.gd"
+extends FiniteProceduralAnimation
 
-const HoldAnim = preload("HoldAnim.gd")
+class_name PickUpAnim
 
 var start: Transform3D
 var destination: Node3D

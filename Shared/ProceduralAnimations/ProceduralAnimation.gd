@@ -1,5 +1,7 @@
 extends RefCounted
 
+class_name ProceduralAnimation
+
 var target: Node3D
 var time = 0.0
 
