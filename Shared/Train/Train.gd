@@ -56,12 +56,17 @@ func set_door_openness(s: float):
 		car.set_door_openness(s)
 
 func _process(delta: float):
-	var start_pos = position.z
+	var start_pos = position
 	actions[0]._process(delta, self)
 	while actions[0].is_done():
 		actions.pop_front()
 		actions[0].start(self)
-	var offset = position.z - start_pos
-	var speed = abs(offset / delta)
+	var offset = position - start_pos
+	var overlapping = player_detector.get_overlapping_bodies()
+	if overlapping.size() > 0:
+		var maybe_player = overlapping[0]
+		if maybe_player is Player:
+			maybe_player.move(offset)
+	var speed = abs(offset.length() / delta)
 	$DriveLoop.pitch_scale = max(speed / TOP_SPEED, 0.1)
 	$DriveLoop.volume_db = min(3.0 * log(speed / TOP_SPEED), -5.0)
