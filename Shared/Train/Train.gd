@@ -23,9 +23,8 @@ func _ready():
 	actions.push_back(MoveDoorsAction.new(0.5))
 	actions.push_back(WaitForPlayerAction.new())
 	actions.push_back(BlinkLightsAction.new())
-	actions.push_back(SetLightsAction.new(1.0))
-	actions.push_back(MoveDoorsAction.new(-0.5))
 	actions.push_back(SetLightsAction.new(0.0))
+	actions.push_back(MoveDoorsAction.new(-0.5))
 	a = MoveAction.new(MoveAction.Direction.DEPART, position, 0.0)
 	actions.push_back(a)
 	

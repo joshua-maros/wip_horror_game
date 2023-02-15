@@ -1,4 +1,4 @@
-extends Node3D
+extends AnimatableBody3D
 
 class_name Player
 
@@ -21,7 +21,10 @@ func _process(delta):
 	input_handler._process(delta)
 	hand_handler._process(delta)
 	hover_handler._process()
-	
+
+func move(delta: Vector3):
+	move_and_collide(delta)
+
 func _input(event):
 	input_handler._input(event)
 

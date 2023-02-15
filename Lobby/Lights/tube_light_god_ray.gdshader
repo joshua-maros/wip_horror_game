@@ -30,7 +30,7 @@ float light_at(vec3 model_pos, vec3 bounds) {
 	// attenuation = min(attenuation, saturate(0.5 * min_component(bounds - abs(model_pos))));
 	attenuation = min(attenuation, saturate(1.0 - dist_from_light / 3.0));
 	
-	return attenuation / dist_from_light;
+	return attenuation / (max(dist_from_light, 0.0) + 0.01);
 }
 
 float random (vec3 seed) {
@@ -38,6 +38,8 @@ float random (vec3 seed) {
         vec3(12.9898,78.233, 31.4159) + TIME)) * 43758.5453123);
 }
 
+// This shader surprisingly accounts for only about 2% of the total render time,
+// despite the big for loop.
 void fragment() {
 	// Where the pixel we're rendering is located in the world.
 	vec4 original_pos = (INV_VIEW_MATRIX * vec4(VERTEX, 1.0));
@@ -46,7 +48,7 @@ void fragment() {
 	// The direction of a ray fired from the camera that hits the point we're
 	// currently rendering.
 	vec3 ray_direction = normalize(original_pos.xyz - CAMERA_POSITION_WORLD);
-	float step_size = 0.4;
+	float step_size = 0.1;
 	// Go backwards because cull_front only renders the faces behind the object
 	// instead of the faces in front of the object.
 	vec3 step_ = -step_size * ray_direction;
@@ -57,8 +59,8 @@ void fragment() {
 	float z = length(original_pos.xyz - CAMERA_POSITION_WORLD) - initial_step * step_size;
 	model_pos += initial_step * step_;
 	
-	for (int i = 0; i < 16; i++) {
-		if (any(greaterThan(abs(model_pos), bounds)) || z < 0.0) {
+	for (int i = 0; i < 64; i++) {
+		if (any(greaterThan(abs(model_pos), bounds)) || z <= 0.001) {
 			break;
 		}
 		light += light_at(model_pos, bounds) * sqrt(z);
@@ -66,7 +68,7 @@ void fragment() {
 		z -= step_size;
 	}
 	
-	float exposure = 1.0 / 1000.0;
+	float exposure = step_size / 200.0;
 	
 	ALBEDO = vec3(light * exposure) * vec3(0.6, 0.8, 1.0);
 	// ALBEDO = ALBEDO.r > 0.0 ? vec3(1.0) : vec3(0.0);
