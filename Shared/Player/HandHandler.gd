@@ -9,9 +9,15 @@ var _player: Player
 
 func start_holding(holdable: HoldableBehavior):
 	if holdable.contained_in:
-		Util.todo()
-	else:
-		_pick_up_object(holdable)
+		var obj = holdable.parent
+		var transform = obj.global_transform
+		var root = obj.get_tree().root.get_child(0)
+		obj.get_parent().remove_child(obj)
+		root.add_child(obj)
+		obj.global_transform = transform
+		holdable.contained_in.start_removing(holdable)
+		holdable.contained_in = null
+	_pick_up_object(holdable)
 
 func start_interacting():
 	var target := _player.target
@@ -20,6 +26,7 @@ func start_interacting():
 		if c and c.can_take(_currently_holding):
 			var anim := InsertAnim.new(c)
 			_anim_sys.start(anim, _currently_holding.parent)
+			_currently_holding.contained_in = c
 			c.start_taking(_currently_holding)
 			_currently_holding = null
 			_player.hover_handler._stop_hovering_previous_object()
@@ -36,7 +43,6 @@ func start_interacting():
 
 func _has_placeable_anywhere_behavior(i: Interactable) -> bool:
 	for b in i.behaviors:
-		print(b, b is PlaceableAnywhereBehavior)
 		if b is PlaceableAnywhereBehavior:
 			return true
 	return false

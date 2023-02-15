@@ -69,6 +69,7 @@ positions = NodePath("../Positions")
 
 [node name="HoldableBehavior" type="Node" parent="."]
 script = ExtResource("4_xxw2o")
+label = &"Crate"
 
 [node name="PlacableAnywhereBehavior" type="Node" parent="."]
 script = ExtResource("1_dix8j")

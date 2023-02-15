@@ -11,4 +11,4 @@ func on_start():
 	pass
 
 func evaluate():
-	target.transform = destination.global_transform
+	target.global_transform = destination.global_transform

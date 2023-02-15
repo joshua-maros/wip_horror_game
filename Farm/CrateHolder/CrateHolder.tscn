@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://nbvo63uhy7go"]
+
+[ext_resource type="Script" path="res://Shared/Interactable/Interactable.gd" id="1_0iti4"]
+[ext_resource type="Script" path="res://Farm/CrateHolder/CrateHolderBehavior.gd" id="2_3w1ew"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dumg0"]
+size = Vector3(0.82537, 0.762857, 0.79892)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yxv0q"]
+size = Vector3(1.10734, 0.569328, 2.0288)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vgr74"]
+size = Vector3(1.114, 0.58, 2.022)
+
+[node name="CrateHolder" type="Node3D"]
+script = ExtResource("1_0iti4")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.603925, 0)
+shape = SubResource("BoxShape3D_dumg0")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.403762, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000299871, 0.696477, 0)
+shape = SubResource("BoxShape3D_yxv0q")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29184, 0)
+mesh = SubResource("BoxMesh_vgr74")
+
+[node name="CrateHolderBehavior" type="Node" parent="." node_paths=PackedStringArray("insertion_point")]
+script = ExtResource("2_3w1ew")
+insertion_point = NodePath("../InsertionPoint")
+
+[node name="InsertionPoint" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.580348, 0)

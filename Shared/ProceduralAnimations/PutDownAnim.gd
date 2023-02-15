@@ -12,10 +12,10 @@ func duration():
 	return 0.3
 
 func on_start():
-	start = target.transform
+	start = target.global_transform
 
 func evaluate():
-	target.transform = start.interpolate_with(destination, progress())
+	target.global_transform = start.interpolate_with(destination, progress())
 
 func on_finish():
 	Util.enable_colliders(target)

@@ -16,3 +16,6 @@ func get_halfway_point() -> Transform3D:
 
 func start_taking(_holdable: HoldableBehavior):
 	pass
+
+func start_removing(_holdable: HoldableBehavior):
+	pass

@@ -12,10 +12,10 @@ func duration():
 	return 0.15
 
 func on_start():
-	start = target.transform
+	start = target.global_transform
 
 func evaluate():
-	target.transform = \
+	target.global_transform = \
 		start.interpolate_with(destination.global_transform, progress())
 
 func on_finish():
