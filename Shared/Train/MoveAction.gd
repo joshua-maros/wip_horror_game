@@ -29,6 +29,8 @@ func _process(delta: float, train: Train):
 	elif direction == Direction.DEPART:
 		movement_timer += delta
 		multiplier = 1.0
+		if movement_timer > 18.0:
+			LevelLogic.transition_controller.advance_level = true
 	if _done:
 		train.position = parked_pos
 	else:

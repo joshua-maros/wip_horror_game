@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cmodibp2mtuwe"]
+[gd_scene load_steps=17 format=3 uid="uid://cmodibp2mtuwe"]
 
 [ext_resource type="PackedScene" uid="uid://cxcbr4rc073fl" path="res://Shared/Player/Player.tscn" id="1_3tjwb"]
 [ext_resource type="Texture2D" uid="uid://byidb4fctdwfw" path="res://Farm/TempNoise.tres" id="1_5dbxu"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bbakqgrml2d8v" path="res://Shared/Train/Train.tscn" id="7_si431"]
 [ext_resource type="PackedScene" uid="uid://nbvo63uhy7go" path="res://Farm/CrateHolder/CrateHolder.tscn" id="8_k38fq"]
 [ext_resource type="Script" path="res://Shared/LevelTransitionController.gd" id="9_xcpwj"]
+[ext_resource type="PackedScene" uid="uid://ccj3a2lf861mv" path="res://Shared/FadeToBlack.tscn" id="10_suyfr"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_f1att"]
 lightmap_size_hint = Vector2i(304, 156)
@@ -123,8 +124,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.895862, 0)
 [node name="CrateHolder" parent="." instance=ExtResource("8_k38fq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.30459, 0.0250001, -1.32125)
 
-[node name="LevelTransitionController" type="Node" parent="." node_paths=PackedStringArray("player", "train", "train_spawn_point")]
+[node name="LevelTransitionController" type="Node" parent="." node_paths=PackedStringArray("player", "train", "train_spawn_point", "fade")]
 script = ExtResource("9_xcpwj")
 player = NodePath("../Player")
 train = NodePath("../Train")
 train_spawn_point = NodePath("../Train/SpawnPoint")
+next_level = "res://Lobby/DimLobby.tscn"
+fade = NodePath("../FadeToBlack")
+
+[node name="FadeToBlack" parent="." instance=ExtResource("10_suyfr")]
