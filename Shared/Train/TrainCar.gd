@@ -38,7 +38,7 @@ func animate(speed: float, train: Train):
 		return
 	var n := func(seed: float):
 		return train.noise.get_noise_2d(1.5 * global_position.z, seed)
-	position = start_pos + speed / 300.0 \
+	position = start_pos + speed ** 0.5 / 90.0 \
 		* Vector3(n.call(0.0), 0.3 * n.call(10.0), 0.0)
 	rotation.z = 0.02 * (n.call(30.0))
 

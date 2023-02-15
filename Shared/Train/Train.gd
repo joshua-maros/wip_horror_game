@@ -71,7 +71,7 @@ func _process(delta: float):
 	if overlapping.size() > 0:
 		var maybe_player = overlapping[0]
 		if maybe_player is Player:
-			maybe_player.move(offset)
+			maybe_player.move_involuntary(offset)
 	var speed = abs(offset.length() / delta)
 	for car in cars:
 		car.animate(speed, self)
