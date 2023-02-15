@@ -1,9 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://o2llqyyjqyh2"]
+[gd_scene load_steps=10 format=3 uid="uid://o2llqyyjqyh2"]
 
 [ext_resource type="PackedScene" uid="uid://dc3p6knof2cw2" path="res://Shared/Train/TrainCar.glb" id="1_axn0s"]
 [ext_resource type="Texture2D" uid="uid://de1u807dlhyqc" path="res://Shared/Train/TrainCar_Lights_Emission_BaseColor.png" id="2_bv2xh"]
 [ext_resource type="Script" path="res://Shared/Train/TrainCar.gd" id="2_gvn1i"]
 [ext_resource type="Material" uid="uid://viljmkgsrydt" path="res://Shared/Train/LightMat.tres" id="3_slxkb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_11jgl"]
+size = Vector3(0.199371, 1.77938, 0.51044)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ipnmj"]
 albedo_texture = ExtResource("2_bv2xh")
@@ -16,6 +19,9 @@ size = Vector3(0.047697, 2.32594, 5.05994)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7w16v"]
 size = Vector3(0.047697, 2.32594, 2.63394)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8qxgx"]
+size = Vector3(0.047697, 2.32594, 18.9683)
 
 [node name="TrainCar" node_paths=PackedStringArray("door_light_parent", "inside_light_parent", "left_door_1", "left_door_2", "left_door_3", "right_door_1", "right_door_2", "right_door_3", "left_door_parent", "right_door_parent") instance=ExtResource("1_axn0s")]
 script = ExtResource("2_gvn1i")
@@ -35,6 +41,42 @@ right_door_parent = NodePath("RightDoorParent")
 [node name="OuterTrain" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12609, 0)
 surface_material_override/2 = ExtResource("3_slxkb")
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="OuterTrain/Door2" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.270296, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OuterTrain/Door2/AnimatableBody3D" index="0"]
+shape = SubResource("BoxShape3D_11jgl")
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="OuterTrain/Door3" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.270296, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OuterTrain/Door3/AnimatableBody3D" index="0"]
+shape = SubResource("BoxShape3D_11jgl")
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="OuterTrain/Door4" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.270296, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OuterTrain/Door4/AnimatableBody3D" index="0"]
+shape = SubResource("BoxShape3D_11jgl")
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="OuterTrain/Door5" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.270296, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OuterTrain/Door5/AnimatableBody3D" index="0"]
+shape = SubResource("BoxShape3D_11jgl")
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="OuterTrain/Door6" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.332675, 11.8123)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OuterTrain/Door6/AnimatableBody3D" index="0"]
+shape = SubResource("BoxShape3D_11jgl")
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="OuterTrain/Door7" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.270296, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OuterTrain/Door7/AnimatableBody3D" index="0"]
+shape = SubResource("BoxShape3D_11jgl")
 
 [node name="Inner Train" parent="OuterTrain" index="16"]
 surface_material_override/1 = SubResource("StandardMaterial3D_ipnmj")
@@ -75,42 +117,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.477739, 5.0614)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37403, 1.56406, 3.02093)
 shape = SubResource("BoxShape3D_7w16v")
 
-[node name="Wall5" type="StaticBody3D" parent="Collision" index="4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75376, 0.477739, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Collision/Wall5" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37403, 1.56406, 3.12787)
-shape = SubResource("BoxShape3D_bx5ik")
-
-[node name="Wall6" type="StaticBody3D" parent="Collision" index="5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75376, 0.477739, -6.20646)
+[node name="Wall6" type="StaticBody3D" parent="Collision" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75376, 0.477739, -3.23345)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Collision/Wall6" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37403, 1.56406, 3.12787)
-shape = SubResource("BoxShape3D_bx5ik")
+shape = SubResource("BoxShape3D_8qxgx")
 
-[node name="Wall7" type="StaticBody3D" parent="Collision" index="6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75376, 0.477739, -11.0616)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Collision/Wall7" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37403, 1.56406, 3.02093)
-shape = SubResource("BoxShape3D_7w16v")
-
-[node name="Wall8" type="StaticBody3D" parent="Collision" index="7"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75376, 0.477739, 5.0614)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Collision/Wall8" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37403, 1.56406, 3.02093)
-shape = SubResource("BoxShape3D_7w16v")
-
-[node name="Wall9" type="StaticBody3D" parent="Collision" index="8"]
+[node name="Wall9" type="StaticBody3D" parent="Collision" index="5"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.01883, 0.477739, 8.00777)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Collision/Wall9" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37403, 1.56406, 3.02093)
 shape = SubResource("BoxShape3D_7w16v")
 
-[node name="Wall10" type="StaticBody3D" parent="Collision" index="9"]
+[node name="Wall10" type="StaticBody3D" parent="Collision" index="6"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.01883, 0.477739, -10.767)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Collision/Wall10" index="0"]

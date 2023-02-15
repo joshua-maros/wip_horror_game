@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bbakqgrml2d8v"]
+[gd_scene load_steps=8 format=3 uid="uid://bbakqgrml2d8v"]
 
 [ext_resource type="Script" path="res://Shared/Train/Train.gd" id="1_j5mfx"]
 [ext_resource type="AudioStream" uid="uid://b5a85gao5uhd8" path="res://Shared/Train/Deceleration.ogg" id="2_sbgls"]
@@ -12,9 +12,6 @@ point_count = 3
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8c6ya"]
 size = Vector3(3, 2, 57.6687)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ypsnh"]
-size = Vector3(3, 1, 57.5891)
 
 [node name="Train" type="Node3D" node_paths=PackedStringArray("player_detector", "accelerate_sound", "decelerate_sound", "car2")]
 script = ExtResource("1_j5mfx")
@@ -56,9 +53,3 @@ attenuation_filter_cutoff_hz = 20000.0
 
 [node name="TrainCar2" parent="." instance=ExtResource("5_e0q4i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.984732, 0)
-
-[node name="Floor" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.477739, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
-shape = SubResource("BoxShape3D_ypsnh")

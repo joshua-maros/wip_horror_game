@@ -28,6 +28,9 @@ func _ready():
 	for child in inside_light_parent.get_children():
 		if child is OmniLight3D:
 			inside_lights.push_back(child)
+	call_deferred("reparent_doors")
+
+func reparent_doors():
 	for door in left_doors:
 		var old_transform = door.global_transform
 		door.get_parent_node_3d().remove_child(door)

@@ -16,7 +16,7 @@ var TOP_SPEED := 30.0
 var ACCELERATION_TIME := 15.0
 
 func _ready():
-	var a = MoveAction.new(MoveAction.Direction.ARRIVE, position, 18.0)
+	var a = MoveAction.new(MoveAction.Direction.ARRIVE, position, 2.0)
 	actions.push_back(a)
 	actions.push_back(BlinkLightsAction.new())
 	actions.push_back(SetLightsAction.new(1.0))
