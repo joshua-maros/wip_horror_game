@@ -5,10 +5,13 @@ class_name Train
 @export var player_detector: Area3D
 @export var accelerate_sound: AudioStreamPlayer3D
 @export var decelerate_sound: AudioStreamPlayer3D
+@export var car1: TrainCar
 @export var car2: TrainCar
+@export var car3: TrainCar
 @export var door_anim_curve: Curve
+@export var noise: Noise
 var actions: Array[TrainAction] = []
-@onready var cars: Array[TrainCar] = [car2]
+@onready var cars: Array[TrainCar] = [car1, car2, car3]
 
 var last_player_pos = Vector3.ZERO
 var time_player_not_moving = 0.0
@@ -44,13 +47,6 @@ func _ready():
 	position = Vector3(0, 1000, 0)
 	
 	set_door_light_brightness(0.0)
-		
-
-#func is_player_on_board():
-#	return $PlayerDetector.get_overlapping_bodies().size() > 0
-
-#func get_player_on_board():
-#	return $PlayerDetector.get_overlapping_bodies()[0]
 
 func set_door_light_brightness(b: float):
 	for car in cars:
@@ -77,5 +73,7 @@ func _process(delta: float):
 		if maybe_player is Player:
 			maybe_player.move(offset)
 	var speed = abs(offset.length() / delta)
+	for car in cars:
+		car.animate(speed, self)
 	$DriveLoop.pitch_scale = max(speed / TOP_SPEED, 0.1)
 	$DriveLoop.volume_db = min(3.0 * log(speed / TOP_SPEED), -5.0)

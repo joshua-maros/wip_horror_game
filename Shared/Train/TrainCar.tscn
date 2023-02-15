@@ -22,16 +22,16 @@ size = Vector3(0.047697, 2.32594, 18.9683)
 script = ExtResource("2_gvn1i")
 door_light_mat = ExtResource("3_slxkb")
 inside_light_mat = ExtResource("3_slxkb")
-door_light_parent = NodePath("DoorLights")
-inside_light_parent = NodePath("InsideLights")
+door_light_parent = NodePath("OuterTrain/DoorLights")
+inside_light_parent = NodePath("OuterTrain/InsideLights")
 left_door_1 = NodePath("OuterTrain/Door7")
 left_door_2 = NodePath("OuterTrain/Door5")
 left_door_3 = NodePath("OuterTrain/Door3")
 right_door_1 = NodePath("OuterTrain/Door6")
 right_door_2 = NodePath("OuterTrain/Door4")
 right_door_3 = NodePath("OuterTrain/Door2")
-left_door_parent = NodePath("LeftDoorParent")
-right_door_parent = NodePath("RightDoorParent")
+left_door_parent = NodePath("OuterTrain/LeftDoorParent")
+right_door_parent = NodePath("OuterTrain/RightDoorParent")
 
 [node name="OuterTrain" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12609, 0)
@@ -76,119 +76,119 @@ shape = SubResource("BoxShape3D_11jgl")
 [node name="Inner Train" parent="OuterTrain" index="16"]
 surface_material_override/1 = ExtResource("4_khk7n")
 
-[node name="ReflectionProbe" type="ReflectionProbe" parent="." index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.23151, 0)
+[node name="ReflectionProbe" type="ReflectionProbe" parent="OuterTrain" index="20"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10542, 0)
 size = Vector3(3.38174, 4.01688, 19.2442)
 box_projection = true
 
-[node name="Collision" type="Node3D" parent="." index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.03596, 0)
+[node name="Collision" type="Node3D" parent="OuterTrain" index="21"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.16205, 0)
 
-[node name="Wall1" type="StaticBody3D" parent="Collision" index="0"]
+[node name="Wall1" type="StaticBody3D" parent="OuterTrain/Collision" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.477739, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Collision/Wall1" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OuterTrain/Collision/Wall1" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37403, 1.56406, 3.12787)
 shape = SubResource("BoxShape3D_bx5ik")
 
-[node name="Wall2" type="StaticBody3D" parent="Collision" index="1"]
+[node name="Wall2" type="StaticBody3D" parent="OuterTrain/Collision" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.477739, -6.20646)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Collision/Wall2" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OuterTrain/Collision/Wall2" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37403, 1.56406, 3.12787)
 shape = SubResource("BoxShape3D_bx5ik")
 
-[node name="Wall3" type="StaticBody3D" parent="Collision" index="2"]
+[node name="Wall3" type="StaticBody3D" parent="OuterTrain/Collision" index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.477739, -11.0616)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Collision/Wall3" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OuterTrain/Collision/Wall3" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37403, 1.56406, 3.02093)
 shape = SubResource("BoxShape3D_7w16v")
 
-[node name="Wall4" type="StaticBody3D" parent="Collision" index="3"]
+[node name="Wall4" type="StaticBody3D" parent="OuterTrain/Collision" index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.477739, 5.0614)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Collision/Wall4" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OuterTrain/Collision/Wall4" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37403, 1.56406, 3.02093)
 shape = SubResource("BoxShape3D_7w16v")
 
-[node name="Wall6" type="StaticBody3D" parent="Collision" index="4"]
+[node name="Wall6" type="StaticBody3D" parent="OuterTrain/Collision" index="4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75376, 0.477739, -3.23345)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Collision/Wall6" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OuterTrain/Collision/Wall6" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37403, 1.56406, 3.12787)
 shape = SubResource("BoxShape3D_8qxgx")
 
-[node name="Wall9" type="StaticBody3D" parent="Collision" index="5"]
+[node name="Wall9" type="StaticBody3D" parent="OuterTrain/Collision" index="5"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.01883, 0.477739, 8.00777)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Collision/Wall9" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OuterTrain/Collision/Wall9" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37403, 1.56406, 3.02093)
 shape = SubResource("BoxShape3D_7w16v")
 
-[node name="Wall10" type="StaticBody3D" parent="Collision" index="6"]
+[node name="Wall10" type="StaticBody3D" parent="OuterTrain/Collision" index="6"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.01883, 0.477739, -10.767)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Collision/Wall10" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OuterTrain/Collision/Wall10" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37403, 1.56406, 3.02093)
 shape = SubResource("BoxShape3D_7w16v")
 
-[node name="InsideLights" type="Node3D" parent="." index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.07423, 0)
+[node name="InsideLights" type="Node3D" parent="OuterTrain" index="22"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.20032, 0)
 
-[node name="InsideLight" parent="InsideLights" index="0" instance=ExtResource("5_yj7su")]
+[node name="InsideLight" parent="OuterTrain/InsideLights" index="0" instance=ExtResource("5_yj7su")]
 
-[node name="InsideLight2" parent="InsideLights" index="1" instance=ExtResource("5_yj7su")]
+[node name="InsideLight2" parent="OuterTrain/InsideLights" index="1" instance=ExtResource("5_yj7su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.875182, 3.22627, 3.82923)
 
-[node name="InsideLight3" parent="InsideLights" index="2" instance=ExtResource("5_yj7su")]
+[node name="InsideLight3" parent="OuterTrain/InsideLights" index="2" instance=ExtResource("5_yj7su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.875182, 3.22627, -3.90002)
 
-[node name="InsideLight4" parent="InsideLights" index="3" instance=ExtResource("5_yj7su")]
+[node name="InsideLight4" parent="OuterTrain/InsideLights" index="3" instance=ExtResource("5_yj7su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.875182, 3.22627, -2.1356)
 
-[node name="InsideLight5" parent="InsideLights" index="4" instance=ExtResource("5_yj7su")]
+[node name="InsideLight5" parent="OuterTrain/InsideLights" index="4" instance=ExtResource("5_yj7su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.875182, 3.22627, -8.16235)
 
-[node name="InsideLight6" parent="InsideLights" index="5" instance=ExtResource("5_yj7su")]
+[node name="InsideLight6" parent="OuterTrain/InsideLights" index="5" instance=ExtResource("5_yj7su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.875182, 3.22627, 8.00601)
 
-[node name="InsideLight7" parent="InsideLights" index="6" instance=ExtResource("5_yj7su")]
+[node name="InsideLight7" parent="OuterTrain/InsideLights" index="6" instance=ExtResource("5_yj7su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.88765, 3.22627, 2.06481)
 
-[node name="InsideLight8" parent="InsideLights" index="7" instance=ExtResource("5_yj7su")]
+[node name="InsideLight8" parent="OuterTrain/InsideLights" index="7" instance=ExtResource("5_yj7su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.88765, 3.22627, 3.82923)
 
-[node name="InsideLight9" parent="InsideLights" index="8" instance=ExtResource("5_yj7su")]
+[node name="InsideLight9" parent="OuterTrain/InsideLights" index="8" instance=ExtResource("5_yj7su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.88765, 3.22627, -3.90002)
 
-[node name="InsideLight10" parent="InsideLights" index="9" instance=ExtResource("5_yj7su")]
+[node name="InsideLight10" parent="OuterTrain/InsideLights" index="9" instance=ExtResource("5_yj7su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.88765, 3.22627, -2.1356)
 
-[node name="InsideLight11" parent="InsideLights" index="10" instance=ExtResource("5_yj7su")]
+[node name="InsideLight11" parent="OuterTrain/InsideLights" index="10" instance=ExtResource("5_yj7su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.88765, 3.22627, -8.16235)
 
-[node name="InsideLight12" parent="InsideLights" index="11" instance=ExtResource("5_yj7su")]
+[node name="InsideLight12" parent="OuterTrain/InsideLights" index="11" instance=ExtResource("5_yj7su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.88765, 3.22627, 8.00601)
 
-[node name="DoorLights" type="Node3D" parent="." index="4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.03596, 0)
+[node name="DoorLights" type="Node3D" parent="OuterTrain" index="23"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.16205, 0)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="DoorLights" index="0"]
+[node name="OmniLight3D" type="OmniLight3D" parent="OuterTrain/DoorLights" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.48873, 3.11952, 0.00732718)
 light_color = Color(1, 0.290196, 0, 1)
 light_energy = 0.0
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="DoorLights" index="1"]
+[node name="OmniLight3D2" type="OmniLight3D" parent="OuterTrain/DoorLights" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.48873, 3.14132, 6.19084)
 light_color = Color(1, 0.290196, 0, 1)
 light_energy = 0.0
 
-[node name="OmniLight3D3" type="OmniLight3D" parent="DoorLights" index="2"]
+[node name="OmniLight3D3" type="OmniLight3D" parent="OuterTrain/DoorLights" index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.48873, 3.09954, -6.16723)
 light_color = Color(1, 0.290196, 0, 1)
 light_energy = 0.0
 
-[node name="LeftDoorParent" type="Node3D" parent="." index="5"]
+[node name="LeftDoorParent" type="Node3D" parent="OuterTrain" index="24"]
 
-[node name="RightDoorParent" type="Node3D" parent="." index="6"]
+[node name="RightDoorParent" type="Node3D" parent="OuterTrain" index="25"]

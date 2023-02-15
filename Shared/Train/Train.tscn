@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bbakqgrml2d8v"]
+[gd_scene load_steps=9 format=3 uid="uid://bbakqgrml2d8v"]
 
 [ext_resource type="Script" path="res://Shared/Train/Train.gd" id="1_j5mfx"]
 [ext_resource type="AudioStream" uid="uid://b5a85gao5uhd8" path="res://Shared/Train/Deceleration.ogg" id="2_sbgls"]
@@ -10,16 +10,22 @@
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.501792, 0.872727), 0.450909, 0.450909, 0, 0, Vector2(1, 1), 3.95945e-07, 0.0, 0, 0]
 point_count = 3
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_dy30p"]
+fractal_octaves = 3
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_8c6ya"]
 size = Vector3(3, 2, 57.6687)
 
-[node name="Train" type="Node3D" node_paths=PackedStringArray("player_detector", "accelerate_sound", "decelerate_sound", "car2")]
+[node name="Train" type="Node3D" node_paths=PackedStringArray("player_detector", "accelerate_sound", "decelerate_sound", "car1", "car2", "car3")]
 script = ExtResource("1_j5mfx")
 player_detector = NodePath("PlayerDetector")
 accelerate_sound = NodePath("Accelerate")
 decelerate_sound = NodePath("Decelerate")
+car1 = NodePath("TrainCar1")
 car2 = NodePath("TrainCar2")
+car3 = NodePath("TrainCar3")
 door_anim_curve = SubResource("Curve_8b7ed")
+noise = SubResource("FastNoiseLite_dy30p")
 
 [node name="PlayerDetector" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0965035, 0)
@@ -51,8 +57,14 @@ volume_db = -5.0
 autoplay = true
 attenuation_filter_cutoff_hz = 20000.0
 
+[node name="TrainCar1" parent="." instance=ExtResource("5_e0q4i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.984732, -19.3054)
+
 [node name="TrainCar2" parent="." instance=ExtResource("5_e0q4i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.984732, 0)
+
+[node name="TrainCar3" parent="." instance=ExtResource("5_e0q4i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.984732, 19.2192)
 
 [node name="Floor" type="AnimatableBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.01529, 0)
