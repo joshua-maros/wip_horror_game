@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://cp5ej4gbf2b50"]
+[gd_scene load_steps=10 format=3 uid="uid://cfikfd43fuu8x"]
 
-[ext_resource type="Script" path="res://Shared/Interactable/Interactable.gd" id="1_h00r6"]
+[ext_resource type="Script" path="res://Shared/Interactable/PlaceableAnywhereBehavior.gd" id="1_dix8j"]
+[ext_resource type="Script" path="res://Shared/Interactable/Interactable.gd" id="1_oav0l"]
 [ext_resource type="Script" path="res://Shared/Interactable/HighlightOnHoverBehavior.gd" id="2_mrslu"]
 [ext_resource type="Script" path="res://Farm/Crate/CrateBehavior.gd" id="3_coxs3"]
 [ext_resource type="Script" path="res://Shared/Interactable/HoldableBehavior.gd" id="4_xxw2o"]
@@ -46,13 +47,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_wandp")
 
 [node name="Crate" type="Node3D"]
-script = ExtResource("1_h00r6")
-
-[node name="InsertionPoint" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.303112, 0)
-
-[node name="HalfwayPoint" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.969921, 0)
+script = ExtResource("1_oav0l")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
@@ -64,9 +59,9 @@ shape = SubResource("BoxShape3D_dumg0")
 mesh = SubResource("ArrayMesh_njr80")
 skeleton = NodePath("")
 
-[node name="HighlightOnHoverBehavior" type="Node" parent="."]
+[node name="HighlightOnHoverBehavior" type="Node" parent="." node_paths=PackedStringArray("mesh")]
 script = ExtResource("2_mrslu")
-meshes = [null]
+mesh = NodePath("../Mesh")
 
 [node name="CrateBehavior" type="Node" parent="." node_paths=PackedStringArray("positions")]
 script = ExtResource("3_coxs3")
@@ -74,6 +69,9 @@ positions = NodePath("../Positions")
 
 [node name="HoldableBehavior" type="Node" parent="."]
 script = ExtResource("4_xxw2o")
+
+[node name="PlacableAnywhereBehavior" type="Node" parent="."]
+script = ExtResource("1_dix8j")
 
 [node name="Positions" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.326775, 0)

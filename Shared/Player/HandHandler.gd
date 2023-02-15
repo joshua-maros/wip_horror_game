@@ -23,8 +23,23 @@ func start_interacting():
 			c.start_taking(_currently_holding)
 			_currently_holding = null
 			_player.hover_handler._stop_hovering_previous_object()
+		elif _has_placeable_anywhere_behavior(_currently_holding.parent) \
+			and target.hit_object:
+			var obj = _currently_holding.parent
+			var anim := PutDownAnim.new( \
+				Transform3D.IDENTITY.translated(target.position))
+			_anim_sys.start(anim, obj)
+			_currently_holding = null
+			_player.hover_handler._stop_hovering_previous_object()
 	elif target.interactable():
 		target.interactable().start_interacting(_player)
+
+func _has_placeable_anywhere_behavior(i: Interactable) -> bool:
+	for b in i.behaviors:
+		print(b, b is PlaceableAnywhereBehavior)
+		if b is PlaceableAnywhereBehavior:
+			return true
+	return false
 
 func stop_interacting():
 	if !_currently_holding:

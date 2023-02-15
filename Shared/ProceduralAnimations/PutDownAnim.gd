@@ -1,5 +1,7 @@
 extends FiniteProceduralAnimation
 
+class_name PutDownAnim
+
 var start: Transform3D
 var destination: Transform3D
 

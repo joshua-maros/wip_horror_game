@@ -22,8 +22,9 @@ shape = SubResource("BoxShape3D_0l6ps")
 mesh = ExtResource("2_h3587")
 skeleton = NodePath("")
 
-[node name="HighlightOnHoverBehavior" type="Node" parent="."]
+[node name="HighlightOnHoverBehavior" type="Node" parent="." node_paths=PackedStringArray("mesh")]
 script = ExtResource("3_6vwtj")
+mesh = NodePath("../Mesh")
 
 [node name="HoldableBehavior" type="Node" parent="."]
 script = ExtResource("4_pk6wu")

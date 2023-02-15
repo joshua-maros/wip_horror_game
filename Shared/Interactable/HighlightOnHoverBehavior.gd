@@ -2,7 +2,8 @@ extends Behavior
 
 class_name HighlightOnHoverBehavior
 
-@export var meshes: Array[MeshInstance3D]
+@export var mesh: MeshInstance3D
+@onready var meshes = [mesh]
 
 func _ready():
 	super._ready()

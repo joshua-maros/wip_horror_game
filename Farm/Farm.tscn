@@ -5,7 +5,7 @@
 [ext_resource type="Environment" uid="uid://dpy1y2nditdwo" path="res://Farm/Environment.tres" id="2_ppd5i"]
 [ext_resource type="PackedScene" uid="uid://mkcox8qiiis0" path="res://Farm/Carrot/Carrot.tscn" id="4_vk1vt"]
 [ext_resource type="Texture2D" uid="uid://bb4nx236sonus" path="res://Farm/Crosshair.png" id="5_15q4x"]
-[ext_resource type="PackedScene" uid="uid://cp5ej4gbf2b50" path="res://Farm/Crate/Crate.tscn" id="6_omg7f"]
+[ext_resource type="PackedScene" uid="uid://cfikfd43fuu8x" path="res://Farm/Crate/Crate.tscn" id="6_omg7f"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_f1att"]
 lightmap_size_hint = Vector2i(304, 156)
@@ -54,42 +54,6 @@ environment = ExtResource("2_ppd5i")
 transform = Transform3D(0.834694, -0.368235, 0.409498, 0, 0.743577, 0.668651, -0.550714, -0.558119, 0.620659, 0, 11.7275, 0)
 shadow_enabled = true
 
-[node name="Carrot" parent="." instance=ExtResource("4_vk1vt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.829109, 0.0252627, -4.6997)
-
-[node name="Carrot2" parent="." instance=ExtResource("4_vk1vt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.214641, 0.0252627, -4.6997)
-
-[node name="Carrot3" parent="." instance=ExtResource("4_vk1vt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.384657, 0.0252627, -4.6997)
-
-[node name="Carrot4" parent="." instance=ExtResource("4_vk1vt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.999125, 0.0252627, -4.6997)
-
-[node name="Carrot5" parent="." instance=ExtResource("4_vk1vt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.64269, 0.0252627, -4.6997)
-
-[node name="Carrot6" parent="." instance=ExtResource("4_vk1vt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25716, 0.0252627, -4.6997)
-
-[node name="Carrot7" parent="." instance=ExtResource("4_vk1vt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85646, 0.0252627, -4.6997)
-
-[node name="Carrot8" parent="." instance=ExtResource("4_vk1vt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.47092, 0.0252627, -4.6997)
-
-[node name="Carrot9" parent="." instance=ExtResource("4_vk1vt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.08787, 0.0252627, -4.6997)
-
-[node name="Carrot10" parent="." instance=ExtResource("4_vk1vt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.70234, 0.0252627, -4.6997)
-
-[node name="Carrot11" parent="." instance=ExtResource("4_vk1vt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.30163, 0.0252627, -4.6997)
-
-[node name="Carrot12" parent="." instance=ExtResource("4_vk1vt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9161, 0.0252627, -4.6997)
-
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
@@ -116,3 +80,41 @@ texture = ExtResource("5_15q4x")
 
 [node name="Crate" parent="." instance=ExtResource("6_omg7f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.83728, 0.0250001, -1.37762)
+
+[node name="Carrots" type="Node3D" parent="."]
+
+[node name="Carrot" parent="Carrots" instance=ExtResource("4_vk1vt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.829109, 0.0252627, -4.6997)
+
+[node name="Carrot2" parent="Carrots" instance=ExtResource("4_vk1vt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.214641, 0.0252627, -4.6997)
+
+[node name="Carrot3" parent="Carrots" instance=ExtResource("4_vk1vt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.384657, 0.0252627, -4.6997)
+
+[node name="Carrot4" parent="Carrots" instance=ExtResource("4_vk1vt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.999125, 0.0252627, -4.6997)
+
+[node name="Carrot5" parent="Carrots" instance=ExtResource("4_vk1vt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.64269, 0.0252627, -4.6997)
+
+[node name="Carrot6" parent="Carrots" instance=ExtResource("4_vk1vt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25716, 0.0252627, -4.6997)
+
+[node name="Carrot7" parent="Carrots" instance=ExtResource("4_vk1vt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85646, 0.0252627, -4.6997)
+
+[node name="Carrot8" parent="Carrots" instance=ExtResource("4_vk1vt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.47092, 0.0252627, -4.6997)
+
+[node name="Carrot9" parent="Carrots" instance=ExtResource("4_vk1vt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.08787, 0.0252627, -4.6997)
+
+[node name="Carrot10" parent="Carrots" instance=ExtResource("4_vk1vt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.70234, 0.0252627, -4.6997)
+
+[node name="Carrot11" parent="Carrots" instance=ExtResource("4_vk1vt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.30163, 0.0252627, -4.6997)
+
+[node name="Carrot12" parent="Carrots" instance=ExtResource("4_vk1vt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9161, 0.0252627, -4.6997)

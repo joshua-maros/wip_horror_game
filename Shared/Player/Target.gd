@@ -2,6 +2,7 @@ extends RefCounted
 
 class_name Target
 
+var hit_object := false
 var position: Vector3
 var target: Interactable = null
 
@@ -11,6 +12,7 @@ func _init(collider, p: Vector3):
 	position = p
 	if collider == null:
 		return
+	hit_object = true
 	target = Util.get_parent_interactable(collider)
 	if target:
 		while target.glued_to:
