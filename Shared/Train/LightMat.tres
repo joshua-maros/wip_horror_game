@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://viljmkgsrydt"]
+
+[resource]
+resource_name = "RedLight"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.054902, 0.054902, 0.054902, 1)
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 0.00775175, 0, 1)
+emission_energy_multiplier = 0.0

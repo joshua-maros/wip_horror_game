@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://o2llqyyjqyh2"]
+[gd_scene load_steps=8 format=3 uid="uid://o2llqyyjqyh2"]
 
 [ext_resource type="PackedScene" uid="uid://dc3p6knof2cw2" path="res://Shared/Train/TrainCar.glb" id="1_axn0s"]
 [ext_resource type="Texture2D" uid="uid://de1u807dlhyqc" path="res://Shared/Train/TrainCar_Lights_Emission_BaseColor.png" id="2_bv2xh"]
 [ext_resource type="Script" path="res://Shared/Train/TrainCar.gd" id="2_gvn1i"]
+[ext_resource type="Material" uid="uid://viljmkgsrydt" path="res://Shared/Train/LightMat.tres" id="3_slxkb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ipnmj"]
 albedo_texture = ExtResource("2_bv2xh")
@@ -16,13 +17,24 @@ size = Vector3(0.047697, 2.32594, 5.05994)
 [sub_resource type="BoxShape3D" id="BoxShape3D_7w16v"]
 size = Vector3(0.047697, 2.32594, 2.63394)
 
-[node name="TrainCar" node_paths=PackedStringArray("door_light_parent", "inside_light_parent") instance=ExtResource("1_axn0s")]
+[node name="TrainCar" node_paths=PackedStringArray("door_light_parent", "inside_light_parent", "left_door_1", "left_door_2", "left_door_3", "right_door_1", "right_door_2", "right_door_3", "left_door_parent", "right_door_parent") instance=ExtResource("1_axn0s")]
 script = ExtResource("2_gvn1i")
+door_light_mat = ExtResource("3_slxkb")
+inside_light_mat = ExtResource("3_slxkb")
 door_light_parent = NodePath("DoorLights")
 inside_light_parent = NodePath("InsideLights")
+left_door_1 = NodePath("OuterTrain/Door7")
+left_door_2 = NodePath("OuterTrain/Door5")
+left_door_3 = NodePath("OuterTrain/Door3")
+right_door_1 = NodePath("OuterTrain/Door6")
+right_door_2 = NodePath("OuterTrain/Door4")
+right_door_3 = NodePath("OuterTrain/Door2")
+left_door_parent = NodePath("LeftDoorParent")
+right_door_parent = NodePath("RightDoorParent")
 
 [node name="OuterTrain" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12609, 0)
+surface_material_override/2 = ExtResource("3_slxkb")
 
 [node name="Inner Train" parent="OuterTrain" index="16"]
 surface_material_override/1 = SubResource("StandardMaterial3D_ipnmj")
@@ -106,7 +118,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37403, 1.56406, 3.02093)
 shape = SubResource("BoxShape3D_7w16v")
 
 [node name="InsideLights" type="Node3D" parent="." index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.03596, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.07423, 0)
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="InsideLights" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.875182, 3.22627, 2.06481)
@@ -185,3 +197,7 @@ light_energy = 0.812
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.48873, 3.09954, -6.16723)
 light_color = Color(1, 0.290196, 0, 1)
 light_energy = 0.812
+
+[node name="LeftDoorParent" type="Node3D" parent="." index="5"]
+
+[node name="RightDoorParent" type="Node3D" parent="." index="6"]

@@ -98,5 +98,3 @@ size = Vector3(2.00564, 0.91848, 3.2784)
 
 [node name="Train" parent="." instance=ExtResource("3_6v5dk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.821036, -0.123827, -5.97169)
-
-[editable path="Train"]
