@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cxcbr4rc073fl" path="res://Shared/Player/Player.tscn" id="2_3fdrr"]
 [ext_resource type="PackedScene" uid="uid://k30ccwvtvxug" path="res://Lobby/Variants/Dim.tscn" id="2_qvk42"]
-[ext_resource type="PackedScene" uid="uid://bfw18r3061nol" path="res://Shared/Train/Train.tscn" id="3_6v5dk"]
+[ext_resource type="PackedScene" uid="uid://bbakqgrml2d8v" path="res://Shared/Train/Train.tscn" id="3_6v5dk"]
 
 [sub_resource type="Curve" id="Curve_dyoxg"]
 _data = [Vector2(0, 0), 0.0, 1.14805, 0, 0, Vector2(0.987179, 0.981818), 0.850909, 0.0, 0, 0]
