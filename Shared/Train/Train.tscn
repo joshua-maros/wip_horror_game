@@ -54,11 +54,12 @@ attenuation_filter_cutoff_hz = 20000.0
 [node name="TrainCar2" parent="." instance=ExtResource("5_e0q4i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.984732, 0)
 
-[node name="PlayerDetector2" type="AnimatableBody3D" parent="."]
+[node name="Floor" type="AnimatableBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.01529, 0)
 collision_layer = 2
 collision_mask = 2
+sync_to_physics = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerDetector2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.01121, 0)
 shape = SubResource("BoxShape3D_8c6ya")

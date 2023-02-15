@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cmodibp2mtuwe"]
+[gd_scene load_steps=16 format=3 uid="uid://cmodibp2mtuwe"]
 
 [ext_resource type="PackedScene" uid="uid://cxcbr4rc073fl" path="res://Shared/Player/Player.tscn" id="1_3tjwb"]
 [ext_resource type="Texture2D" uid="uid://byidb4fctdwfw" path="res://Farm/TempNoise.tres" id="1_5dbxu"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cfikfd43fuu8x" path="res://Farm/Crate/Crate.tscn" id="6_omg7f"]
 [ext_resource type="PackedScene" uid="uid://bbakqgrml2d8v" path="res://Shared/Train/Train.tscn" id="7_si431"]
 [ext_resource type="PackedScene" uid="uid://nbvo63uhy7go" path="res://Farm/CrateHolder/CrateHolder.tscn" id="8_k38fq"]
+[ext_resource type="Script" path="res://Shared/LevelTransitionController.gd" id="9_xcpwj"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_f1att"]
 lightmap_size_hint = Vector2i(304, 156)
@@ -47,7 +48,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_65jt0")
 shape = SubResource("BoxShape3D_rfjhy")
 
 [node name="Player" parent="." instance=ExtResource("1_3tjwb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.56295, 0.0249991, 3.64829)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.60015, 0.0462267, 3.64829)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("2_ppd5i")
@@ -116,5 +117,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.08787, 0.0252627, -4.6997)
 [node name="Train" parent="." instance=ExtResource("7_si431")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5928, 0.0249996, -0.94083)
 
+[node name="SpawnPoint" type="Node3D" parent="Train"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.895862, 0)
+
 [node name="CrateHolder" parent="." instance=ExtResource("8_k38fq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.30459, 0.0250001, -1.32125)
+
+[node name="LevelTransitionController" type="Node" parent="." node_paths=PackedStringArray("player", "train", "train_spawn_point")]
+script = ExtResource("9_xcpwj")
+player = NodePath("../Player")
+train = NodePath("../Train")
+train_spawn_point = NodePath("../Train/SpawnPoint")

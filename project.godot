@@ -23,6 +23,7 @@ buses/default_bus_layout="res://Shared/Defaults/DefaultBusLayout.tres"
 
 Util="*res://Shared/Util.gd"
 Constants="*res://Shared/Constants.tscn"
+LevelLogic="*res://Shared/LevelLogic.gd"
 
 [editor]
 

@@ -9,6 +9,8 @@ func can_take(holdable: HoldableBehavior):
 func start_taking(holdable: HoldableBehavior):
 	parent.glue_to_self(holdable.parent)
 	num_carrots += 1
+	if num_carrots == 9:
+		LevelLogic.transition_controller.train_can_leave = true
 
 func next_carrot_pos() -> Vector3:
 	var pos: Node3D = positions.get_child(num_carrots)
