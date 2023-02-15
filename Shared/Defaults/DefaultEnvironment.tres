@@ -13,10 +13,12 @@ curve = SubResource("Curve_2pkde")
 sky_material = SubResource("ProceduralSkyMaterial_2v5jq")
 
 [resource]
-background_mode = 2
+background_mode = 1
+background_energy_multiplier = 0.0
 sky = SubResource("Sky_xlwcl")
-ambient_light_source = 3
-reflected_light_source = 2
+ambient_light_source = 2
+ambient_light_sky_contribution = 0.0
+ambient_light_energy = 0.0
 ssao_power = 1.78381
 ssao_detail = 1.0
 sdfgi_min_cell_size = 0.528418

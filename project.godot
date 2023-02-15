@@ -73,4 +73,5 @@ reflections/reflection_atlas/reflection_size=128
 reflections/reflection_atlas/reflection_size.mobile=64
 limits/opengl/max_renderable_lights=256
 limits/opengl/max_lights_per_object=256
-environment/defaults/default_clear_color=Color(0.509804, 0, 0.470588, 1)
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
+environment/defaults/default_environment="res://Shared/Defaults/DefaultEnvironment.tres"

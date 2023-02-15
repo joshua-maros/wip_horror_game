@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bkhec0tetkva7"]
+
+[node name="InsideLight" type="OmniLight3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.875182, 3.22627, 2.06481)
+light_color = Color(0.572549, 0.682353, 0.870588, 1)
+light_energy = 0.208
+omni_range = 3.742

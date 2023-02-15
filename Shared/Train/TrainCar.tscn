@@ -1,18 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://o2llqyyjqyh2"]
 
 [ext_resource type="PackedScene" uid="uid://dc3p6knof2cw2" path="res://Shared/Train/TrainCar.glb" id="1_axn0s"]
-[ext_resource type="Texture2D" uid="uid://de1u807dlhyqc" path="res://Shared/Train/TrainCar_Lights_Emission_BaseColor.png" id="2_bv2xh"]
 [ext_resource type="Script" path="res://Shared/Train/TrainCar.gd" id="2_gvn1i"]
 [ext_resource type="Material" uid="uid://viljmkgsrydt" path="res://Shared/Train/LightMat.tres" id="3_slxkb"]
+[ext_resource type="Material" uid="uid://djsiwsfakxfow" path="res://Shared/Train/LightPanelMat.tres" id="4_khk7n"]
+[ext_resource type="PackedScene" uid="uid://bkhec0tetkva7" path="res://Shared/Train/InsideLight.tscn" id="5_yj7su"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_11jgl"]
 size = Vector3(0.199371, 1.77938, 0.51044)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ipnmj"]
-albedo_texture = ExtResource("2_bv2xh")
-emission_enabled = true
-emission_energy_multiplier = 3.67
-emission_texture = ExtResource("2_bv2xh")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bx5ik"]
 size = Vector3(0.047697, 2.32594, 5.05994)
@@ -79,7 +74,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.270296, 0)
 shape = SubResource("BoxShape3D_11jgl")
 
 [node name="Inner Train" parent="OuterTrain" index="16"]
-surface_material_override/1 = SubResource("StandardMaterial3D_ipnmj")
+surface_material_override/1 = ExtResource("4_khk7n")
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.23151, 0)
@@ -141,65 +136,40 @@ shape = SubResource("BoxShape3D_7w16v")
 [node name="InsideLights" type="Node3D" parent="." index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.07423, 0)
 
-[node name="OmniLight3D3" type="OmniLight3D" parent="InsideLights" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.875182, 3.22627, 2.06481)
-light_color = Color(0.807843, 0.866667, 1, 1)
-light_energy = 0.349
+[node name="InsideLight" parent="InsideLights" index="0" instance=ExtResource("5_yj7su")]
 
-[node name="OmniLight3D4" type="OmniLight3D" parent="InsideLights" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.875182, 3.22627, 3.87437)
-light_color = Color(0.807843, 0.866667, 1, 1)
-light_energy = 0.349
+[node name="InsideLight2" parent="InsideLights" index="1" instance=ExtResource("5_yj7su")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.875182, 3.22627, 3.82923)
 
-[node name="OmniLight3D5" type="OmniLight3D" parent="InsideLights" index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.875182, 3.22627, -3.90503)
-light_color = Color(0.807843, 0.866667, 1, 1)
-light_energy = 0.349
+[node name="InsideLight3" parent="InsideLights" index="2" instance=ExtResource("5_yj7su")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.875182, 3.22627, -3.90002)
 
-[node name="OmniLight3D7" type="OmniLight3D" parent="InsideLights" index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.875182, 3.22627, -8.26768)
-light_color = Color(0.807843, 0.866667, 1, 1)
-light_energy = 0.349
+[node name="InsideLight4" parent="InsideLights" index="3" instance=ExtResource("5_yj7su")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.875182, 3.22627, -2.1356)
 
-[node name="OmniLight3D8" type="OmniLight3D" parent="InsideLights" index="4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.875182, 3.22627, 8.26756)
-light_color = Color(0.807843, 0.866667, 1, 1)
-light_energy = 0.349
+[node name="InsideLight5" parent="InsideLights" index="4" instance=ExtResource("5_yj7su")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.875182, 3.22627, -8.16235)
 
-[node name="OmniLight3D6" type="OmniLight3D" parent="InsideLights" index="5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.875182, 3.22627, -2.09547)
-light_color = Color(0.807843, 0.866667, 1, 1)
-light_energy = 0.349
+[node name="InsideLight6" parent="InsideLights" index="5" instance=ExtResource("5_yj7su")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.875182, 3.22627, 8.00601)
 
-[node name="OmniLight3D9" type="OmniLight3D" parent="InsideLights" index="6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02547, 3.22627, 2.06481)
-light_color = Color(0.807843, 0.866667, 1, 1)
-light_energy = 0.349
+[node name="InsideLight7" parent="InsideLights" index="6" instance=ExtResource("5_yj7su")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.88765, 3.22627, 2.06481)
 
-[node name="OmniLight3D10" type="OmniLight3D" parent="InsideLights" index="7"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02547, 3.22627, 3.87437)
-light_color = Color(0.807843, 0.866667, 1, 1)
-light_energy = 0.349
+[node name="InsideLight8" parent="InsideLights" index="7" instance=ExtResource("5_yj7su")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.88765, 3.22627, 3.82923)
 
-[node name="OmniLight3D11" type="OmniLight3D" parent="InsideLights" index="8"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02547, 3.22627, -3.90503)
-light_color = Color(0.807843, 0.866667, 1, 1)
-light_energy = 0.349
+[node name="InsideLight9" parent="InsideLights" index="8" instance=ExtResource("5_yj7su")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.88765, 3.22627, -3.90002)
 
-[node name="OmniLight3D12" type="OmniLight3D" parent="InsideLights" index="9"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02547, 3.22627, -8.26768)
-light_color = Color(0.807843, 0.866667, 1, 1)
-light_energy = 0.349
+[node name="InsideLight10" parent="InsideLights" index="9" instance=ExtResource("5_yj7su")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.88765, 3.22627, -2.1356)
 
-[node name="OmniLight3D13" type="OmniLight3D" parent="InsideLights" index="10"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02547, 3.22627, 8.26756)
-light_color = Color(0.807843, 0.866667, 1, 1)
-light_energy = 0.349
+[node name="InsideLight11" parent="InsideLights" index="10" instance=ExtResource("5_yj7su")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.88765, 3.22627, -8.16235)
 
-[node name="OmniLight3D14" type="OmniLight3D" parent="InsideLights" index="11"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02547, 3.22627, -2.09547)
-light_color = Color(0.807843, 0.866667, 1, 1)
-light_energy = 0.349
+[node name="InsideLight12" parent="InsideLights" index="11" instance=ExtResource("5_yj7su")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.88765, 3.22627, 8.00601)
 
 [node name="DoorLights" type="Node3D" parent="." index="4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.03596, 0)
@@ -207,17 +177,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.03596, 0)
 [node name="OmniLight3D" type="OmniLight3D" parent="DoorLights" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.48873, 3.11952, 0.00732718)
 light_color = Color(1, 0.290196, 0, 1)
-light_energy = 0.812
+light_energy = 0.0
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="DoorLights" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.48873, 3.14132, 6.19084)
 light_color = Color(1, 0.290196, 0, 1)
-light_energy = 0.812
+light_energy = 0.0
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="DoorLights" index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.48873, 3.09954, -6.16723)
 light_color = Color(1, 0.290196, 0, 1)
-light_energy = 0.812
+light_energy = 0.0
 
 [node name="LeftDoorParent" type="Node3D" parent="." index="5"]
 
