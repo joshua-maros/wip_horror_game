@@ -1,11 +1,21 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3]
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://diqb0t73l3i7e"]
 
 [ext_resource type="Texture2D" uid="uid://dh2bbqd2fid56" path="res://Lobby/Tiles/TileNormal.png" id="2_1wnao"]
+[ext_resource type="Texture2D" uid="uid://n73ae5ivsr73" path="res://Lobby/Base/Base_worn-painted-metal_roughness.png" id="2_b30e0"]
+
+[sub_resource type="Gradient" id="Gradient_tg1ew"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ar68y"]
+gradient = SubResource("Gradient_tg1ew")
+fill_from = Vector2(0.807692, 0.128205)
 
 [resource]
 albedo_color = Color(0.0392157, 0.0392157, 0.0392157, 1)
-roughness = 0.66
+roughness_texture = ExtResource("2_b30e0")
+roughness_texture_channel = 1
 normal_enabled = true
 normal_scale = -2.52
 normal_texture = ExtResource("2_1wnao")
 heightmap_scale = 5.855
+detail_uv_layer = 1
+detail_albedo = SubResource("GradientTexture2D_ar68y")

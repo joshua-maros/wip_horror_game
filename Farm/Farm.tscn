@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cmodibp2mtuwe"]
+[gd_scene load_steps=19 format=3 uid="uid://cmodibp2mtuwe"]
 
 [ext_resource type="PackedScene" uid="uid://cxcbr4rc073fl" path="res://Shared/Player/Player.tscn" id="1_3tjwb"]
 [ext_resource type="Texture2D" uid="uid://byidb4fctdwfw" path="res://Farm/TempNoise.tres" id="1_5dbxu"]
@@ -35,6 +35,10 @@ uv1_scale = Vector3(14.248, 14.248, 14.248)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rfjhy"]
 size = Vector3(30, 0.05, 30)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3r1ge"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v315e"]
 
 [node name="Farm" type="Node3D"]
 
@@ -133,3 +137,30 @@ next_level = "res://Lobby/DimLobby.tscn"
 fade = NodePath("../FadeToBlack")
 
 [node name="FadeToBlack" parent="." instance=ExtResource("10_suyfr")]
+
+[node name="Ramp" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.3012, 0.242769, 0, -0.826141, 0.970084, 0, 0, 0, 1, -9.66296, 0.110577, -0.941527)
+mesh = SubResource("BoxMesh_3r1ge")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ramp"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ramp/StaticBody3D"]
+shape = SubResource("BoxShape3D_v315e")
+
+[node name="Ramp2" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.3012, 0.242769, 0, -0.826141, 0.970084, 0, 0, 0, 1, -9.66296, 0.110577, 5.27433)
+mesh = SubResource("BoxMesh_3r1ge")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ramp2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ramp2/StaticBody3D"]
+shape = SubResource("BoxShape3D_v315e")
+
+[node name="Ramp3" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.3012, 0.242769, 0, -0.826141, 0.970084, 0, 0, 0, 1, -9.66296, 0.110577, -7.07412)
+mesh = SubResource("BoxMesh_3r1ge")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ramp3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ramp3/StaticBody3D"]
+shape = SubResource("BoxShape3D_v315e")

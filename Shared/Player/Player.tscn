@@ -8,10 +8,10 @@
 radius = 0.3
 height = 1.8
 
-[node name="Player" type="AnimatableBody3D" node_paths=PackedStringArray("camera", "held_parent", "crosshair_ray")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0463732, 0)
+[node name="Player" type="AnimatableBody3D" node_paths=PackedStringArray("camera", "held_parent", "crosshair_ray", "step_ray_1", "step_ray_2", "step_ray_3")]
 collision_layer = 3
 collision_mask = 3
+input_ray_pickable = false
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
@@ -21,6 +21,9 @@ script = ExtResource("1_lyr5h")
 camera = NodePath("Camera")
 held_parent = NodePath("Camera/HeldParent")
 crosshair_ray = NodePath("Camera/CrosshairRay")
+step_ray_1 = NodePath("StepRay1")
+step_ray_2 = NodePath("StepRay2")
+step_ray_3 = NodePath("StepRay3")
 
 [node name="Camera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
@@ -33,5 +36,20 @@ collision_mask = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.920145, -0.793098, -1.44213)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.849708, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.905379, 0)
 shape = SubResource("CapsuleShape3D_47ln8")
+
+[node name="StepRay1" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0270454, -0.283847)
+target_position = Vector3(0, -2, 0)
+collision_mask = 3
+
+[node name="StepRay2" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.259473, 0.0270454, 0.175572)
+target_position = Vector3(0, -2, 0)
+collision_mask = 3
+
+[node name="StepRay3" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.240988, 0.0270454, 0.175572)
+target_position = Vector3(0, -2, 0)
+collision_mask = 3
