@@ -1,0 +1,81 @@
+[gd_scene load_steps=11 format=3 uid="uid://mr5u6mrmlpdx"]
+
+[ext_resource type="PackedScene" uid="uid://cxcbr4rc073fl" path="res://Shared/Player/Player.tscn" id="1_ewrsh"]
+[ext_resource type="PackedScene" uid="uid://bbakqgrml2d8v" path="res://Shared/Train/Train.tscn" id="3_cu1p2"]
+[ext_resource type="Script" path="res://Shared/LevelTransitionController.gd" id="4_bh33c"]
+[ext_resource type="PackedScene" uid="uid://ccj3a2lf861mv" path="res://Shared/FadeToBlack.tscn" id="5_41hxp"]
+[ext_resource type="PackedScene" uid="uid://dapudfbgmfqri" path="res://Lobby/Variants/Bright.tscn" id="5_d41af"]
+
+[sub_resource type="Curve" id="Curve_dyoxg"]
+_data = [Vector2(0, 0), 0.0, 1.14805, 0, 0, Vector2(0.987179, 0.981818), 0.850909, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_78bjp"]
+_data = [Vector2(0, 0), 0.0, 0.992727, 0, 0, Vector2(1, 1), 0.975, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_5vpu1"]
+_data = [Vector2(0, 0), 0.0, 0.689926, 0, 0, Vector2(1, 1), 1.3852, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_i3eqi"]
+curve_x = SubResource("Curve_dyoxg")
+curve_y = SubResource("Curve_78bjp")
+curve_z = SubResource("Curve_5vpu1")
+
+[sub_resource type="Environment" id="Environment_drgu1"]
+background_mode = 1
+ambient_light_source = 2
+tonemap_mode = 2
+tonemap_exposure = 1.11
+tonemap_white = 2.73
+ssr_fade_in = 0.102453
+ssr_depth_tolerance = 0.3
+ssao_enabled = true
+ssao_intensity = 4.25
+ssil_intensity = 11.42
+sdfgi_read_sky_light = false
+sdfgi_bounce_feedback = 1.66
+sdfgi_min_cell_size = 0.05
+sdfgi_cascade0_distance = 3.2
+sdfgi_max_distance = 51.2
+glow_enabled = true
+glow_intensity = 0.18
+glow_strength = 0.87
+glow_bloom = 0.56
+glow_blend_mode = 0
+glow_hdr_threshold = 2.0
+fog_enabled = true
+fog_light_color = Color(0.027451, 0.0352941, 0.0431373, 1)
+fog_density = 0.0671
+volumetric_fog_density = 0.059
+volumetric_fog_albedo = Color(0.392157, 0.392157, 0.392157, 1)
+volumetric_fog_gi_inject = 0.76
+volumetric_fog_anisotropy = 0.29
+adjustment_color_correction = SubResource("CurveXYZTexture_i3eqi")
+
+[node name="CleanLobby" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_ewrsh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.0408, 0.852012, 1.95381)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_drgu1")
+
+[node name="Train" parent="." instance=ExtResource("3_cu1p2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.821036, -0.123827, -5.97169)
+
+[node name="SpawnPoint" type="Node3D" parent="Train"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.898073, 0)
+
+[node name="LevelTransitionController" type="Node" parent="." node_paths=PackedStringArray("player", "train", "train_spawn_point", "fade")]
+script = ExtResource("4_bh33c")
+player = NodePath("../Player")
+train = NodePath("../Train")
+train_spawn_point = NodePath("../Train/SpawnPoint")
+next_level = "res://Farm/Farm.tscn"
+fade = NodePath("../FadeToBlack")
+
+[node name="FadeToBlack" parent="." instance=ExtResource("5_41hxp")]
+
+[node name="Base" parent="." instance=ExtResource("5_d41af")]

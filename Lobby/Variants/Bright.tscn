@@ -1,9 +1,10 @@
-[gd_scene load_steps=22 format=3]
+[gd_scene load_steps=23 format=3 uid="uid://dapudfbgmfqri"]
 
-[ext_resource type="PackedScene" uid="uid://cqepb12lq2a70" path="res://Lobby/Base/Base.glb" id="1_r0mak"]
-[ext_resource type="PackedScene" path="res://scenes/objects/Lobby/FunctioningLight.tscn" id="2_ce78n"]
-[ext_resource type="Material" path="res://Lobby/Base/Materials/Ground.tres" id="2_d527q"]
-[ext_resource type="Material" path="res://Lobby/Base/Materials/Beams.tres" id="3_x56jy"]
+[ext_resource type="PackedScene" uid="uid://b3tb5bl1dra40" path="res://Lobby/Base/Base.glb" id="1_r0mak"]
+[ext_resource type="Material" uid="uid://dcbdtko170juk" path="res://Lobby/Base/Materials/Ground.tres" id="2_d527q"]
+[ext_resource type="PackedScene" uid="uid://du7xxxb6uscbw" path="res://Lobby/Lights/BrightLight.tscn" id="2_ifefy"]
+[ext_resource type="Material" uid="uid://dfpp6d8uyh80a" path="res://Lobby/Base/Materials/Beams.tres" id="3_x56jy"]
+[ext_resource type="PackedScene" path="res://Lobby/Tiles/Tiles.tscn" id="5_g8gua"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_784mv"]
 data = PackedVector3Array(8.1384, -0.6803, 12.9279, 8.1384, 0.4957, 38.7836, 8.1384, 0.4957, 12.9279, 8.1384, -0.6803, 12.9279, 8.1384, -0.6803, 38.7836, 8.1384, 0.4957, 38.7836, -8.1384, 0.4957, 38.7836, -8.1384, -0.6803, 59.0773, -8.1384, -0.6803, 38.7836, -8.1384, 0.4957, 38.7836, -8.1384, 0.4957, 59.0773, -8.1384, -0.6803, 59.0773, 8.1384, 0.4957, 0, -8.1384, 0.4957, 12.9279, -8.1384, 0.4957, 0, 8.1384, 0.4957, 0, 8.1384, 0.4957, 12.9279, -8.1384, 0.4957, 12.9279, 8.1384, -0.6803, 0, 8.1384, 0.4957, 12.9279, 8.1384, 0.4957, 0, 8.1384, -0.6803, 0, 8.1384, -0.6803, 12.9279, 8.1384, 0.4957, 12.9279, -8.1384, -0.6803, 38.7836, -8.1384, 0.4957, 12.9279, -8.1384, 0.4957, 38.7836, -8.1384, -0.6803, 38.7836, -8.1384, -0.6803, 12.9279, -8.1384, 0.4957, 12.9279, 4.9671, 0.4957, 18.281, 8.1384, 0.4957, 38.7836, 4.9671, 0.4957, 34.5429, 4.9671, 0.4957, 18.281, 8.1384, 0.4957, 12.9279, 8.1384, 0.4957, 38.7836, 4.9671, 0.4957, 34.5429, -8.1384, 0.4957, 38.7836, -4.9671, 0.4957, 34.5429, 4.9671, 0.4957, 34.5429, 8.1384, 0.4957, 38.7836, -8.1384, 0.4957, 38.7836, -4.9671, 0.4957, 34.5429, -8.1384, 0.4957, 12.9279, -4.9671, 0.4957, 18.281, -4.9671, 0.4957, 34.5429, -8.1384, 0.4957, 38.7836, -8.1384, 0.4957, 12.9279, -4.9671, 0.4957, 18.281, 8.1384, 0.4957, 12.9279, 4.9671, 0.4957, 18.281, -4.9671, 0.4957, 18.281, -8.1384, 0.4957, 12.9279, 8.1384, 0.4957, 12.9279, 8.1384, -0.6803, 59.0773, -8.1384, 0.4957, 59.0773, 8.1384, 0.4957, 59.0773, 8.1384, -0.6803, 59.0773, -8.1384, -0.6803, 59.0773, -8.1384, 0.4957, 59.0773, 8.1384, 0.4957, 38.7836, -8.1384, 0.4957, 59.0773, -8.1384, 0.4957, 38.7836, 8.1384, 0.4957, 38.7836, 8.1384, 0.4957, 59.0773, -8.1384, 0.4957, 59.0773, 8.1384, -0.6803, 38.7836, 8.1384, 0.4957, 59.0773, 8.1384, 0.4957, 38.7836, 8.1384, -0.6803, 38.7836, 8.1384, -0.6803, 59.0773, 8.1384, 0.4957, 59.0773, -8.1384, -0.6803, 12.9279, -8.1384, 0.4957, 0, -8.1384, 0.4957, 12.9279, -8.1384, -0.6803, 12.9279, -8.1384, -0.6803, 0, -8.1384, 0.4957, 0, -4.9671, 0.4957, 18.281, 5.048, -0.0203, 18.281, -5.048, -0.0203, 18.281, -4.9671, 0.4957, 18.281, 4.9671, 0.4957, 18.281, 5.048, -0.0203, 18.281, 4.9671, 0.4957, 34.5429, -5.048, -0.0203, 34.5429, 5.048, -0.0203, 34.5429, 4.9671, 0.4957, 34.5429, -4.9671, 0.4957, 34.5429, -5.048, -0.0203, 34.5429, -4.9671, 0.4957, 34.5429, -5.048, -0.0203, 18.281, -5.048, -0.0203, 34.5429, -4.9671, 0.4957, 34.5429, -4.9671, 0.4957, 18.281, -5.048, -0.0203, 18.281, 4.9671, 0.4957, 18.281, 5.048, -0.0203, 34.5429, 5.048, -0.0203, 18.281, 4.9671, 0.4957, 18.281, 4.9671, 0.4957, 34.5429, 5.048, -0.0203, 34.5429, 5.048, -0.0203, 18.281, 5.048, -1.054, 41.0794, 5.048, -2.1073, 18.281, 5.048, -0.0203, 18.281, 5.048, -0.0203, 34.5429, 5.048, -1.054, 41.0794, -5.048, -0.0203, 18.281, 5.048, -2.1073, 18.281, -5.048, -2.1073, 18.281, -5.048, -0.0203, 18.281, 5.048, -0.0203, 18.281, 5.048, -2.1073, 18.281, 5.048, -0.0203, 34.5429, -5.048, -1.054, 41.0794, 5.048, -1.054, 41.0794, 5.048, -0.0203, 34.5429, -5.048, -0.0203, 34.5429, -5.048, -1.054, 41.0794, -5.048, -0.0203, 34.5429, -5.048, -2.1073, 18.281, -5.048, -1.054, 41.0794, -5.048, -0.0203, 34.5429, -5.048, -0.0203, 18.281, -5.048, -2.1073, 18.281, 8.1384, -0.6803, -12.9279, 8.1384, 0.4957, -38.7836, 8.1384, -0.6803, -38.7836, 8.1384, -0.6803, -12.9279, 8.1384, 0.4957, -12.9279, 8.1384, 0.4957, -38.7836, -8.1384, 0.4957, -38.7836, -8.1384, -0.6803, -59.0773, -8.1384, 0.4957, -59.0773, -8.1384, 0.4957, -38.7836, -8.1384, -0.6803, -38.7836, -8.1384, -0.6803, -59.0773, 8.1384, 0.4957, 0, -8.1384, 0.4957, -12.9279, 8.1384, 0.4957, -12.9279, 8.1384, 0.4957, 0, -8.1384, 0.4957, 0, -8.1384, 0.4957, -12.9279, 8.1384, -0.6803, 0, 8.1384, 0.4957, -12.9279, 8.1384, -0.6803, -12.9279, 8.1384, -0.6803, 0, 8.1384, 0.4957, 0, 8.1384, 0.4957, -12.9279, -8.1384, -0.6803, -38.7836, -8.1384, 0.4957, -12.9279, -8.1384, -0.6803, -12.9279, -8.1384, -0.6803, -38.7836, -8.1384, 0.4957, -38.7836, -8.1384, 0.4957, -12.9279, 4.9671, 0.4957, -18.281, 8.1384, 0.4957, -38.7836, 8.1384, 0.4957, -12.9279, 4.9671, 0.4957, -18.281, 4.9671, 0.4957, -34.5429, 8.1384, 0.4957, -38.7836, 4.9671, 0.4957, -34.5429, -8.1384, 0.4957, -38.7836, 8.1384, 0.4957, -38.7836, 4.9671, 0.4957, -34.5429, -4.9671, 0.4957, -34.5429, -8.1384, 0.4957, -38.7836, -4.9671, 0.4957, -34.5429, -8.1384, 0.4957, -12.9279, -8.1384, 0.4957, -38.7836, -4.9671, 0.4957, -34.5429, -4.9671, 0.4957, -18.281, -8.1384, 0.4957, -12.9279, -4.9671, 0.4957, -18.281, 8.1384, 0.4957, -12.9279, -8.1384, 0.4957, -12.9279, -4.9671, 0.4957, -18.281, 4.9671, 0.4957, -18.281, 8.1384, 0.4957, -12.9279, 8.1384, -0.6803, -59.0773, -8.1384, 0.4957, -59.0773, -8.1384, -0.6803, -59.0773, 8.1384, -0.6803, -59.0773, 8.1384, 0.4957, -59.0773, -8.1384, 0.4957, -59.0773, 8.1384, 0.4957, -38.7836, -8.1384, 0.4957, -59.0773, 8.1384, 0.4957, -59.0773, 8.1384, 0.4957, -38.7836, -8.1384, 0.4957, -38.7836, -8.1384, 0.4957, -59.0773, 8.1384, -0.6803, -38.7836, 8.1384, 0.4957, -59.0773, 8.1384, -0.6803, -59.0773, 8.1384, -0.6803, -38.7836, 8.1384, 0.4957, -38.7836, 8.1384, 0.4957, -59.0773, -8.1384, -0.6803, -12.9279, -8.1384, 0.4957, 0, -8.1384, -0.6803, 0, -8.1384, -0.6803, -12.9279, -8.1384, 0.4957, -12.9279, -8.1384, 0.4957, 0, -4.9671, 0.4957, -18.281, 5.048, -0.0203, -18.281, 4.9671, 0.4957, -18.281, -4.9671, 0.4957, -18.281, -5.048, -0.0203, -18.281, 5.048, -0.0203, -18.281, 4.9671, 0.4957, -34.5429, -5.048, -0.0203, -34.5429, -4.9671, 0.4957, -34.5429, 4.9671, 0.4957, -34.5429, 5.048, -0.0203, -34.5429, -5.048, -0.0203, -34.5429, -4.9671, 0.4957, -34.5429, -5.048, -0.0203, -18.281, -4.9671, 0.4957, -18.281, -4.9671, 0.4957, -34.5429, -5.048, -0.0203, -34.5429, -5.048, -0.0203, -18.281, 4.9671, 0.4957, -18.281, 5.048, -0.0203, -34.5429, 4.9671, 0.4957, -34.5429, 4.9671, 0.4957, -18.281, 5.048, -0.0203, -18.281, 5.048, -0.0203, -34.5429, 5.048, -0.0203, -18.281, 5.048, -1.054, -41.0794, 5.048, -0.0203, -34.5429, 5.048, -0.0203, -18.281, 5.048, -2.1073, -18.281, 5.048, -1.054, -41.0794, -5.048, -0.0203, -18.281, 5.048, -2.1073, -18.281, 5.048, -0.0203, -18.281, -5.048, -0.0203, -18.281, -5.048, -2.1073, -18.281, 5.048, -2.1073, -18.281, 5.048, -0.0203, -34.5429, -5.048, -1.054, -41.0794, -5.048, -0.0203, -34.5429, 5.048, -0.0203, -34.5429, 5.048, -1.054, -41.0794, -5.048, -1.054, -41.0794, -5.048, -0.0203, -34.5429, -5.048, -2.1073, -18.281, -5.048, -0.0203, -18.281, -5.048, -0.0203, -34.5429, -5.048, -1.054, -41.0794, -5.048, -2.1073, -18.281)
@@ -58,7 +59,123 @@ data = PackedVector3Array(0.0135, -5.7601, 5.5167, 2.6736, -5.7601, 5.9743, 2.85
 
 [node name="Base" instance=ExtResource("1_r0mak")]
 
-[node name="Cube" parent="." index="1"]
+[node name="Lights1" type="Node3D" parent="." index="0"]
+
+[node name="Light" parent="Lights1" index="0" instance=ExtResource("2_ifefy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4892, 7.44824, 0.850768)
+
+[node name="Light6" parent="Lights1" index="1" instance=ExtResource("2_ifefy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4892, 7.44824, -5.54923)
+
+[node name="Light7" parent="Lights1" index="2" instance=ExtResource("2_ifefy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4892, 7.44824, -11.9492)
+
+[node name="Light8" parent="Lights1" index="3" instance=ExtResource("2_ifefy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4892, 7.44824, -18.3492)
+
+[node name="Light9" parent="Lights1" index="4" instance=ExtResource("2_ifefy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4892, 7.44824, -24.7492)
+
+[node name="Light10" parent="Lights1" index="5" instance=ExtResource("2_ifefy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4892, 7.44824, -31.1492)
+
+[node name="Light11" parent="Lights1" index="6" instance=ExtResource("2_ifefy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4892, 7.44824, -37.5492)
+
+[node name="Light2" parent="Lights1" index="7" instance=ExtResource("2_ifefy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4892, 7.44824, 7.25077)
+
+[node name="Light3" parent="Lights1" index="8" instance=ExtResource("2_ifefy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4892, 7.44824, 13.6508)
+
+[node name="Light4" parent="Lights1" index="9" instance=ExtResource("2_ifefy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4892, 7.44824, 20.0508)
+
+[node name="Light5" parent="Lights1" index="10" instance=ExtResource("2_ifefy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4892, 7.44824, 26.4508)
+
+[node name="Light12" parent="Lights1" index="11" instance=ExtResource("2_ifefy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4892, 7.44824, 32.8508)
+
+[node name="Lights2" type="Node3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6979, -1.59873, 0)
+
+[node name="Light" parent="Lights2" index="0" instance=ExtResource("2_ifefy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4892, 7.44824, 0.850768)
+
+[node name="Light6" parent="Lights2" index="1" instance=ExtResource("2_ifefy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4892, 7.44824, -5.54923)
+
+[node name="Light7" parent="Lights2" index="2" instance=ExtResource("2_ifefy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4892, 7.44824, -11.9492)
+
+[node name="Light8" parent="Lights2" index="3" instance=ExtResource("2_ifefy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4892, 7.44824, -18.3492)
+
+[node name="Light9" parent="Lights2" index="4" instance=ExtResource("2_ifefy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4892, 7.44824, -24.7492)
+
+[node name="Light10" parent="Lights2" index="5" instance=ExtResource("2_ifefy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4892, 7.44824, -31.1492)
+
+[node name="Light11" parent="Lights2" index="6" instance=ExtResource("2_ifefy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4892, 7.44824, -37.5492)
+
+[node name="Light2" parent="Lights2" index="7" instance=ExtResource("2_ifefy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4892, 7.44824, 7.25077)
+
+[node name="Light3" parent="Lights2" index="8" instance=ExtResource("2_ifefy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4892, 7.44824, 13.6508)
+
+[node name="Light4" parent="Lights2" index="9" instance=ExtResource("2_ifefy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4892, 7.44824, 20.0508)
+
+[node name="Light5" parent="Lights2" index="10" instance=ExtResource("2_ifefy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4892, 7.44824, 26.4508)
+
+[node name="Light12" parent="Lights2" index="11" instance=ExtResource("2_ifefy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4892, 7.44824, 32.8508)
+
+[node name="Lights3" type="Node3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.1166, -1.59873, 0)
+
+[node name="Light" parent="Lights3" index="0" instance=ExtResource("2_ifefy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4892, 7.44824, 0.850768)
+
+[node name="Light6" parent="Lights3" index="1" instance=ExtResource("2_ifefy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4892, 7.44824, -5.54923)
+
+[node name="Light7" parent="Lights3" index="2" instance=ExtResource("2_ifefy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4892, 7.44824, -11.9492)
+
+[node name="Light8" parent="Lights3" index="3" instance=ExtResource("2_ifefy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4892, 7.44824, -18.3492)
+
+[node name="Light9" parent="Lights3" index="4" instance=ExtResource("2_ifefy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4892, 7.44824, -24.7492)
+
+[node name="Light10" parent="Lights3" index="5" instance=ExtResource("2_ifefy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4892, 7.44824, -31.1492)
+
+[node name="Light11" parent="Lights3" index="6" instance=ExtResource("2_ifefy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4892, 7.44824, -37.5492)
+
+[node name="Light2" parent="Lights3" index="7" instance=ExtResource("2_ifefy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4892, 7.44824, 7.25077)
+
+[node name="Light3" parent="Lights3" index="8" instance=ExtResource("2_ifefy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4892, 7.44824, 13.6508)
+
+[node name="Light4" parent="Lights3" index="9" instance=ExtResource("2_ifefy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4892, 7.44824, 20.0508)
+
+[node name="Light5" parent="Lights3" index="10" instance=ExtResource("2_ifefy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4892, 7.44824, 26.4508)
+
+[node name="Light12" parent="Lights3" index="11" instance=ExtResource("2_ifefy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4892, 7.44824, 32.8508)
+
+[node name="Cube" parent="." index="4"]
 surface_material_override/0 = ExtResource("2_d527q")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Cube" index="0"]
@@ -76,7 +193,7 @@ shape = SubResource("ConvexPolygonShape3D_albj8")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cube002/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_hdhs0")
 
-[node name="Cube001" parent="." index="4"]
+[node name="Cube001" parent="." index="7"]
 surface_material_override/0 = ExtResource("3_x56jy")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Cube001" index="0"]
@@ -89,7 +206,7 @@ shape = SubResource("ConcavePolygonShape3D_bdd2t")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cube008/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_1bp3m")
 
-[node name="Cube009" parent="." index="10"]
+[node name="Cube009" parent="." index="13"]
 surface_material_override/0 = ExtResource("3_x56jy")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Cube009" index="0"]
@@ -152,160 +269,4 @@ shape = SubResource("ConcavePolygonShape3D_5lx1w")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cube025/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_x783b")
 
-[node name="Lights" type="Node3D" parent="." index="42"]
-
-[node name="Light" parent="Lights" index="0" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, 7.25332)
-
-[node name="Light2" parent="Lights" index="1" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12362, 6.29144, 7.25332)
-
-[node name="Light3" parent="Lights" index="2" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, 13.9651)
-
-[node name="Light4" parent="Lights" index="3" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12362, 6.29144, 13.9651)
-
-[node name="Light5" parent="Lights" index="4" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, 20.3309)
-
-[node name="Light6" parent="Lights" index="5" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12362, 6.29144, 20.3309)
-
-[node name="Light7" parent="Lights" index="6" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, 26.9923)
-
-[node name="Light8" parent="Lights" index="7" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12362, 6.29144, 26.9923)
-
-[node name="Light9" parent="Lights" index="8" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, 0.47544)
-
-[node name="Light10" parent="Lights" index="9" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12362, 6.29144, 0.47544)
-
-[node name="Light11" parent="Lights" index="10" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, -5.91792)
-
-[node name="Light12" parent="Lights" index="11" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12362, 6.29144, -5.91792)
-
-[node name="Light13" parent="Lights" index="12" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, -12.5354)
-
-[node name="Light14" parent="Lights" index="13" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12362, 6.29144, -12.5354)
-
-[node name="Light15" parent="Lights" index="14" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, -19.0483)
-
-[node name="Light16" parent="Lights" index="15" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12362, 6.29144, -19.0483)
-
-[node name="Light17" parent="Lights" index="16" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, -25.496)
-
-[node name="Light18" parent="Lights" index="17" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12362, 6.29144, -25.496)
-
-[node name="Light19" parent="Lights" index="18" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, -32.2249)
-
-[node name="Light20" parent="Lights" index="19" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12362, 6.29144, -32.2249)
-
-[node name="Lights2" type="Node3D" parent="." index="43"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 21.0739, 0, 1.12888)
-
-[node name="Light" parent="Lights2" index="0" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, 7.25332)
-
-[node name="Light2" parent="Lights2" index="1" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12362, 6.29144, 7.25332)
-
-[node name="Light3" parent="Lights2" index="2" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, 13.9651)
-
-[node name="Light4" parent="Lights2" index="3" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12362, 6.29144, 13.9651)
-
-[node name="Light5" parent="Lights2" index="4" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, 20.3309)
-
-[node name="Light6" parent="Lights2" index="5" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12362, 6.29144, 20.3309)
-
-[node name="Light7" parent="Lights2" index="6" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, 26.9923)
-
-[node name="Light8" parent="Lights2" index="7" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12362, 6.29144, 26.9923)
-
-[node name="Light9" parent="Lights2" index="8" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, 0.47544)
-
-[node name="Light10" parent="Lights2" index="9" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12362, 6.29144, 0.47544)
-
-[node name="Light11" parent="Lights2" index="10" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, -5.91792)
-
-[node name="Light12" parent="Lights2" index="11" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12362, 6.29144, -5.91792)
-
-[node name="Light13" parent="Lights2" index="12" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, -12.5354)
-
-[node name="Light14" parent="Lights2" index="13" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12362, 6.29144, -12.5354)
-
-[node name="Light15" parent="Lights2" index="14" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, -19.0483)
-
-[node name="Light16" parent="Lights2" index="15" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12362, 6.29144, -19.0483)
-
-[node name="Light17" parent="Lights2" index="16" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, -25.496)
-
-[node name="Light18" parent="Lights2" index="17" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12362, 6.29144, -25.496)
-
-[node name="Light19" parent="Lights2" index="18" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, -32.2249)
-
-[node name="Light20" parent="Lights2" index="19" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12362, 6.29144, -32.2249)
-
-[node name="Lights3" type="Node3D" parent="." index="44"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 13.2765, 0.918114, 1.12888)
-
-[node name="Light" parent="Lights3" index="0" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, 7.25332)
-
-[node name="Light3" parent="Lights3" index="1" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, 13.9651)
-
-[node name="Light5" parent="Lights3" index="2" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, 20.3309)
-
-[node name="Light7" parent="Lights3" index="3" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, 26.9923)
-
-[node name="Light9" parent="Lights3" index="4" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, 0.47544)
-
-[node name="Light11" parent="Lights3" index="5" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, -5.91792)
-
-[node name="Light13" parent="Lights3" index="6" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, -12.5354)
-
-[node name="Light15" parent="Lights3" index="7" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, -19.0483)
-
-[node name="Light17" parent="Lights3" index="8" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, -25.496)
-
-[node name="Light19" parent="Lights3" index="9" instance=ExtResource("2_ce78n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85934, 6.63829, -32.2249)
+[node name="Tiles" parent="." index="45" instance=ExtResource("5_g8gua")]

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://du7xxxb6uscbw"]
+
+[ext_resource type="PackedScene" uid="uid://vwv6x8dqiw3d" path="res://Lobby/Lights/Light.glb" id="1_8vj40"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_el4hs"]
+shading_mode = 0
+albedo_color = Color(4, 4.6, 5.2, 1)
+
+[node name="Light" instance=ExtResource("1_8vj40")]
+
+[node name="Cylinder024" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_el4hs")
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, -0.000336521, -1, 0, 1, -0.000336521, 0, -2.007, 0)
+light_color = Color(0.878431, 0.909804, 1, 1)
+light_energy = 0.867
+light_size = 0.047
+light_bake_mode = 1
+omni_range = 17.198
