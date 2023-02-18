@@ -4,23 +4,22 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://jw8f2vi5s7ah"
 path.s3tc="res://.godot/imported/TrainCar_InnerTrain_OuterTrain_BaseColor.png-f5bd71e4a9e14ce33fc8586b5cd59c80.s3tc.ctex"
-path.etc2="res://.godot/imported/TrainCar_InnerTrain_OuterTrain_BaseColor.png-f5bd71e4a9e14ce33fc8586b5cd59c80.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc", "etc2"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Shared/Train/TrainCar_InnerTrain_OuterTrain_BaseColor.png"
-dest_files=["res://.godot/imported/TrainCar_InnerTrain_OuterTrain_BaseColor.png-f5bd71e4a9e14ce33fc8586b5cd59c80.s3tc.ctex", "res://.godot/imported/TrainCar_InnerTrain_OuterTrain_BaseColor.png-f5bd71e4a9e14ce33fc8586b5cd59c80.etc2.ctex"]
+dest_files=["res://.godot/imported/TrainCar_InnerTrain_OuterTrain_BaseColor.png-f5bd71e4a9e14ce33fc8586b5cd59c80.s3tc.ctex"]
 
 [params]
 
 compress/mode=2
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true

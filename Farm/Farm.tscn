@@ -82,7 +82,7 @@ on = false
 
 [sub_resource type="Resource" id="Resource_mt8cq"]
 script = ExtResource("13_kxw2r")
-trigger_on = null
+trigger_on = 1
 
 [sub_resource type="Resource" id="Resource_5a5xo"]
 script = ExtResource("11_a0kno")
@@ -196,7 +196,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.08787, 0.0252627, -4.6997)
 
 [node name="Train" parent="." instance=ExtResource("7_si431")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5928, 0.0249996, -0.94083)
-actions = [SubResource("Resource_8r0kh"), SubResource("Resource_t2bcm"), SubResource("Resource_or6kf"), SubResource("Resource_yifd1"), SubResource("Resource_07216"), SubResource("Resource_psm28"), SubResource("Resource_a52ig"), SubResource("Resource_1vkwm"), SubResource("Resource_87ujp"), SubResource("Resource_4hvfc"), SubResource("Resource_mt8cq"), SubResource("Resource_5a5xo"), SubResource("Resource_xqe1n"), SubResource("Resource_02qfa"), SubResource("Resource_vh4at"), SubResource("Resource_kbttn"), SubResource("Resource_i8od4"), SubResource("Resource_yhxtn")]
+actions = Array[Resource("res://Shared/Train/TrainAction.gd")]([SubResource("Resource_8r0kh"), SubResource("Resource_t2bcm"), SubResource("Resource_or6kf"), SubResource("Resource_yifd1"), SubResource("Resource_07216"), SubResource("Resource_psm28"), SubResource("Resource_a52ig"), SubResource("Resource_1vkwm"), SubResource("Resource_87ujp"), SubResource("Resource_4hvfc"), SubResource("Resource_mt8cq"), SubResource("Resource_5a5xo"), SubResource("Resource_xqe1n"), SubResource("Resource_02qfa"), SubResource("Resource_vh4at"), SubResource("Resource_kbttn"), SubResource("Resource_i8od4"), SubResource("Resource_yhxtn")])
 
 [node name="SpawnPoint" type="Node3D" parent="Train"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.895862, 0)

@@ -11,6 +11,8 @@ class_name Train
 @export var door_anim_curve: Curve
 @export var noise: Noise
 @export var actions: Array[TrainAction]
+var next_actions: Array[TrainAction]
+@export var npc_train: bool
 @onready var cars: Array[TrainCar] = [car1, car2, car3]
 
 var last_player_pos = Vector3.ZERO
@@ -28,6 +30,7 @@ func _ready():
 	
 	for index in range(actions.size()):
 		actions[index] = actions[index].duplicate()
+		next_actions.push_back(actions[index].duplicate())
 	actions[0].start(self)
 
 func set_door_light_brightness(b: float):
@@ -47,6 +50,9 @@ func _process(delta: float):
 	actions[0]._process(delta, self)
 	while actions[0].is_done():
 		actions.pop_front()
+		if actions.size() == 0:
+			for action in next_actions:
+				actions.push_back(action.duplicate())
 		actions[0].start(self)
 	var offset = position - start_pos
 	var overlapping = player_detector.get_overlapping_bodies()

@@ -1,8 +1,9 @@
-[gd_scene load_steps=28 format=3 uid="uid://mr5u6mrmlpdx"]
+[gd_scene load_steps=37 format=3 uid="uid://mr5u6mrmlpdx"]
 
 [ext_resource type="PackedScene" uid="uid://cxcbr4rc073fl" path="res://Shared/Player/Player.tscn" id="1_ewrsh"]
 [ext_resource type="PackedScene" uid="uid://bbakqgrml2d8v" path="res://Shared/Train/Train.tscn" id="3_cu1p2"]
 [ext_resource type="Script" path="res://Shared/Train/MoveAction.gd" id="3_j13c0"]
+[ext_resource type="Script" path="res://Shared/Train/WaitForLevelEvent.gd" id="3_vpfml"]
 [ext_resource type="Script" path="res://Shared/Train/BlinkLightsAction.gd" id="4_5qwb0"]
 [ext_resource type="Script" path="res://Shared/LevelTransitionController.gd" id="4_bh33c"]
 [ext_resource type="PackedScene" uid="uid://ccj3a2lf861mv" path="res://Shared/FadeToBlack.tscn" id="5_41hxp"]
@@ -11,6 +12,7 @@
 [ext_resource type="Script" path="res://Shared/Train/MoveDoorsAction.gd" id="6_773ns"]
 [ext_resource type="PackedScene" uid="uid://dea77oq6c56ek" path="res://Lobby/NPC/NPC.tscn" id="6_vegd3"]
 [ext_resource type="Script" path="res://Shared/Train/WaitForPlayerAction.gd" id="7_3vttu"]
+[ext_resource type="Script" path="res://Shared/Train/WaitDelayAction.gd" id="8_6eg24"]
 
 [sub_resource type="Curve" id="Curve_dyoxg"]
 _data = [Vector2(0, 0), 0.0, 1.14805, 0, 0, Vector2(0.987179, 0.981818), 0.850909, 0.0, 0, 0]
@@ -60,9 +62,14 @@ volumetric_fog_gi_inject = 0.76
 volumetric_fog_anisotropy = 0.29
 adjustment_color_correction = SubResource("CurveXYZTexture_i3eqi")
 
+[sub_resource type="Resource" id="Resource_7dm0x"]
+script = ExtResource("3_vpfml")
+trigger_on = 0
+
 [sub_resource type="Resource" id="Resource_3bts6"]
 script = ExtResource("3_j13c0")
 direction = 0
+invert = true
 
 [sub_resource type="Resource" id="Resource_npkg8"]
 script = ExtResource("4_5qwb0")
@@ -101,11 +108,38 @@ on = null
 [sub_resource type="Resource" id="Resource_30xrf"]
 script = ExtResource("3_j13c0")
 direction = 1
+invert = false
+
+[sub_resource type="Resource" id="Resource_5ar2j"]
+script = ExtResource("8_6eg24")
+wait_for = 2.0
+
+[sub_resource type="Resource" id="Resource_vdxqh"]
+script = ExtResource("8_6eg24")
+wait_for = 5.0
+
+[sub_resource type="Resource" id="Resource_qurxw"]
+script = ExtResource("8_6eg24")
+wait_for = 2.0
+
+[sub_resource type="Resource" id="Resource_klsca"]
+script = ExtResource("8_6eg24")
+wait_for = 10.0
+
+[sub_resource type="Resource" id="Resource_02l0n"]
+script = ExtResource("3_j13c0")
+direction = 0
+invert = false
+
+[sub_resource type="Resource" id="Resource_72ycg"]
+script = ExtResource("3_j13c0")
+direction = 1
+invert = true
 
 [node name="CleanLobby" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_ewrsh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.0408, 0.852012, 1.95381)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.152, 0.852012, 1.95381)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_drgu1")
@@ -115,13 +149,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.8292, 0.89926, 8.72822)
 
 [node name="Train" parent="." instance=ExtResource("3_cu1p2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.821036, -0.123827, -5.97169)
-actions = [SubResource("Resource_3bts6"), SubResource("Resource_npkg8"), SubResource("Resource_ige62"), SubResource("Resource_v2232"), SubResource("Resource_ygwxm"), SubResource("Resource_du8bi"), SubResource("Resource_gurf6"), SubResource("Resource_pxxop"), SubResource("Resource_e70qe"), SubResource("Resource_vaowc"), SubResource("Resource_30xrf")]
+actions = Array[Resource("res://Shared/Train/TrainAction.gd")]([SubResource("Resource_7dm0x"), SubResource("Resource_3bts6"), SubResource("Resource_npkg8"), SubResource("Resource_ige62"), SubResource("Resource_v2232"), SubResource("Resource_ygwxm"), SubResource("Resource_du8bi"), SubResource("Resource_gurf6"), SubResource("Resource_pxxop"), SubResource("Resource_e70qe"), SubResource("Resource_vaowc"), SubResource("Resource_30xrf")])
 
-[node name="LevelTransitionController" type="Node" parent="." node_paths=PackedStringArray("player", "train", "train_spawn_point", "fade")]
+[node name="Train2" parent="." instance=ExtResource("3_cu1p2")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.71654, -0.123827, 0.491991)
+actions = Array[Resource("res://Shared/Train/TrainAction.gd")]([SubResource("Resource_3bts6"), SubResource("Resource_5ar2j"), SubResource("Resource_v2232"), SubResource("Resource_vdxqh"), SubResource("Resource_qurxw"), SubResource("Resource_e70qe"), SubResource("Resource_30xrf"), SubResource("Resource_klsca")])
+npc_train = true
+
+[node name="Train3" parent="." instance=ExtResource("3_cu1p2")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 23.8184, -0.123827, -2.50463)
+actions = Array[Resource("res://Shared/Train/TrainAction.gd")]([SubResource("Resource_klsca"), SubResource("Resource_02l0n"), SubResource("Resource_5ar2j"), SubResource("Resource_v2232"), SubResource("Resource_vdxqh"), SubResource("Resource_qurxw"), SubResource("Resource_e70qe"), SubResource("Resource_72ycg")])
+npc_train = true
+
+[node name="LevelTransitionController" type="Node" parent="." node_paths=PackedStringArray("player", "train", "fade")]
 script = ExtResource("4_bh33c")
 player = NodePath("../Player")
 train = NodePath("../Train")
-train_spawn_point = NodePath("../SpawnPoint")
 next_level = "res://Farm/Farm.tscn"
 fade = NodePath("../FadeToBlack")
 
@@ -130,4 +173,4 @@ fade = NodePath("../FadeToBlack")
 [node name="Base" parent="." instance=ExtResource("5_d41af")]
 
 [node name="NPC" parent="." instance=ExtResource("6_vegd3")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.68759, 1.85466, 0.486387)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.87611, 1.85466, 0.486387)

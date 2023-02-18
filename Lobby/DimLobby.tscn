@@ -144,7 +144,7 @@ max_distance = 41.2
 
 [node name="Train" parent="." instance=ExtResource("3_6v5dk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.821036, -0.123827, -5.97169)
-actions = [SubResource("Resource_o6mpb"), SubResource("Resource_pqd3e"), SubResource("Resource_4ax58"), SubResource("Resource_kp1d4"), SubResource("Resource_eedhs"), SubResource("Resource_fy32b"), SubResource("Resource_8dak0"), SubResource("Resource_vj81e"), SubResource("Resource_1bslt"), SubResource("Resource_87c1r"), SubResource("Resource_7idi5")]
+actions = Array[Resource("res://Shared/Train/TrainAction.gd")]([SubResource("Resource_o6mpb"), SubResource("Resource_pqd3e"), SubResource("Resource_4ax58"), SubResource("Resource_kp1d4"), SubResource("Resource_eedhs"), SubResource("Resource_fy32b"), SubResource("Resource_8dak0"), SubResource("Resource_vj81e"), SubResource("Resource_1bslt"), SubResource("Resource_87c1r"), SubResource("Resource_7idi5")])
 
 [node name="SpawnPoint" type="Node3D" parent="Train"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.898073, 0)

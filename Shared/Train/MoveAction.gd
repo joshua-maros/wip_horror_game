@@ -5,6 +5,7 @@ class_name MoveAction
 enum Direction {ARRIVE, DEPART}
 
 @export var direction: Direction
+@export var invert: bool
 var movement_timer: float
 var _done = false
 
@@ -17,15 +18,18 @@ func start(train: Train):
 		movement_timer = 0.0
 
 func _process(delta: float, train: Train):
-	var multiplier := 1.0
+	var multiplier := -1.0 if invert else 1.0
 	if direction == Direction.ARRIVE:
 		movement_timer -= delta
 		_done = movement_timer <= 0.0
 	elif direction == Direction.DEPART:
 		movement_timer += delta
-		if movement_timer > 18.0:
-			LevelLogic.transition_controller.advance_level = true
-	if _done:
+		if movement_timer > train.ACCELERATION_TIME:
+			if train.npc_train:
+				_done = true
+			else:
+				LevelLogic.transition_controller.advance_level = true
+	if _done and direction == Direction.ARRIVE:
 		train.position = train.parked_pos
 	else:
 		train.position = train.parked_pos \

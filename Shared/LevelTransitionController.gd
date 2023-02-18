@@ -8,7 +8,7 @@ signal level_event(name: LevelEvent)
 
 @export var player: Player
 @export var train: Train
-@export var train_spawn_point: Node3D
+@export var spawn_point: Node3D
 var advance_level := false
 @export_file("*scn") var next_level: String
 @export var fade: Control
@@ -30,8 +30,8 @@ func trigger_level_event(name: LevelEvent):
 func _process(delta):
 	if initial_setup_frames > 0:
 		initial_setup_frames -= 1
-		if initial_setup_frames == 0:
-			player.global_transform = train_spawn_point.global_transform
+		if initial_setup_frames == 0 and spawn_point:
+			player.global_transform = spawn_point.global_transform
 	elif fade_in < 1.0:
 		fade_in += delta / fade_time
 		fade_internal.color.a = max(1.0 - fade_in, 0.0)

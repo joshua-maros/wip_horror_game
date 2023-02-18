@@ -12,4 +12,4 @@ func on_event(event: LevelTransitionController.LevelEvent):
 	done = done or event == trigger_on
 
 func is_done() -> bool:
-	return LevelLogic.transition_controller.train_can_leave
+	return done

@@ -41,7 +41,7 @@ car2 = NodePath("TrainCar2")
 car3 = NodePath("TrainCar3")
 door_anim_curve = SubResource("Curve_8b7ed")
 noise = SubResource("FastNoiseLite_dy30p")
-actions = [SubResource("Resource_gja4x"), SubResource("Resource_82ij6"), SubResource("Resource_16qjw")]
+actions = Array[Resource("res://Shared/Train/TrainAction.gd")]([SubResource("Resource_gja4x"), SubResource("Resource_82ij6"), SubResource("Resource_16qjw")])
 
 [node name="PlayerDetector" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0965035, 0)

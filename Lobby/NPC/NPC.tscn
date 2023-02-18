@@ -3,14 +3,17 @@
 [ext_resource type="PackedScene" uid="uid://ut5f61w4smxm" path="res://Lobby/NPC/NPC.glb" id="1_w74qn"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_23ms1"]
-radius = 0.478162
+radius = 0.293212
 height = 1.83362
 
 [node name="NPC" instance=ExtResource("1_w74qn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00234, 0)
 
 [node name="Sphere" parent="." index="0"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.355211, 0)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.541058, 0)
+
+[node name="Sphere001" parent="Sphere" index="0"]
+transform = Transform3D(0.115932, 0, -0.0289195, 0, 0.182366, 0, 0.0361348, 0, 0.0927828, 0, 0.248578, 0.947058)
 
 [node name="AnimatableBody3D" type="AnimatableBody3D" parent="." index="1"]
 
