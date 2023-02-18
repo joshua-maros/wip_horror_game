@@ -4,23 +4,23 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://d0ediqd0ej8rt"
 path.s3tc="res://.godot/imported/Base_worn-painted-metal_normal-ogl.png-00dddc790382fae229123e3a8671f89a.s3tc.ctex"
+path.etc2="res://.godot/imported/Base_worn-painted-metal_normal-ogl.png-00dddc790382fae229123e3a8671f89a.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc", "etc2"],
 "vram_texture": true
 }
-generator_parameters={}
 
 [deps]
 
 source_file="res://Lobby/Base/Base_worn-painted-metal_normal-ogl.png"
-dest_files=["res://.godot/imported/Base_worn-painted-metal_normal-ogl.png-00dddc790382fae229123e3a8671f89a.s3tc.ctex"]
+dest_files=["res://.godot/imported/Base_worn-painted-metal_normal-ogl.png-00dddc790382fae229123e3a8671f89a.s3tc.ctex", "res://.godot/imported/Base_worn-painted-metal_normal-ogl.png-00dddc790382fae229123e3a8671f89a.etc2.ctex"]
 
 [params]
 
 compress/mode=2
-compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
+compress/bptc_ldr=0
 compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true

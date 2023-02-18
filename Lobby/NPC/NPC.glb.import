@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://vwv6x8dqiw3d"
-path="res://.godot/imported/Light.glb-89f4e7accb388b2ca35e4334439e72ac.scn"
+uid="uid://ut5f61w4smxm"
+path="res://.godot/imported/NPC.glb-0dc82ac41c35fa5b9c75e3da825138b9.scn"
 
 [deps]
 
-source_file="res://Lobby/Lights/Light.glb"
-dest_files=["res://.godot/imported/Light.glb-89f4e7accb388b2ca35e4334439e72ac.scn"]
+source_file="res://Lobby/NPC/NPC.glb"
+dest_files=["res://.godot/imported/NPC.glb-0dc82ac41c35fa5b9c75e3da825138b9.scn"]
 
 [params]
 

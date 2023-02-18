@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://115xqatmoove"
+uid="uid://pfl7am368t1u"
 path="res://.godot/imported/Carrot.glb-9d484d93f5ea77f5133ef355d81bedad.scn"
 
 [deps]
@@ -26,7 +26,6 @@ skins/use_named_skins=true
 animation/import=true
 animation/fps=30
 animation/trimming=false
-animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
 "meshes": {
@@ -42,4 +41,3 @@ _subresources={
 }
 }
 }
-gltf/embedded_image_handling=1

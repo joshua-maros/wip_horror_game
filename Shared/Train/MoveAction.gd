@@ -4,37 +4,32 @@ class_name MoveAction
 
 enum Direction {ARRIVE, DEPART}
 
-var direction: Direction
+@export var direction: Direction
 var movement_timer: float
 var _done = false
-var parked_pos: Vector3
-
-func _init(d: Direction, p: Vector3, t: float):
-	direction = d
-	parked_pos = p
-	movement_timer = t
 
 func start(train: Train):
 	if direction == Direction.ARRIVE:
 		train.decelerate_sound.play()
+		movement_timer = train.ACCELERATION_TIME
 	elif direction == Direction.DEPART:
 		train.accelerate_sound.play()
+		movement_timer = 0.0
 
 func _process(delta: float, train: Train):
-	var multiplier: float
+	var multiplier := 1.0
 	if direction == Direction.ARRIVE:
 		movement_timer -= delta
 		_done = movement_timer <= 0.0
-		multiplier = -1.0
 	elif direction == Direction.DEPART:
 		movement_timer += delta
-		multiplier = 1.0
 		if movement_timer > 18.0:
 			LevelLogic.transition_controller.advance_level = true
 	if _done:
-		train.position = parked_pos
+		train.position = train.parked_pos
 	else:
-		train.position = parked_pos + Vector3(0, 0, _compute_offset(train))
+		train.position = train.parked_pos \
+			+ Vector3(0, 0, multiplier * _compute_offset(train))
 
 func is_done() -> bool:
 	return _done

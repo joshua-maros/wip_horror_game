@@ -1,10 +1,16 @@
-[gd_scene load_steps=11 format=3 uid="uid://1w7iwfmefn3h"]
+[gd_scene load_steps=28 format=3 uid="uid://c1biuieiiu7id"]
 
 [ext_resource type="PackedScene" uid="uid://cxcbr4rc073fl" path="res://Shared/Player/Player.tscn" id="2_3fdrr"]
 [ext_resource type="PackedScene" uid="uid://k30ccwvtvxug" path="res://Lobby/Variants/Dim.tscn" id="2_qvk42"]
 [ext_resource type="PackedScene" uid="uid://bbakqgrml2d8v" path="res://Shared/Train/Train.tscn" id="3_6v5dk"]
 [ext_resource type="Script" path="res://Shared/LevelTransitionController.gd" id="4_hdtyq"]
+[ext_resource type="Script" path="res://Shared/Train/MoveAction.gd" id="4_m603g"]
 [ext_resource type="PackedScene" uid="uid://ccj3a2lf861mv" path="res://Shared/FadeToBlack.tscn" id="5_510vn"]
+[ext_resource type="Script" path="res://Shared/Train/BlinkLightsAction.gd" id="5_v4l0r"]
+[ext_resource type="Script" path="res://Shared/Train/SetLightsAction.gd" id="6_08kvy"]
+[ext_resource type="Script" path="res://Shared/Train/MoveDoorsAction.gd" id="7_pddix"]
+[ext_resource type="Script" path="res://Shared/Train/WaitForPlayerAction.gd" id="8_00ka2"]
+[ext_resource type="Script" path="res://Shared/Train/WaitForLevelEvent.gd" id="9_ft82t"]
 
 [sub_resource type="Curve" id="Curve_dyoxg"]
 _data = [Vector2(0, 0), 0.0, 1.14805, 0, 0, Vector2(0.987179, 0.981818), 0.850909, 0.0, 0, 0]
@@ -54,6 +60,48 @@ volumetric_fog_gi_inject = 0.76
 volumetric_fog_anisotropy = 0.29
 adjustment_color_correction = SubResource("CurveXYZTexture_i3eqi")
 
+[sub_resource type="Resource" id="Resource_o6mpb"]
+script = ExtResource("4_m603g")
+direction = 0
+
+[sub_resource type="Resource" id="Resource_pqd3e"]
+script = ExtResource("5_v4l0r")
+
+[sub_resource type="Resource" id="Resource_4ax58"]
+script = ExtResource("6_08kvy")
+on = true
+
+[sub_resource type="Resource" id="Resource_kp1d4"]
+script = ExtResource("7_pddix")
+direction = 0
+
+[sub_resource type="Resource" id="Resource_eedhs"]
+script = ExtResource("6_08kvy")
+on = false
+
+[sub_resource type="Resource" id="Resource_fy32b"]
+script = ExtResource("8_00ka2")
+trigger_when_player = 1
+
+[sub_resource type="Resource" id="Resource_8dak0"]
+script = ExtResource("5_v4l0r")
+
+[sub_resource type="Resource" id="Resource_vj81e"]
+script = ExtResource("6_08kvy")
+on = true
+
+[sub_resource type="Resource" id="Resource_1bslt"]
+script = ExtResource("7_pddix")
+direction = 1
+
+[sub_resource type="Resource" id="Resource_87c1r"]
+script = ExtResource("6_08kvy")
+on = null
+
+[sub_resource type="Resource" id="Resource_7idi5"]
+script = ExtResource("9_ft82t")
+trigger_on = null
+
 [node name="CleanLobby" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("2_3fdrr")]
@@ -69,38 +117,34 @@ environment = SubResource("Environment_drgu1")
 [node name="ReflectionProbe6" type="ReflectionProbe" parent="Static Reflection Probes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9693, 1.34544, 0.609692)
 max_distance = 225.7
-size = Vector3(15.7964, 12.7144, 12.4351)
 box_projection = true
 enable_shadows = true
 
 [node name="ReflectionProbe12" type="ReflectionProbe" parent="Static Reflection Probes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.38079, 1.43996, 0.609692)
 max_distance = 225.7
-size = Vector3(2.40132, 1.6709, 5.47662)
 box_projection = true
 enable_shadows = true
 
 [node name="ReflectionProbe10" type="ReflectionProbe" parent="Static Reflection Probes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9344, 1.40851, -6.54712)
 max_distance = 153.6
-size = Vector3(16.0987, 13.4693, 12.4351)
 box_projection = true
 enable_shadows = true
 
 [node name="ReflectionProbe9" type="ReflectionProbe" parent="Static Reflection Probes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4356, 2.28141, 7.02727)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4356, 1.61029, 7.2153)
 max_distance = 408.4
-size = Vector3(12.0341, 11.9945, 12.4351)
 box_projection = true
 enable_shadows = true
 
 [node name="ReflectionProbe11" type="ReflectionProbe" parent="Static Reflection Probes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.58282, 2.27244, 0.499556)
 max_distance = 41.2
-size = Vector3(2.00564, 0.91848, 3.2784)
 
 [node name="Train" parent="." instance=ExtResource("3_6v5dk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.821036, -0.123827, -5.97169)
+actions = [SubResource("Resource_o6mpb"), SubResource("Resource_pqd3e"), SubResource("Resource_4ax58"), SubResource("Resource_kp1d4"), SubResource("Resource_eedhs"), SubResource("Resource_fy32b"), SubResource("Resource_8dak0"), SubResource("Resource_vj81e"), SubResource("Resource_1bslt"), SubResource("Resource_87c1r"), SubResource("Resource_7idi5")]
 
 [node name="SpawnPoint" type="Node3D" parent="Train"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.898073, 0)

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dea77oq6c56ek"]
+
+[ext_resource type="PackedScene" uid="uid://ut5f61w4smxm" path="res://Lobby/NPC/NPC.glb" id="1_w74qn"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_23ms1"]
+radius = 0.478162
+height = 1.83362
+
+[node name="NPC" instance=ExtResource("1_w74qn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00234, 0)
+
+[node name="Sphere" parent="." index="0"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.355211, 0)
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0873373, 0)
+shape = SubResource("CapsuleShape3D_23ms1")

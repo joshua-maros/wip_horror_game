@@ -4,23 +4,23 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c2yoe2b416i4c"
 path.s3tc="res://.godot/imported/Base_WoodPlanksWorn33_REFL_3K.png-e63af92ea780e3b1e86bce755031ee15.s3tc.ctex"
+path.etc2="res://.godot/imported/Base_WoodPlanksWorn33_REFL_3K.png-e63af92ea780e3b1e86bce755031ee15.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc", "etc2"],
 "vram_texture": true
 }
-generator_parameters={}
 
 [deps]
 
 source_file="res://Lobby/Base/Base_WoodPlanksWorn33_REFL_3K.png"
-dest_files=["res://.godot/imported/Base_WoodPlanksWorn33_REFL_3K.png-e63af92ea780e3b1e86bce755031ee15.s3tc.ctex"]
+dest_files=["res://.godot/imported/Base_WoodPlanksWorn33_REFL_3K.png-e63af92ea780e3b1e86bce755031ee15.s3tc.ctex", "res://.godot/imported/Base_WoodPlanksWorn33_REFL_3K.png-e63af92ea780e3b1e86bce755031ee15.etc2.ctex"]
 
 [params]
 
 compress/mode=2
-compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
+compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true

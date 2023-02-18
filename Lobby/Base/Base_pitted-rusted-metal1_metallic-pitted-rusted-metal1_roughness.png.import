@@ -4,23 +4,23 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://byd6c1j6dsho3"
 path.s3tc="res://.godot/imported/Base_pitted-rusted-metal1_metallic-pitted-rusted-metal1_roughness.png-1d2a486ba2886c4d1e4011ffc0211f12.s3tc.ctex"
+path.etc2="res://.godot/imported/Base_pitted-rusted-metal1_metallic-pitted-rusted-metal1_roughness.png-1d2a486ba2886c4d1e4011ffc0211f12.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc", "etc2"],
 "vram_texture": true
 }
-generator_parameters={}
 
 [deps]
 
 source_file="res://Lobby/Base/Base_pitted-rusted-metal1_metallic-pitted-rusted-metal1_roughness.png"
-dest_files=["res://.godot/imported/Base_pitted-rusted-metal1_metallic-pitted-rusted-metal1_roughness.png-1d2a486ba2886c4d1e4011ffc0211f12.s3tc.ctex"]
+dest_files=["res://.godot/imported/Base_pitted-rusted-metal1_metallic-pitted-rusted-metal1_roughness.png-1d2a486ba2886c4d1e4011ffc0211f12.s3tc.ctex", "res://.godot/imported/Base_pitted-rusted-metal1_metallic-pitted-rusted-metal1_roughness.png-1d2a486ba2886c4d1e4011ffc0211f12.etc2.ctex"]
 
 [params]
 
 compress/mode=2
-compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
+compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true

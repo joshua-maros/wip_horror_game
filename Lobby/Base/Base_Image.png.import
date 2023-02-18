@@ -7,7 +7,6 @@ path="res://.godot/imported/Base_Image.png-160bfe02f5ba3012426596f2cc502524.ctex
 metadata={
 "vram_texture": false
 }
-generator_parameters={}
 
 [deps]
 
@@ -17,9 +16,9 @@ dest_files=["res://.godot/imported/Base_Image.png-160bfe02f5ba3012426596f2cc5025
 [params]
 
 compress/mode=0
-compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
+compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true

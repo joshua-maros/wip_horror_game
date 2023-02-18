@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cmodibp2mtuwe"]
+[gd_scene load_steps=43 format=3 uid="uid://7pepkajnu6df"]
 
 [ext_resource type="PackedScene" uid="uid://cxcbr4rc073fl" path="res://Shared/Player/Player.tscn" id="1_3tjwb"]
 [ext_resource type="Texture2D" uid="uid://byidb4fctdwfw" path="res://Farm/TempNoise.tres" id="1_5dbxu"]
@@ -8,8 +8,14 @@
 [ext_resource type="PackedScene" uid="uid://cfikfd43fuu8x" path="res://Farm/Crate/Crate.tscn" id="6_omg7f"]
 [ext_resource type="PackedScene" uid="uid://bbakqgrml2d8v" path="res://Shared/Train/Train.tscn" id="7_si431"]
 [ext_resource type="PackedScene" uid="uid://nbvo63uhy7go" path="res://Farm/CrateHolder/CrateHolder.tscn" id="8_k38fq"]
+[ext_resource type="Script" path="res://Shared/Train/MoveAction.gd" id="8_v0jo6"]
+[ext_resource type="Script" path="res://Shared/Train/BlinkLightsAction.gd" id="9_rplbd"]
 [ext_resource type="Script" path="res://Shared/LevelTransitionController.gd" id="9_xcpwj"]
+[ext_resource type="Script" path="res://Shared/Train/SetLightsAction.gd" id="10_og1mu"]
 [ext_resource type="PackedScene" uid="uid://ccj3a2lf861mv" path="res://Shared/FadeToBlack.tscn" id="10_suyfr"]
+[ext_resource type="Script" path="res://Shared/Train/MoveDoorsAction.gd" id="11_a0kno"]
+[ext_resource type="Script" path="res://Shared/Train/WaitForPlayerAction.gd" id="12_a0heb"]
+[ext_resource type="Script" path="res://Shared/Train/WaitForLevelEvent.gd" id="13_kxw2r"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_f1att"]
 lightmap_size_hint = Vector2i(304, 156)
@@ -35,6 +41,75 @@ uv1_scale = Vector3(14.248, 14.248, 14.248)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rfjhy"]
 size = Vector3(30, 0.05, 30)
+
+[sub_resource type="Resource" id="Resource_8r0kh"]
+script = ExtResource("8_v0jo6")
+direction = 0
+
+[sub_resource type="Resource" id="Resource_t2bcm"]
+script = ExtResource("9_rplbd")
+
+[sub_resource type="Resource" id="Resource_or6kf"]
+script = ExtResource("10_og1mu")
+on = true
+
+[sub_resource type="Resource" id="Resource_yifd1"]
+script = ExtResource("11_a0kno")
+direction = 0
+
+[sub_resource type="Resource" id="Resource_07216"]
+script = ExtResource("10_og1mu")
+on = null
+
+[sub_resource type="Resource" id="Resource_psm28"]
+script = ExtResource("12_a0heb")
+trigger_when_player = 1
+
+[sub_resource type="Resource" id="Resource_a52ig"]
+script = ExtResource("9_rplbd")
+
+[sub_resource type="Resource" id="Resource_1vkwm"]
+script = ExtResource("10_og1mu")
+on = true
+
+[sub_resource type="Resource" id="Resource_87ujp"]
+script = ExtResource("11_a0kno")
+direction = 1
+
+[sub_resource type="Resource" id="Resource_4hvfc"]
+script = ExtResource("10_og1mu")
+on = false
+
+[sub_resource type="Resource" id="Resource_mt8cq"]
+script = ExtResource("13_kxw2r")
+trigger_on = null
+
+[sub_resource type="Resource" id="Resource_5a5xo"]
+script = ExtResource("11_a0kno")
+direction = 0
+
+[sub_resource type="Resource" id="Resource_xqe1n"]
+script = ExtResource("12_a0heb")
+trigger_when_player = 0
+
+[sub_resource type="Resource" id="Resource_02qfa"]
+script = ExtResource("9_rplbd")
+
+[sub_resource type="Resource" id="Resource_vh4at"]
+script = ExtResource("10_og1mu")
+on = true
+
+[sub_resource type="Resource" id="Resource_kbttn"]
+script = ExtResource("11_a0kno")
+direction = 1
+
+[sub_resource type="Resource" id="Resource_i8od4"]
+script = ExtResource("10_og1mu")
+on = null
+
+[sub_resource type="Resource" id="Resource_yhxtn"]
+script = ExtResource("8_v0jo6")
+direction = 1
 
 [sub_resource type="BoxMesh" id="BoxMesh_3r1ge"]
 
@@ -121,6 +196,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.08787, 0.0252627, -4.6997)
 
 [node name="Train" parent="." instance=ExtResource("7_si431")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5928, 0.0249996, -0.94083)
+actions = [SubResource("Resource_8r0kh"), SubResource("Resource_t2bcm"), SubResource("Resource_or6kf"), SubResource("Resource_yifd1"), SubResource("Resource_07216"), SubResource("Resource_psm28"), SubResource("Resource_a52ig"), SubResource("Resource_1vkwm"), SubResource("Resource_87ujp"), SubResource("Resource_4hvfc"), SubResource("Resource_mt8cq"), SubResource("Resource_5a5xo"), SubResource("Resource_xqe1n"), SubResource("Resource_02qfa"), SubResource("Resource_vh4at"), SubResource("Resource_kbttn"), SubResource("Resource_i8od4"), SubResource("Resource_yhxtn")]
 
 [node name="SpawnPoint" type="Node3D" parent="Train"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.895862, 0)

@@ -10,43 +10,25 @@ class_name Train
 @export var car3: TrainCar
 @export var door_anim_curve: Curve
 @export var noise: Noise
-var actions: Array[TrainAction] = []
+@export var actions: Array[TrainAction]
 @onready var cars: Array[TrainCar] = [car1, car2, car3]
 
 var last_player_pos = Vector3.ZERO
 var time_player_not_moving = 0.0
+var parked_pos: Vector3
 var TOP_SPEED := 30.0
 var ACCELERATION_TIME := 15.0
 
 func _ready():
-	var a = MoveAction.new(MoveAction.Direction.ARRIVE, position, 18.0)
-	actions.push_back(a)
-	actions.push_back(BlinkLightsAction.new())
-	actions.push_back(SetLightsAction.new(1.0))
-	actions.push_back(MoveDoorsAction.new(0.5))
-	actions.push_back(WaitForPlayerAction.new(false))
-	actions.push_back(BlinkLightsAction.new())
-	actions.push_back(SetLightsAction.new(1.0))
-	actions.push_back(MoveDoorsAction.new(-0.5))
-	actions.push_back(SetLightsAction.new(0.0))
-	actions.push_back(WaitForLevelCompletion.new())
-	actions.push_back(BlinkLightsAction.new())
-	actions.push_back(SetLightsAction.new(1.0))
-	actions.push_back(MoveDoorsAction.new(0.5))
-	actions.push_back(WaitForPlayerAction.new(true))
-	actions.push_back(BlinkLightsAction.new())
-	actions.push_back(SetLightsAction.new(0.0))
-	actions.push_back(MoveDoorsAction.new(-0.5))
-	a = MoveAction.new(MoveAction.Direction.DEPART, position, 0.0)
-	actions.push_back(a)
-	
-	actions[0].start(self)
-	
+	parked_pos = position
 	# Store it outside the level so we don't start playing sound on game start.
 	# Once the animations kick in, they will immediately override this.
 	position = Vector3(0, 1000, 0)
-	
 	set_door_light_brightness(0.0)
+	
+	for index in range(actions.size()):
+		actions[index] = actions[index].duplicate()
+	actions[0].start(self)
 
 func set_door_light_brightness(b: float):
 	for car in cars:

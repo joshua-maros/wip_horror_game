@@ -2,10 +2,13 @@ extends Node
 
 class_name LevelTransitionController
 
+enum LevelEvent { CALL_TRAIN, OBJECTIVE_COMPLETE }
+
+signal level_event(name: LevelEvent)
+
 @export var player: Player
 @export var train: Train
 @export var train_spawn_point: Node3D
-var train_can_leave := false
 var advance_level := false
 @export_file("*scn") var next_level: String
 @export var fade: Control
@@ -19,6 +22,9 @@ var initial_setup_frames: int = 5
 
 func _init():
 	LevelLogic.transition_controller = self
+
+func trigger_level_event(name: LevelEvent):
+	level_event.emit(name)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
