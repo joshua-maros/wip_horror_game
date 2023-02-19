@@ -38,31 +38,31 @@ script = ExtResource("1_dix8j")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.326775, 0)
 
 [node name="Position" type="Node3D" parent="Positions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.192646, 0, -0.197518)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.151064, 0, -0.197518)
 
 [node name="Position2" type="Node3D" parent="Positions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0139146, 0, -0.197518)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0154546, 0, -0.197518)
 
 [node name="Position3" type="Node3D" parent="Positions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.237041, 0, -0.197518)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.132622, 0, -0.197518)
 
 [node name="Position4" type="Node3D" parent="Positions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.192646, 0, -0.00820076)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.151064, 0, -0.00820076)
 
 [node name="Position5" type="Node3D" parent="Positions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0139146, 0, -0.00820076)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0154546, 0, -0.00820076)
 
 [node name="Position6" type="Node3D" parent="Positions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.237041, 0, -0.00820076)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.132622, 0, -0.00820076)
 
 [node name="Position7" type="Node3D" parent="Positions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.192646, 0, 0.18153)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.151064, 0, 0.18153)
 
 [node name="Position8" type="Node3D" parent="Positions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0139146, 0, 0.18153)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0154546, 0, 0.18153)
 
 [node name="Position9" type="Node3D" parent="Positions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.237041, 0, 0.18153)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.132622, 0, 0.18153)
 
 [node name="Crate" parent="." instance=ExtResource("6_3iia5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00706767, 0.225738, -0.00539324)
