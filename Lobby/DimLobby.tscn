@@ -1,7 +1,7 @@
 [gd_scene load_steps=28 format=3 uid="uid://c1biuieiiu7id"]
 
 [ext_resource type="PackedScene" uid="uid://cxcbr4rc073fl" path="res://Shared/Player/Player.tscn" id="2_3fdrr"]
-[ext_resource type="PackedScene" uid="uid://k30ccwvtvxug" path="res://Lobby/Variants/Dim.tscn" id="2_qvk42"]
+[ext_resource type="PackedScene" path="res://Lobby/Variants/Dim.tscn" id="2_qvk42"]
 [ext_resource type="PackedScene" uid="uid://bbakqgrml2d8v" path="res://Shared/Train/Train.tscn" id="3_6v5dk"]
 [ext_resource type="Script" path="res://Shared/LevelTransitionController.gd" id="4_hdtyq"]
 [ext_resource type="Script" path="res://Shared/Train/MoveAction.gd" id="4_m603g"]
@@ -63,6 +63,7 @@ adjustment_color_correction = SubResource("CurveXYZTexture_i3eqi")
 [sub_resource type="Resource" id="Resource_o6mpb"]
 script = ExtResource("4_m603g")
 direction = 0
+invert = false
 
 [sub_resource type="Resource" id="Resource_pqd3e"]
 script = ExtResource("5_v4l0r")
@@ -149,11 +150,11 @@ actions = Array[Resource("res://Shared/Train/TrainAction.gd")]([SubResource("Res
 [node name="SpawnPoint" type="Node3D" parent="Train"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.898073, 0)
 
-[node name="LevelTransitionController" type="Node" parent="." node_paths=PackedStringArray("player", "train", "train_spawn_point", "fade")]
+[node name="LevelTransitionController" type="Node" parent="." node_paths=PackedStringArray("player", "train", "spawn_point", "fade")]
 script = ExtResource("4_hdtyq")
 player = NodePath("../Player")
 train = NodePath("../Train")
-train_spawn_point = NodePath("../Train/SpawnPoint")
+spawn_point = NodePath("../Train/SpawnPoint")
 next_level = "res://Farm/Farm.tscn"
 fade = NodePath("../FadeToBlack")
 
