@@ -1,9 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://c737njdb7v45r"]
+[gd_scene load_steps=15 format=3]
 
-[ext_resource type="Texture2D" uid="uid://de2bok3d67fg3" path="res://Lobby/Lights/Light_2K-concrete_50_roughness.png" id="1_t5yyq"]
-[ext_resource type="Texture2D" uid="uid://b61pl4s4xjlr5" path="res://Lobby/Lights/Light_painted-old-metal-pbr-texture-02.png" id="2_1s5d2"]
-[ext_resource type="Texture2D" uid="uid://dtgwad7j04j5p" path="res://Lobby/Lights/Light_painted-old-metal-pbr-texture-03.png" id="3_hbfy2"]
-[ext_resource type="Texture2D" uid="uid://cr6dnu454hake" path="res://Lobby/Lights/Light_painted-old-metal-pbr-texture-05.png" id="4_ewk35"]
+[ext_resource type="Texture2D" uid="uid://de2bok3d67fg3" path="res://BigAssets/Light/Light_2K-concrete_50_roughness.png" id="1_t5yyq"]
+[ext_resource type="Texture2D" uid="uid://b61pl4s4xjlr5" path="res://BigAssets/Light/Light_painted-old-metal-pbr-texture-02.png" id="2_1s5d2"]
+[ext_resource type="Texture2D" uid="uid://dtgwad7j04j5p" path="res://BigAssets/Light/Light_painted-old-metal-pbr-texture-03.png" id="3_hbfy2"]
+[ext_resource type="Texture2D" uid="uid://cr6dnu454hake" path="res://BigAssets/Light/Light_painted-old-metal-pbr-texture-05.png" id="4_ewk35"]
 [ext_resource type="Shader" path="res://Lobby/Lights/tube_light_god_ray.gdshader" id="5_rdrh8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1rpdu"]

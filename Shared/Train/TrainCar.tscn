@@ -1,6 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://o2llqyyjqyh2"]
+[gd_scene load_steps=11 format=3 uid="uid://bf37x1aaoxuwj"]
 
-[ext_resource type="PackedScene" uid="uid://qqijntmfcpwm" path="res://Shared/Train/TrainCar.glb" id="1_axn0s"]
+[ext_resource type="PackedScene" uid="uid://qqijntmfcpwm" path="res://BigAssets/TrainCar/TrainCar.glb" id="1_s2dje"]
 [ext_resource type="Script" path="res://Shared/Train/TrainCar.gd" id="2_gvn1i"]
 [ext_resource type="Material" uid="uid://viljmkgsrydt" path="res://Shared/Train/LightMat.tres" id="3_slxkb"]
 [ext_resource type="Material" uid="uid://djsiwsfakxfow" path="res://Shared/Train/LightPanelMat.tres" id="4_khk7n"]
@@ -19,7 +19,7 @@ size = Vector3(0.047697, 2.32594, 2.63394)
 [sub_resource type="BoxShape3D" id="BoxShape3D_8qxgx"]
 size = Vector3(0.047697, 2.32594, 18.9683)
 
-[node name="TrainCar" node_paths=PackedStringArray("door_light_parent", "inside_light_parent", "left_door_1", "left_door_2", "left_door_3", "right_door_1", "right_door_2", "right_door_3", "seat_group_1", "seat_group_2", "seat_group_3", "left_door_parent", "right_door_parent") instance=ExtResource("1_axn0s")]
+[node name="TrainCar" node_paths=PackedStringArray("door_light_parent", "inside_light_parent", "left_door_1", "left_door_2", "left_door_3", "right_door_1", "right_door_2", "right_door_3", "seat_group_1", "seat_group_2", "seat_group_3", "left_door_parent", "right_door_parent") instance=ExtResource("1_s2dje")]
 script = ExtResource("2_gvn1i")
 door_light_mat = ExtResource("3_slxkb")
 inside_light_mat = ExtResource("3_slxkb")

@@ -1,6 +1,6 @@
-[gd_scene load_steps=25 format=3 uid="uid://k30ccwvtvxug"]
+[gd_scene load_steps=25 format=3]
 
-[ext_resource type="PackedScene" uid="uid://b3tb5bl1dra40" path="res://Lobby/Base/Base.glb" id="1_rhvot"]
+[ext_resource type="PackedScene" uid="uid://b3tb5bl1dra40" path="res://BigAssets/Base/Base.glb" id="1_rhvot"]
 [ext_resource type="Material" uid="uid://dcbdtko170juk" path="res://Lobby/Base/Materials/Ground.tres" id="2_8kcdv"]
 [ext_resource type="Material" uid="uid://dfpp6d8uyh80a" path="res://Lobby/Base/Materials/Beams.tres" id="3_2bmw1"]
 [ext_resource type="PackedScene" uid="uid://biaabu5xvdnru" path="res://Lobby/Lights/NonFunctioningLight.tscn" id="4_k55r7"]

@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://du7xxxb6uscbw"]
+[gd_scene load_steps=3 format=3]
 
-[ext_resource type="PackedScene" uid="uid://vwv6x8dqiw3d" path="res://Lobby/Lights/Light.glb" id="1_8vj40"]
+[ext_resource type="PackedScene" uid="uid://vwv6x8dqiw3d" path="res://BigAssets/Light/Light.glb" id="1_8vj40"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_el4hs"]
 shading_mode = 0

@@ -1,12 +1,12 @@
-[gd_resource type="ShaderMaterial" load_steps=8 format=3 uid="uid://dcbdtko170juk"]
+[gd_resource type="ShaderMaterial" load_steps=8 format=3]
 
 [ext_resource type="Shader" uid="uid://dyxxlamml6dy0" path="res://Shared/MultiMapMix/MultiMapMixShader.tres" id="1_t37h4"]
-[ext_resource type="Texture2D" uid="uid://hpkhwtqorljq" path="res://Lobby/Base/Textures/Ground1/2K-concrete_49_basecolor.png" id="2_gga0o"]
-[ext_resource type="Texture2D" uid="uid://cfhrtpag3ivwn" path="res://Lobby/Base/Textures/Ground2/2K-concrete_50_basecolor.png" id="3_4ow7k"]
-[ext_resource type="Texture2D" uid="uid://hrd4fdrkuijo" path="res://Lobby/Base/Textures/Ground1/2K-concrete_49_normal.png" id="4_jtdxx"]
-[ext_resource type="Texture2D" uid="uid://t0gm68pif0n6" path="res://Lobby/Base/Textures/Ground1/2K-concrete_49_roughness.png" id="4_v0jf0"]
-[ext_resource type="Texture2D" uid="uid://eq6v6bqq0asb" path="res://Lobby/Base/Textures/Ground2/2K-concrete_50_roughness.png" id="5_dsnlc"]
-[ext_resource type="Texture2D" uid="uid://de0kdxpp241w3" path="res://Lobby/Base/Textures/Ground2/2K-concrete_50_normal.png" id="5_x6fnq"]
+[ext_resource type="Texture2D" uid="uid://hpkhwtqorljq" path="res://BigAssets/Base/Textures/Ground1/2K-concrete_49_basecolor.png" id="2_gga0o"]
+[ext_resource type="Texture2D" uid="uid://cfhrtpag3ivwn" path="res://BigAssets/Base/Textures/Ground2/2K-concrete_50_basecolor.png" id="3_4ow7k"]
+[ext_resource type="Texture2D" uid="uid://hrd4fdrkuijo" path="res://BigAssets/Base/Textures/Ground1/2K-concrete_49_normal.png" id="4_jtdxx"]
+[ext_resource type="Texture2D" uid="uid://t0gm68pif0n6" path="res://BigAssets/Base/Textures/Ground1/2K-concrete_49_roughness.png" id="4_v0jf0"]
+[ext_resource type="Texture2D" uid="uid://eq6v6bqq0asb" path="res://BigAssets/Base/Textures/Ground2/2K-concrete_50_roughness.png" id="5_dsnlc"]
+[ext_resource type="Texture2D" uid="uid://de0kdxpp241w3" path="res://BigAssets/Base/Textures/Ground2/2K-concrete_50_normal.png" id="5_x6fnq"]
 
 [resource]
 render_priority = 0
