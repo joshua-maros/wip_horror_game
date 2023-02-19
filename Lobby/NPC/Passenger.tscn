@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4gbx6trbam0c"]
+
+[ext_resource type="PackedScene" uid="uid://dea77oq6c56ek" path="res://Lobby/NPC/NPC.tscn" id="1_76uaa"]
+[ext_resource type="Script" path="res://Lobby/NPC/Passenger.gd" id="2_kt0fd"]
+
+[node name="AnimatableBody3D" node_paths=PackedStringArray("collider") instance=ExtResource("1_76uaa")]
+script = ExtResource("2_kt0fd")
+collider = NodePath("CollisionShape3D")

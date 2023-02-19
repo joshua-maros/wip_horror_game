@@ -1,0 +1,146 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsrypybmvl0rx"]
+
+[ext_resource type="Script" path="res://Shared/Train/SeatGroup.gd" id="1_isd5g"]
+[ext_resource type="Script" path="res://Shared/DeleteOnStart.gd" id="2_wx64y"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_x34om"]
+size = Vector3(0.574, 1, 0.594)
+
+[node name="SeatGroup" type="Node3D" node_paths=PackedStringArray("boarding_posn_node", "aisle_posn_node")]
+script = ExtResource("1_isd5g")
+boarding_posn_node = NodePath("BoardingPos")
+aisle_posn_node = NodePath("AislePos")
+
+[node name="BoardingPos" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.36501, -0.00180048, 0.0142814)
+
+[node name="AislePos" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0162337, -0.00180048, 0.0142814)
+
+[node name="SeatPos1" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.900147, -0.00180048, -0.951589)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SeatPos1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.426083, 0)
+mesh = SubResource("BoxMesh_x34om")
+script = ExtResource("2_wx64y")
+
+[node name="SeatPos2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.900148, -0.00180048, -1.55109)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SeatPos2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.426083, 0)
+mesh = SubResource("BoxMesh_x34om")
+script = ExtResource("2_wx64y")
+
+[node name="SeatPos3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.900148, -0.00180048, -2.14247)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SeatPos3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.426083, 0)
+mesh = SubResource("BoxMesh_x34om")
+script = ExtResource("2_wx64y")
+
+[node name="SeatPos4" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.900148, -0.00180048, -2.74466)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SeatPos4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.426083, 0)
+mesh = SubResource("BoxMesh_x34om")
+script = ExtResource("2_wx64y")
+
+[node name="SeatPos5" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.890981, -0.00180048, -0.951589)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SeatPos5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.426083, 0)
+mesh = SubResource("BoxMesh_x34om")
+script = ExtResource("2_wx64y")
+
+[node name="SeatPos6" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.89098, -0.00180048, -1.5511)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SeatPos6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.426083, 0)
+mesh = SubResource("BoxMesh_x34om")
+script = ExtResource("2_wx64y")
+
+[node name="SeatPos7" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.89098, -0.00180048, -2.14247)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SeatPos7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.426083, 0)
+mesh = SubResource("BoxMesh_x34om")
+script = ExtResource("2_wx64y")
+
+[node name="SeatPos8" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.89098, -0.00180048, -2.74466)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SeatPos8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.426083, 0)
+mesh = SubResource("BoxMesh_x34om")
+script = ExtResource("2_wx64y")
+
+[node name="SeatPos9" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.900147, -0.00180048, 2.77785)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SeatPos9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.426083, 0)
+mesh = SubResource("BoxMesh_x34om")
+script = ExtResource("2_wx64y")
+
+[node name="SeatPos10" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.900147, -0.00180048, 2.17834)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SeatPos10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.426083, 0)
+mesh = SubResource("BoxMesh_x34om")
+script = ExtResource("2_wx64y")
+
+[node name="SeatPos11" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.900147, -0.00180048, 1.58697)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SeatPos11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.426083, 0)
+mesh = SubResource("BoxMesh_x34om")
+script = ExtResource("2_wx64y")
+
+[node name="SeatPos12" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.900148, -0.00180048, 0.984782)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SeatPos12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.426083, 0)
+mesh = SubResource("BoxMesh_x34om")
+script = ExtResource("2_wx64y")
+
+[node name="SeatPos13" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.890981, -0.00180048, 2.77785)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SeatPos13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.426083, 0)
+mesh = SubResource("BoxMesh_x34om")
+script = ExtResource("2_wx64y")
+
+[node name="SeatPos14" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.89098, -0.00180048, 2.17834)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SeatPos14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.426083, 0)
+mesh = SubResource("BoxMesh_x34om")
+script = ExtResource("2_wx64y")
+
+[node name="SeatPos15" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.890981, -0.00180048, 1.58696)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SeatPos15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.426083, 0)
+mesh = SubResource("BoxMesh_x34om")
+script = ExtResource("2_wx64y")
+
+[node name="SeatPos16" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.890981, -0.00180048, 0.984782)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SeatPos16"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.426083, 0)
+mesh = SubResource("BoxMesh_x34om")
+script = ExtResource("2_wx64y")

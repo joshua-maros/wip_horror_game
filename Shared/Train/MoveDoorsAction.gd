@@ -17,5 +17,9 @@ func _process(delta: float, train: Train):
 	else:
 		train.set_door_openness(train.door_anim_curve.sample(timer))
 
+func finish(train: Train):
+	if direction == DoorDirection.OPEN:
+		train.doors_opened.emit()
+
 func is_done() -> bool:
 	return timer >= 1.0

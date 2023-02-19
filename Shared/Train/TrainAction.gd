@@ -8,5 +8,8 @@ func start(train: Train):
 func _process(delta: float, train: Train):
 	pass
 
+func finish(train: Train):
+	pass
+
 func is_done() -> bool:
 	return false

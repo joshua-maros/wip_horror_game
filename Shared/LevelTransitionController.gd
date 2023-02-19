@@ -23,7 +23,7 @@ var initial_setup_frames: int = 5
 func _init():
 	LevelLogic.transition_controller = self
 
-func trigger_level_event(name: LevelEvent):
+func emit_level_event(name: LevelEvent):
 	level_event.emit(name)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

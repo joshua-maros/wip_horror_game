@@ -12,6 +12,9 @@ class_name TrainCar
 @export var right_door_1: Node3D
 @export var right_door_2: Node3D
 @export var right_door_3: Node3D
+@export var seat_group_1: SeatGroup
+@export var seat_group_2: SeatGroup
+@export var seat_group_3: SeatGroup
 @export var left_door_parent: Node3D
 @export var right_door_parent: Node3D
 @export var body: Node3D
@@ -21,6 +24,7 @@ var door_lights: Array[OmniLight3D] = []
 var inside_lights: Array[OmniLight3D] = []
 @onready var left_doors: Array[Node3D] = [left_door_1, left_door_2, left_door_3]
 @onready var right_doors: Array[Node3D] = [right_door_1, right_door_2, right_door_3]
+@onready var seat_groups: Array[SeatGroup] = [seat_group_1, seat_group_2, seat_group_3]
 @onready var start_pos = position
 var do_shake = false
 

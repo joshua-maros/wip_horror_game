@@ -15,6 +15,9 @@ var next_actions: Array[TrainAction]
 @export var npc_train: bool
 @onready var cars: Array[TrainCar] = [car1, car2, car3]
 
+signal arrived()
+signal doors_opened()
+
 var last_player_pos = Vector3.ZERO
 var time_player_not_moving = 0.0
 var parked_pos: Vector3
@@ -49,6 +52,7 @@ func _process(delta: float):
 	var start_pos = position
 	actions[0]._process(delta, self)
 	while actions[0].is_done():
+		actions[0].finish(self)
 		actions.pop_front()
 		if actions.size() == 0:
 			for action in next_actions:
@@ -57,9 +61,8 @@ func _process(delta: float):
 	var offset = position - start_pos
 	var overlapping = player_detector.get_overlapping_bodies()
 	if overlapping.size() > 0:
-		var maybe_player = overlapping[0]
-		if maybe_player is Player:
-			maybe_player.move_involuntary(offset)
+		for overlap in overlapping:
+			overlap.position += offset
 	var speed = abs(offset.length() / delta)
 	for car in cars:
 		car.animate(speed, self)

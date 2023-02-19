@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://mr5u6mrmlpdx"]
+[gd_scene load_steps=38 format=3 uid="uid://mr5u6mrmlpdx"]
 
 [ext_resource type="PackedScene" uid="uid://cxcbr4rc073fl" path="res://Shared/Player/Player.tscn" id="1_ewrsh"]
 [ext_resource type="PackedScene" uid="uid://bbakqgrml2d8v" path="res://Shared/Train/Train.tscn" id="3_cu1p2"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dea77oq6c56ek" path="res://Lobby/NPC/NPC.tscn" id="6_vegd3"]
 [ext_resource type="Script" path="res://Shared/Train/WaitForPlayerAction.gd" id="7_3vttu"]
 [ext_resource type="Script" path="res://Shared/Train/WaitDelayAction.gd" id="8_6eg24"]
+[ext_resource type="PackedScene" uid="uid://c4gbx6trbam0c" path="res://Lobby/NPC/Passenger.tscn" id="14_puggi"]
 
 [sub_resource type="Curve" id="Curve_dyoxg"]
 _data = [Vector2(0, 0), 0.0, 1.14805, 0, 0, Vector2(0.987179, 0.981818), 0.850909, 0.0, 0, 0]
@@ -161,10 +162,11 @@ transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 23.8184,
 actions = Array[Resource("res://Shared/Train/TrainAction.gd")]([SubResource("Resource_klsca"), SubResource("Resource_02l0n"), SubResource("Resource_5ar2j"), SubResource("Resource_v2232"), SubResource("Resource_vdxqh"), SubResource("Resource_qurxw"), SubResource("Resource_e70qe"), SubResource("Resource_72ycg")])
 npc_train = true
 
-[node name="LevelTransitionController" type="Node" parent="." node_paths=PackedStringArray("player", "train", "fade")]
+[node name="LevelTransitionController" type="Node" parent="." node_paths=PackedStringArray("player", "train", "spawn_point", "fade")]
 script = ExtResource("4_bh33c")
 player = NodePath("../Player")
 train = NodePath("../Train")
+spawn_point = NodePath("../SpawnPoint")
 next_level = "res://Farm/Farm.tscn"
 fade = NodePath("../FadeToBlack")
 
@@ -173,4 +175,38 @@ fade = NodePath("../FadeToBlack")
 [node name="Base" parent="." instance=ExtResource("5_d41af")]
 
 [node name="NPC" parent="." instance=ExtResource("6_vegd3")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.87611, 1.85466, 0.486387)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.87611, 0.849134, 0.486387)
+
+[node name="AnimatableBody3D" parent="." node_paths=PackedStringArray("waiting_for") instance=ExtResource("14_puggi")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.54123, 0.850884, -4.64042)
+waiting_for = NodePath("../Train2")
+seat_group_index = 3
+
+[node name="AnimatableBody3D2" parent="." node_paths=PackedStringArray("waiting_for") instance=ExtResource("14_puggi")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.39663, 0.850884, -5.29846)
+waiting_for = NodePath("../Train2")
+seat_group_index = 3
+seat_index = 2
+
+[node name="AnimatableBody3D3" parent="." node_paths=PackedStringArray("waiting_for") instance=ExtResource("14_puggi")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.75852, 0.850884, -5.8855)
+waiting_for = NodePath("../Train2")
+seat_group_index = 3
+seat_index = 4
+
+[node name="AnimatableBody3D4" parent="." node_paths=PackedStringArray("waiting_for") instance=ExtResource("14_puggi")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.54123, 0.850884, 0.974753)
+waiting_for = NodePath("../Train2")
+seat_group_index = 4
+
+[node name="AnimatableBody3D5" parent="." node_paths=PackedStringArray("waiting_for") instance=ExtResource("14_puggi")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.39663, 0.850884, 0.316713)
+waiting_for = NodePath("../Train2")
+seat_group_index = 4
+seat_index = 2
+
+[node name="AnimatableBody3D6" parent="." node_paths=PackedStringArray("waiting_for") instance=ExtResource("14_puggi")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.75852, 0.850884, -0.270327)
+waiting_for = NodePath("../Train2")
+seat_group_index = 4
+seat_index = 4
