@@ -1,7 +1,6 @@
-[gd_scene load_steps=43 format=3 uid="uid://7pepkajnu6df"]
+[gd_scene load_steps=39 format=3 uid="uid://7pepkajnu6df"]
 
 [ext_resource type="PackedScene" uid="uid://cxcbr4rc073fl" path="res://Shared/Player/Player.tscn" id="1_3tjwb"]
-[ext_resource type="Texture2D" uid="uid://byidb4fctdwfw" path="res://Farm/TempNoise.tres" id="1_5dbxu"]
 [ext_resource type="Environment" uid="uid://dpy1y2nditdwo" path="res://Farm/Environment.tres" id="2_ppd5i"]
 [ext_resource type="PackedScene" uid="uid://mkcox8qiiis0" path="res://Farm/Carrot/Carrot.tscn" id="4_vk1vt"]
 [ext_resource type="Texture2D" uid="uid://bb4nx236sonus" path="res://Farm/Crosshair.png" id="5_15q4x"]
@@ -16,35 +15,13 @@
 [ext_resource type="Script" path="res://Shared/Train/MoveDoorsAction.gd" id="11_a0kno"]
 [ext_resource type="Script" path="res://Shared/Train/WaitForPlayerAction.gd" id="12_a0heb"]
 [ext_resource type="Script" path="res://Shared/Train/WaitForLevelEvent.gd" id="13_kxw2r"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_f1att"]
-lightmap_size_hint = Vector2i(304, 156)
-add_uv2 = true
-size = Vector3(30, 0.05, 30)
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_y5eww"]
-
-[sub_resource type="Gradient" id="Gradient_u8ikq"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_g3i7l"]
-gradient = SubResource("Gradient_u8ikq")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_65jt0"]
-albedo_color = Color(0.211765, 0.105882, 0.0509804, 1)
-albedo_texture = ExtResource("1_5dbxu")
-roughness = 0.95
-heightmap_scale = 1.58
-heightmap_texture = ExtResource("1_5dbxu")
-detail_mask = SubResource("GradientTexture2D_g3i7l")
-detail_albedo = SubResource("NoiseTexture2D_y5eww")
-uv1_scale = Vector3(14.248, 14.248, 14.248)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_rfjhy"]
-size = Vector3(30, 0.05, 30)
+[ext_resource type="PackedScene" uid="uid://bb6hx1dksjp7e" path="res://Farm/GroundPlane.glb" id="16_snhpm"]
+[ext_resource type="Material" uid="uid://0kmr4a7xets6" path="res://Farm/Dirt.tres" id="17_cym61"]
 
 [sub_resource type="Resource" id="Resource_8r0kh"]
 script = ExtResource("8_v0jo6")
 direction = 0
+invert = false
 
 [sub_resource type="Resource" id="Resource_t2bcm"]
 script = ExtResource("9_rplbd")
@@ -110,22 +87,16 @@ on = null
 [sub_resource type="Resource" id="Resource_yhxtn"]
 script = ExtResource("8_v0jo6")
 direction = 1
+invert = false
 
 [sub_resource type="BoxMesh" id="BoxMesh_3r1ge"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v315e"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_rfjhy"]
+size = Vector3(100, 0.05, 100)
+
 [node name="Farm" type="Node3D"]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(11, 0, 0, 0, 1, 0, 0, 0, 11, 0, 0, 0)
-mesh = SubResource("BoxMesh_f1att")
-surface_material_override/0 = SubResource("StandardMaterial3D_65jt0")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
-shape = SubResource("BoxShape3D_rfjhy")
 
 [node name="Player" parent="." instance=ExtResource("1_3tjwb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.60015, 0.0462267, 3.64829)
@@ -204,11 +175,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.895862, 0)
 [node name="CrateHolder" parent="." instance=ExtResource("8_k38fq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.30459, 0.0250001, -1.32125)
 
-[node name="LevelTransitionController" type="Node" parent="." node_paths=PackedStringArray("player", "train", "train_spawn_point", "fade")]
+[node name="LevelTransitionController" type="Node" parent="." node_paths=PackedStringArray("player", "train", "spawn_point", "fade")]
 script = ExtResource("9_xcpwj")
 player = NodePath("../Player")
 train = NodePath("../Train")
-train_spawn_point = NodePath("../Train/SpawnPoint")
+spawn_point = NodePath("../Train/SpawnPoint")
 next_level = "res://Lobby/DimLobby.tscn"
 fade = NodePath("../FadeToBlack")
 
@@ -240,3 +211,18 @@ mesh = SubResource("BoxMesh_3r1ge")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ramp3/StaticBody3D"]
 shape = SubResource("BoxShape3D_v315e")
+
+[node name="Ground" type="Node3D" parent="."]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ground"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D"]
+shape = SubResource("BoxShape3D_rfjhy")
+
+[node name="GroundPlane" parent="Ground" instance=ExtResource("16_snhpm")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -12.5849, 0, 0)
+
+[node name="Plane" parent="Ground/GroundPlane" index="0"]
+surface_material_override/0 = ExtResource("17_cym61")
+
+[editable path="Ground/GroundPlane"]

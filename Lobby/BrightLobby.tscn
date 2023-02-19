@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://Shared/Train/BlinkLightsAction.gd" id="4_5qwb0"]
 [ext_resource type="Script" path="res://Shared/LevelTransitionController.gd" id="4_bh33c"]
 [ext_resource type="PackedScene" uid="uid://ccj3a2lf861mv" path="res://Shared/FadeToBlack.tscn" id="5_41hxp"]
-[ext_resource type="PackedScene" uid="uid://dapudfbgmfqri" path="res://Lobby/Variants/Bright.tscn" id="5_d41af"]
+[ext_resource type="PackedScene" uid="uid://dwefg0kuk2rl5" path="res://Lobby/Variants/Bright.tscn" id="5_d41af"]
 [ext_resource type="Script" path="res://Shared/Train/SetLightsAction.gd" id="5_qw5jv"]
 [ext_resource type="Script" path="res://Shared/Train/MoveDoorsAction.gd" id="6_773ns"]
 [ext_resource type="PackedScene" uid="uid://dea77oq6c56ek" path="res://Lobby/NPC/NPC.tscn" id="6_vegd3"]

@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://mkcox8qiiis0"]
 
 [ext_resource type="Script" path="res://Shared/Interactable/Interactable.gd" id="1_s2kf6"]
-[ext_resource type="ArrayMesh" uid="uid://ce4ga2178bw8n" path="res://Farm/Carrot/Carrot.res" id="2_h3587"]
 [ext_resource type="Script" path="res://Shared/Interactable/HighlightOnHoverBehavior.gd" id="3_6vwtj"]
 [ext_resource type="Script" path="res://Shared/Interactable/HoldableBehavior.gd" id="4_pk6wu"]
 [ext_resource type="Script" path="res://Shared/Interactable/PlaceableAnywhereBehavior.gd" id="5_3te54"]
+[ext_resource type="PackedScene" uid="uid://pfl7am368t1u" path="res://BigAssets/Carrot/Carrot.glb" id="5_4oj6b"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0l6ps"]
 size = Vector3(0.512471, 0.822895, 0.417306)
@@ -19,13 +19,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0576798, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.174259, 0)
 shape = SubResource("BoxShape3D_0l6ps")
 
-[node name="Mesh" type="MeshInstance3D" parent="."]
-mesh = ExtResource("2_h3587")
-skeleton = NodePath("")
-
-[node name="HighlightOnHoverBehavior" type="Node" parent="." node_paths=PackedStringArray("mesh")]
+[node name="HighlightOnHoverBehavior" type="Node" parent="."]
 script = ExtResource("3_6vwtj")
-mesh = NodePath("../Mesh")
 
 [node name="HoldableBehavior" type="Node" parent="."]
 script = ExtResource("4_pk6wu")
@@ -33,3 +28,6 @@ label = &"Carrot"
 
 [node name="PlaceableAnywhereBehavior" type="Node" parent="."]
 script = ExtResource("5_3te54")
+
+[node name="Carrot" parent="." instance=ExtResource("5_4oj6b")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -0.150169, 0)

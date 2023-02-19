@@ -2,14 +2,21 @@ extends Behavior
 
 class_name HighlightOnHoverBehavior
 
-@export var mesh: MeshInstance3D
-@onready var meshes = [mesh]
+@export var mesh_root: Node3D
+@onready var meshes: Array[MeshInstance3D] = []
 
 func _ready():
 	super._ready()
 	connect_to_parent_signals()
-	if meshes.size() == 0:
-		use_default_meshes()
+	if mesh_root == null:
+		mesh_root = get_parent()
+	add_meshes_from(mesh_root)
+
+func add_meshes_from(node: Node):
+	if node is MeshInstance3D:
+		meshes.push_back(node)
+	for child in node.get_children():
+		add_meshes_from(child)
 
 func connect_to_parent_signals():
 	parent.hover_start.connect(highlight_start)

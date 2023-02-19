@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://bf37x1aaoxuwj"]
+[gd_scene load_steps=10 format=3 uid="uid://bf37x1aaoxuwj"]
 
 [ext_resource type="PackedScene" uid="uid://qqijntmfcpwm" path="res://BigAssets/TrainCar/TrainCar.glb" id="1_s2dje"]
 [ext_resource type="Script" path="res://Shared/Train/TrainCar.gd" id="2_gvn1i"]
 [ext_resource type="Material" uid="uid://viljmkgsrydt" path="res://Shared/Train/LightMat.tres" id="3_slxkb"]
-[ext_resource type="Material" uid="uid://djsiwsfakxfow" path="res://Shared/Train/LightPanelMat.tres" id="4_khk7n"]
 [ext_resource type="PackedScene" uid="uid://bkhec0tetkva7" path="res://Shared/Train/InsideLight.tscn" id="5_yj7su"]
 [ext_resource type="PackedScene" uid="uid://dsrypybmvl0rx" path="res://Shared/Train/SeatGroup.tscn" id="6_dk262"]
 
@@ -82,9 +81,6 @@ sync_to_physics = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="OuterTrain/Door7/AnimatableBody3D" index="0"]
 shape = SubResource("BoxShape3D_11jgl")
-
-[node name="Inner Train" parent="OuterTrain" index="16"]
-surface_material_override/1 = ExtResource("4_khk7n")
 
 [node name="Collision" type="Node3D" parent="OuterTrain" index="20"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.16205, 0)
