@@ -1,0 +1,13 @@
+~ this_is_a_node_title
+
+Dispatcher: You must be the new guy.
+
+Dispatcher: Here's how this works. You get assignments at this desk, then you take the train behind me to do them. Pretty simple.
+
+Dispatcher: Looks like you'll be working at [bold]Sunshine Farms[/bold] for the forseeable future.
+
+Dispatcher: I'll call the train for you.
+
+do LevelLogic.emit_call_train()
+
+=> END

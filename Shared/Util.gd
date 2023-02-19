@@ -35,6 +35,10 @@ func get_parent_mesh(search_start: Node) -> MeshInstance3D:
 	return get_parent_with_class( \
 		search_start, MeshInstance3D, "MeshInstance3D") as MeshInstance3D
 
+func get_parent_interactable_npc(search_start: Node) -> InteractableNPC:
+	return get_parent_with_class( \
+		search_start, InteractableNPC, "InteractableNPC") as InteractableNPC
+
 func get_parent_node_3d(search_start: Node) -> Node3D:
 	return get_parent_with_class( \
 		search_start, Node3D, "Node3D") as Node3D
