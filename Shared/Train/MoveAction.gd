@@ -6,6 +6,7 @@ enum Direction {ARRIVE, DEPART}
 
 @export var direction: Direction
 @export var invert: bool
+@export var extra_time: float = 0.0
 var movement_timer: float
 var _done = false
 var arrived = false
@@ -13,7 +14,7 @@ var arrived = false
 func start(train: Train):
 	if direction == Direction.ARRIVE:
 		train.decelerate_sound.play()
-		movement_timer = train.ACCELERATION_TIME
+		movement_timer = train.ACCELERATION_TIME + extra_time
 	elif direction == Direction.DEPART:
 		train.accelerate_sound.play()
 		movement_timer = 0.0
@@ -28,7 +29,7 @@ func _process(delta: float, train: Train):
 		_done = movement_timer <= 0.0
 	elif direction == Direction.DEPART:
 		movement_timer += delta
-		if movement_timer > train.ACCELERATION_TIME:
+		if movement_timer > train.ACCELERATION_TIME + extra_time:
 			if train.npc_train:
 				_done = true
 			else:

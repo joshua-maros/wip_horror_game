@@ -1,7 +1,6 @@
-[gd_scene load_steps=39 format=3 uid="uid://7pepkajnu6df"]
+[gd_scene load_steps=43 format=3 uid="uid://7pepkajnu6df"]
 
 [ext_resource type="PackedScene" uid="uid://cxcbr4rc073fl" path="res://Shared/Player/Player.tscn" id="1_3tjwb"]
-[ext_resource type="Environment" uid="uid://dpy1y2nditdwo" path="res://Farm/Environment.tres" id="2_ppd5i"]
 [ext_resource type="PackedScene" uid="uid://mkcox8qiiis0" path="res://Farm/Carrot/Carrot.tscn" id="4_vk1vt"]
 [ext_resource type="Texture2D" uid="uid://bb4nx236sonus" path="res://Farm/Crosshair.png" id="5_15q4x"]
 [ext_resource type="PackedScene" uid="uid://cfikfd43fuu8x" path="res://Farm/Crate/Crate.tscn" id="6_omg7f"]
@@ -18,10 +17,66 @@
 [ext_resource type="PackedScene" uid="uid://bb6hx1dksjp7e" path="res://Farm/GroundPlane.glb" id="16_snhpm"]
 [ext_resource type="Material" uid="uid://0kmr4a7xets6" path="res://Farm/Dirt.tres" id="17_cym61"]
 
+[sub_resource type="GDScript" id="GDScript_g22ku"]
+script/source = "extends Area3D
+
+@export var env: WorldEnvironment
+@export var sun: DirectionalLight3D
+var player_was_inside := true
+var old_sky_energy: float
+var old_sun_energy: float
+
+func _ready():
+	old_sky_energy = env.environment.background_energy_multiplier
+	old_sun_energy = sun.light_energy
+	turn_off_lights()
+
+func turn_on_lights():
+	env.environment.background_energy_multiplier = old_sky_energy
+	sun.light_energy = old_sun_energy
+
+func turn_off_lights():
+	env.environment.background_energy_multiplier = 0.0
+	sun.light_energy = 0.0
+
+func _process(delta):
+	var player_inside = false
+	for overlap in get_overlapping_bodies():
+		if overlap is Player:
+			player_inside = true
+	if player_inside != player_was_inside:
+		if player_inside:
+			turn_off_lights()
+		else:
+			turn_on_lights()
+	player_was_inside = player_inside
+"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1yoop"]
+size = Vector3(10.4349, 7.6378, 215.584)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cujxo"]
+sky_energy_multiplier = 2.92
+
+[sub_resource type="Sky" id="Sky_rpkvm"]
+sky_material = SubResource("ProceduralSkyMaterial_cujxo")
+
+[sub_resource type="Environment" id="Environment_ys6y3"]
+background_mode = 2
+sky = SubResource("Sky_rpkvm")
+fog_light_color = Color(0.458824, 0.517647, 0.611765, 1)
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.02
+volumetric_fog_albedo = Color(1, 0.956863, 0.913725, 1)
+volumetric_fog_detail_spread = 5.27803
+volumetric_fog_ambient_inject = 1.0
+volumetric_fog_sky_affect = 0.0
+
 [sub_resource type="Resource" id="Resource_8r0kh"]
 script = ExtResource("8_v0jo6")
 direction = 0
-invert = false
+invert = true
+extra_time = 0.0
 
 [sub_resource type="Resource" id="Resource_t2bcm"]
 script = ExtResource("9_rplbd")
@@ -87,7 +142,8 @@ on = null
 [sub_resource type="Resource" id="Resource_yhxtn"]
 script = ExtResource("8_v0jo6")
 direction = 1
-invert = false
+invert = true
+extra_time = 0.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_3r1ge"]
 
@@ -98,11 +154,21 @@ size = Vector3(100, 0.05, 100)
 
 [node name="Farm" type="Node3D"]
 
+[node name="TurnOffLightsInTunnel" type="Area3D" parent="." node_paths=PackedStringArray("env", "sun")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.6744, 2.47157, -63.7064)
+script = SubResource("GDScript_g22ku")
+env = NodePath("../WorldEnvironment")
+sun = NodePath("../DirectionalLight3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TurnOffLightsInTunnel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -103.352)
+shape = SubResource("BoxShape3D_1yoop")
+
 [node name="Player" parent="." instance=ExtResource("1_3tjwb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.60015, 0.0462267, 3.64829)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("2_ppd5i")
+environment = SubResource("Environment_ys6y3")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.834694, -0.368235, 0.409498, 0, 0.743577, 0.668651, -0.550714, -0.558119, 0.620659, 0, 11.7275, 0)
@@ -220,7 +286,7 @@ shape = SubResource("BoxShape3D_v315e")
 shape = SubResource("BoxShape3D_rfjhy")
 
 [node name="GroundPlane" parent="Ground" instance=ExtResource("16_snhpm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -12.5849, 0, 0)
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -12.5849, 0, 0)
 
 [node name="Plane" parent="Ground/GroundPlane" index="0"]
 surface_material_override/0 = ExtResource("17_cym61")

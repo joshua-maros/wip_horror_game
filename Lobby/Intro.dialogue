@@ -4,10 +4,10 @@ Dispatcher: You must be the new guy.
 
 Dispatcher: Here's how this works. You get assignments at this desk, then you take the train behind me to do them. Pretty simple.
 
-Dispatcher: Looks like you'll be working at [bold]Sunshine Farms[/bold] for the forseeable future.
+do LevelLogic.emit_call_train()
+
+Dispatcher: Looks like you'll be working at [b]Sunshine Farms[/b] for the forseeable future.
 
 Dispatcher: I'll call the train for you.
-
-do LevelLogic.emit_call_train()
 
 => END

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://c1biuieiiu7id"]
+[gd_scene load_steps=29 format=3 uid="uid://c1biuieiiu7id"]
 
 [ext_resource type="PackedScene" uid="uid://cxcbr4rc073fl" path="res://Shared/Player/Player.tscn" id="2_3fdrr"]
 [ext_resource type="PackedScene" path="res://Lobby/Variants/Dim.tscn" id="2_qvk42"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://Shared/Train/MoveDoorsAction.gd" id="7_pddix"]
 [ext_resource type="Script" path="res://Shared/Train/WaitForPlayerAction.gd" id="8_00ka2"]
 [ext_resource type="Script" path="res://Shared/Train/WaitForLevelEvent.gd" id="9_ft82t"]
+[ext_resource type="AudioStream" uid="uid://cv3wqo1xqxhve" path="res://Lobby/Creepy.ogg" id="12_gucij"]
 
 [sub_resource type="Curve" id="Curve_dyoxg"]
 _data = [Vector2(0, 0), 0.0, 1.14805, 0, 0, Vector2(0.987179, 0.981818), 0.850909, 0.0, 0, 0]
@@ -64,6 +65,7 @@ adjustment_color_correction = SubResource("CurveXYZTexture_i3eqi")
 script = ExtResource("4_m603g")
 direction = 0
 invert = false
+extra_time = 0.0
 
 [sub_resource type="Resource" id="Resource_pqd3e"]
 script = ExtResource("5_v4l0r")
@@ -159,3 +161,11 @@ next_level = "res://Farm/Farm.tscn"
 fade = NodePath("../FadeToBlack")
 
 [node name="FadeToBlack" parent="." instance=ExtResource("5_510vn")]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9431, 3.10462, 0)
+stream = ExtResource("12_gucij")
+volume_db = 7.725
+max_db = 3.07
+autoplay = true
+panning_strength = 0.0

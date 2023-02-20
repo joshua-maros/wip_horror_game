@@ -63,12 +63,12 @@ void fragment() {
 		if (any(greaterThan(abs(model_pos), bounds)) || z <= 0.001) {
 			break;
 		}
-		light += light_at(model_pos, bounds) * sqrt(z);
+		light += light_at(model_pos, bounds);
 		model_pos += step_;
 		z -= step_size;
 	}
 	
-	float exposure = step_size / 200.0;
+	float exposure = step_size / 150.0;
 	
 	ALBEDO = vec3(light * exposure) * vec3(0.6, 0.8, 1.0);
 	// ALBEDO = ALBEDO.r > 0.0 ? vec3(1.0) : vec3(0.0);

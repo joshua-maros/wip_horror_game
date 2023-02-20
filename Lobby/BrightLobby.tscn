@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://c4gbx6trbam0c" path="res://Lobby/NPC/Passenger.tscn" id="14_puggi"]
 [ext_resource type="Script" path="res://Lobby/NPC/InteractableNPC.gd" id="14_qiix4"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_label.gd" id="15_oak12"]
+[ext_resource type="AudioStream" uid="uid://doxxi311qw3qn" path="res://Lobby/Nice.ogg" id="18_khgg4"]
 
 [sub_resource type="Curve" id="Curve_dyoxg"]
 _data = [Vector2(0, 0), 0.0, 1.14805, 0, 0, Vector2(0.987179, 0.981818), 0.850909, 0.0, 0, 0]
@@ -74,6 +75,7 @@ trigger_on = 0
 script = ExtResource("3_j13c0")
 direction = 0
 invert = true
+extra_time = 0.0
 
 [sub_resource type="Resource" id="Resource_npkg8"]
 script = ExtResource("4_5qwb0")
@@ -113,6 +115,7 @@ on = null
 script = ExtResource("3_j13c0")
 direction = 1
 invert = false
+extra_time = 10.0
 
 [sub_resource type="Resource" id="Resource_5ar2j"]
 script = ExtResource("8_6eg24")
@@ -126,19 +129,17 @@ wait_for = 5.0
 script = ExtResource("8_6eg24")
 wait_for = 2.0
 
-[sub_resource type="Resource" id="Resource_klsca"]
-script = ExtResource("8_6eg24")
-wait_for = 10.0
-
 [sub_resource type="Resource" id="Resource_02l0n"]
 script = ExtResource("3_j13c0")
 direction = 0
 invert = false
+extra_time = 7.0
 
 [sub_resource type="Resource" id="Resource_72ycg"]
 script = ExtResource("3_j13c0")
 direction = 1
 invert = true
+extra_time = 0.0
 
 [node name="CleanLobby" type="Node3D"]
 
@@ -157,12 +158,12 @@ actions = Array[Resource("res://Shared/Train/TrainAction.gd")]([SubResource("Res
 
 [node name="Train2" parent="." instance=ExtResource("3_cu1p2")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.71654, -0.123827, 0.491991)
-actions = Array[Resource("res://Shared/Train/TrainAction.gd")]([SubResource("Resource_3bts6"), SubResource("Resource_5ar2j"), SubResource("Resource_v2232"), SubResource("Resource_vdxqh"), SubResource("Resource_qurxw"), SubResource("Resource_e70qe"), SubResource("Resource_30xrf"), SubResource("Resource_klsca")])
+actions = Array[Resource("res://Shared/Train/TrainAction.gd")]([SubResource("Resource_3bts6"), SubResource("Resource_5ar2j"), SubResource("Resource_v2232"), SubResource("Resource_vdxqh"), SubResource("Resource_qurxw"), SubResource("Resource_e70qe"), SubResource("Resource_30xrf")])
 npc_train = true
 
 [node name="Train3" parent="." instance=ExtResource("3_cu1p2")]
 transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 23.8184, -0.123827, -2.50463)
-actions = Array[Resource("res://Shared/Train/TrainAction.gd")]([SubResource("Resource_klsca"), SubResource("Resource_02l0n"), SubResource("Resource_5ar2j"), SubResource("Resource_v2232"), SubResource("Resource_vdxqh"), SubResource("Resource_qurxw"), SubResource("Resource_e70qe"), SubResource("Resource_72ycg")])
+actions = Array[Resource("res://Shared/Train/TrainAction.gd")]([SubResource("Resource_02l0n"), SubResource("Resource_5ar2j"), SubResource("Resource_v2232"), SubResource("Resource_vdxqh"), SubResource("Resource_qurxw"), SubResource("Resource_e70qe"), SubResource("Resource_72ycg")])
 npc_train = true
 
 [node name="LevelTransitionController" type="Node" parent="." node_paths=PackedStringArray("player", "train", "spawn_point", "fade")]
@@ -225,3 +226,10 @@ offset_top = -174.0
 grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("15_oak12")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5976, 2.60117, 0)
+stream = ExtResource("18_khgg4")
+max_db = -6.102
+autoplay = true
+panning_strength = 0.0

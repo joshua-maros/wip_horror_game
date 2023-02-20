@@ -17,7 +17,7 @@ gradient = SubResource("Gradient_1t0w8")
 [resource]
 render_priority = 0
 shader = ExtResource("1_5jvcv")
-shader_parameter/NoiseScale = 4.044
+shader_parameter/NoiseScale = 21.058
 shader_parameter/Albedo1 = ExtResource("2_eib2g")
 shader_parameter/Albedo2 = ExtResource("3_ds10d")
 shader_parameter/Metallic1 = SubResource("GradientTexture2D_67k3q")
